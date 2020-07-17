@@ -6,16 +6,13 @@ export default function Ingredient(props){
     color: `antiquewhite`
   }
 
-  //console.log(props)
   return (
     <div>
-      <button key={ props.index } 
+      <div key={ props.index } 
           style={ style } 
-          onClick={ (e) => { props.addIngredient(e) } }
-          value={ props.index }
       >
         { props.ingredient.name }
-      </button>
+      </div>
     </div>
   )
 }
