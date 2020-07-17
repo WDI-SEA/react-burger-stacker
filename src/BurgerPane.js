@@ -8,7 +8,7 @@ const BurgerPane = (props) => {
         <div>
             <h1>Burger:</h1>
             <BurgerStack ingredients={props.ingredient}/>
-            <ClearBurger />
+            <ClearBurger action={props.action}/>
         </div>
     )
 }

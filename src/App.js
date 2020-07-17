@@ -23,11 +23,22 @@ function App() {
   const [ingredients, setIngredients] = useState(burger)
   const [burgerPaneIngredients , setBurgerPaneIngredients] = useState([])
 
+  function addToStack(e) {
+    let result = e.target.innerText
+    setBurgerPaneIngredients([result, ...burgerPaneIngredients])
+    console.log(burgerPaneIngredients)
+
+  }
+
+  function clearStack(e) {
+    setBurgerPaneIngredients([])
+  }
+
   return (
     <div className="App">
       <h1>Burger Stacker</h1>
-      <IngredientList ingredients={ingredients}/>
-      <BurgerPane ingredient={burgerPaneIngredients}/>
+      <IngredientList ingredients={ingredients} action={addToStack} />
+      <BurgerPane ingredient={burgerPaneIngredients} action={clearStack}/>
     </div>
   );
 }

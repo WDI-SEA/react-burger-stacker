@@ -5,12 +5,17 @@ function BurgerStack(props) {
     return (
         <div>
             <ul>
-                {props.ingredients.map((ingredient) => {
+            {props.ingredients.map((ingredient) => {
+                    console.log(ingredient)
                     return (
-                        <li><Ingredient ingredient={ingredient.name} /></li>
+                        <li>
+                            <Ingredient ingredient={ingredient} />
+                        </li>
+                        
                     )
                 })}
             </ul>
+         
         </div>
     )
 }
