@@ -1,0 +1,6 @@
+<ul>
+        {props.ingredients.map((ingredient, i) => 
+        <li key={i}>{ingredient.name} 
+        <button onClick={() => handleClick(ingredient)}>Add</button>
+        </li>)}
+        </ul>

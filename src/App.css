@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+
+.ingredients-list {
+  margin: 50px 50px;
+  border: solid 1px black;
+}
+
+.burger-pane {
+  margin: 50px 50px;
+  border: solid 1px black;
+}
