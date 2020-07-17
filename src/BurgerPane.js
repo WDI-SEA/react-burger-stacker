@@ -7,7 +7,8 @@ const BurgerPane = (props) => {
     let burg = props.toppins.map((item) => {
         return (
             // let bColor = {item.color}
-                <div style={{backgroundColor: 'green'}}  class={item.name}>
+            // {console.log({item.name})
+                <div style={{backgroundColor: 'green' }} className={'toppin'} value={item.color}>
 
                     {item}
                 </div> 
@@ -15,9 +16,7 @@ const BurgerPane = (props) => {
             })   
     return (
         <div className="burgerPane">
-            <h1>BURGS</h1>
-            <h1>BURGS</h1>
-            <h1>BURGS</h1>
+            <h1>BUILD A BURG!!!</h1>
             {burg}
         </div>
     );
