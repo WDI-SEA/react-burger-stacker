@@ -22,17 +22,23 @@ function App() {
   ];
  
   const [stackOrder, setStackOrder] = useState([]);
+  const [pantry, setPantry] = useState(APP_DATA);
   const clearStack = () => {
     setStackOrder([]);
   }
   const pileHigh = (newIngredient) => {
     setStackOrder([newIngredient, ...stackOrder])
   }
+  const addToPantry = (e) => {
+    e.preventDefault();
+    console.log("Adding ", e.target.name.value);
+    setPantry([...pantry, {name: e.target.name.value, color: e.target.color.value}]);
+  }
   return (
     <>
       <h1>Burger Stacker</h1>
-      <IngredientContainer appData={APP_DATA} pileHigh={pileHigh}/>
-      <BurgerContainer appData={APP_DATA} stackOrder={stackOrder} clearStack={clearStack}/>
+      <IngredientContainer appData={pantry} addToPantry={addToPantry} pileHigh={pileHigh}/>
+      <BurgerContainer appData={pantry} stackOrder={stackOrder} clearStack={clearStack}/>
     </>
   );
 }
