@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ClearBurger = (props) => {
+const ClearBurger = () => {
 
 }
 

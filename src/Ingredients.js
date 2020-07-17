@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Ingredients = (props) => {
-
+const Ingredients = () => {
+   
 }
 
 export default Ingredients
