@@ -6,10 +6,12 @@ import './App.css'
 const BurgerPane = (props) => {
     let burg = props.toppins.map((item) => {
         return (
+            // function bColor(b) {return b.color}
             // let bColor = {item.color}
             // {console.log({item.name})
-                <div style={{backgroundColor: 'green' }} className={'toppin'} value={item.color}>
 
+                <div class="toppin" style={{backgroundColor: 'green'}} className={item.color} value={item.color}>
+                    {/* <input type="button" value={item.name} /> */}
                     {item}
                 </div> 
             )

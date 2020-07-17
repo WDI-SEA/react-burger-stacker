@@ -1,6 +1,7 @@
-.App {
-  text-align: center;
-}
+/* #root {
+    display: flex;
+    flex-direction: row;
+} */
 
 .App-logo {
   height: 40vmin;
@@ -37,7 +38,41 @@
   }
 }
 
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* .burgerBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+} */
+
+.toppin {
+    width: 150px;
+    text-align: center;
+    margin: 4px auto;
+    /* padding-top: 50px; */
+}
+
 .lettuce {
     background-color: green;
 }
 
+/* .ingredient-list {
+    display: flex;
+    flex-direction: column;
+} */
+
+/* .burgerPane {
+    display: flex;
+    flex-direction: column;
+} */
+
+.btn {
+    width: 80px;
+    margin: 20px auto; 
+}
