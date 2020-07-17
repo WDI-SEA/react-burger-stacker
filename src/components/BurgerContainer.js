@@ -1,9 +1,12 @@
 import React from 'react';
+import BurgerLayer from './BurgerLayer';
 
 const BurgerContainer = (props) => {
     return (
         <div className="burger-container">
-            <h1>{props.stackOrder}</h1>
+        {props.stackOrder.map(layer => (
+            <BurgerLayer color={layer.color} />
+        ))}
             <button onClick={() => props.clearStack()}>Clear</button>
         </div>
     );

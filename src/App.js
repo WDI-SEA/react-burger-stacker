@@ -26,7 +26,7 @@ function App() {
     setStackOrder([]);
   }
   const pileHigh = (newIngredient) => {
-    setStackOrder([...stackOrder, newIngredient])
+    setStackOrder([newIngredient, ...stackOrder])
   }
   return (
     <>
