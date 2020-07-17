@@ -1,12 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import BurgerContainer from './components/BurgerContainer.js';
+import IngredientContainer from './components/IngredientContainer.js';
+
 
 function App(props) {
   return (
     <>
       <h1>Burger Stacker</h1>
-      <p>{JSON.stringify(props)}</p>
+      <IngredientContainer appData={props.appData}/>
+      <BurgerContainer appData={props.appData}/>
     </>
   );
 }
