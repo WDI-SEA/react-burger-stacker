@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-const ClearBurger = () => {
+const ClearBurger = (props) => {
    return (
         <div>
-            <button className="clearButton" onClick={() => this.props.clearBurger}>Clean Your Plate</button>
+            <button className="clearButton" onClick={(e) => props.action(e)}>Clean Your Plate</button>
         </div>
    )
 }

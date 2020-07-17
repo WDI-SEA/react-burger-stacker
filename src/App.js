@@ -39,6 +39,11 @@ function App() {
     console.log(burgerPaneIngredients)
   }
 
+  const clearStack = (e) => {
+    //handle onClick of clear button, set burgerPaneIngredients to empty array
+    setBurgerPaneIngredients([])
+  }
+
   // return the functions to render the components we call upon
   return (
     // begin JSX expression
@@ -47,7 +52,7 @@ function App() {
       that is how we define JS within JSX */}
       {/*  */}
       <IngredientList ingredients={ingredients} action={addToStack}/>
-      <BurgerPane ingredients={burgerPaneIngredients}/>
+      <BurgerPane ingredients={burgerPaneIngredients} action={clearStack}/>
     </div>
     // end JSX expression
   );
