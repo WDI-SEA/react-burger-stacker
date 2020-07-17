@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 
 const Ingredient = (props) => {
     return (
-        <div className="ingredient">
-            {props.ingredient.name}
+        <li className="ingredient">
             <button onClick={() => props.pileHigh(props.ingredient)}>Add Me!</button>
-        </div>
+            {props.ingredient.name}
+        </li>
     )
 }
 

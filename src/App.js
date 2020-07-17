@@ -29,6 +29,10 @@ function App() {
   const pileHigh = (newIngredient) => {
     setStackOrder([newIngredient, ...stackOrder])
   }
+  const removeLayer = () => {
+    let newStackOrder = stackOrder.slice(1);
+    setStackOrder(newStackOrder);
+  }
   const addToPantry = (e) => {
     e.preventDefault();
     console.log("Adding ", e.target.name.value);
@@ -38,7 +42,12 @@ function App() {
     <>
       <h1>Burger Stacker</h1>
       <IngredientContainer appData={pantry} addToPantry={addToPantry} pileHigh={pileHigh}/>
-      <BurgerContainer appData={pantry} stackOrder={stackOrder} clearStack={clearStack}/>
+      <BurgerContainer 
+        appData={pantry} 
+        stackOrder={stackOrder} 
+        clearStack={clearStack} 
+        removeLayer={removeLayer}
+      />
     </>
   );
 }

@@ -40,14 +40,48 @@
 .ingredient-container, .burger-container {
   display: inline-block;
   border: 1px solid black;
+  border-radius: 10px;
   margin: 10px;
-  height: 500px;
   width: 400px;
 }
 
 .burger-layer {
-  display: block;
+  display: inline-block;
   width: 300px;
   height: 20px;
   margin: 5px;
+}
+
+div {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+form {
+  margin: 5px;
+}
+
+li {
+  text-align: left;
+}
+
+button {
+  margin: 4px 2px;
+}
+
+form {
+  background-color: #CCCCCC;
+  padding: 4px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+input {
+  margin: 4px;
+}
+
+p {
+  margin-top: 4px;
+  margin-bottom: 4px;
 }

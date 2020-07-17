@@ -14,10 +14,12 @@ const IngredientContainer = (props) => {
             </ul>
             <form onSubmit={props.addToPantry}>
                 <p>Add New Ingredient</p>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" />
-                <label for="color">Color:</label>
-                <input type="color" id="color" name="color" />
+                <label>Name:
+                    <input type="text" id="name" name="name" />
+                </label>
+                <label>Color:
+                    <input type="color" id="color" name="color" />
+                </label>
                 <input type="submit" value="I must have this" />
             </form>
         </div>
