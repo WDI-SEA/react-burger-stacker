@@ -3,7 +3,8 @@ import React from 'react';
 const BurgerContainer = (props) => {
     return (
         <div className="burger-container">
-            <button>Clear</button>
+            <h1>{props.stackOrder}</h1>
+            <button onClick={() => props.clearStack()}>Clear</button>
         </div>
     );
 }

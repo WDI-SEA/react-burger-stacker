@@ -6,7 +6,7 @@ const IngredientContainer = (props) => {
         <div className="ingredient-container">
             <ul>
                 {props.appData.map(ingredient => (
-                    <Ingredient key={ingredient.name} name={ingredient.name} />
+                    <Ingredient key={ingredient.name} name={ingredient.name} pileHigh={props.pileHigh}/>
                 ))}
             </ul>
         </div>
