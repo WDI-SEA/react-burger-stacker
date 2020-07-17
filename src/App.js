@@ -12,15 +12,11 @@ function App(props) {
 
   const addIngredient = (e) => {
     setBurgerIngredients([ingredientData[e.target.value], ...burgerIngredients]);
-    // console.log(e.target.value)
-    // console.log(burgerIngredients)
   }
 
   const clearBurger = () => {
     setBurgerIngredients([])
   }
-
-  //console.log('app', props);
 
   return (
     <div className="App">

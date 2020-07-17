@@ -1,10 +1,9 @@
 import React from 'react';
 
 export default function ClearBurger(props){
-  console.log(props)
   return (
     <div>
-      <button onClick="">Clear Burger</button>
+      <button onClick={ (e) => { props.clearBurger() } }>Clear Burger</button>
     </div>
   )
 }
