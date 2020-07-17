@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import IngredientList from './IngredientList';
+import BurgerPane from './BurgerPane';
+import ingredientsData from './ingredientsData'
 
 function App() {
+
+  const [addedIngredients, setAddedIngredients] = useState([])
+
+  const addIngredient = (ingredient) => {
+    setAddedIngredients([ingredientsData[ingredient.target.value], ...addedIngredients])
+    console.log(ingredient.target.value)
+    console.log(addedIngredients)
+  }
+
+  const resetIngredients = () => {
+    setAddedIngredients([])
+    // console.log(addedIngredients)
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <IngredientList ingredientsData={ingredientsData} addIngredient={addIngredient} />
+      <BurgerPane addedIngredients={addedIngredients} resetIngredients={resetIngredients} />
     </div>
   );
 }
