@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Ingredients from './Ingredients'
-import Burger from './Burger'
 
 function App() {
   let ingredientsList = [
@@ -20,13 +19,9 @@ function App() {
     {name: "Special Sauce", color: 'orange'}
   ]
 
-  let burgerItems = [
-
-  ]
   return (
     <div className="App">
       <Ingredients ingredientsList={ingredientsList} />
-      <Burger ingredientsList={ingredientsList} />
     </div>
   );
 }

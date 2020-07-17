@@ -2,9 +2,9 @@ import React from 'react'
 
 const Burger = (props) => {
   return (
-    <div id="burger">
+    <div className="Burger">
       <ul>
-        {props.ingredientsList.map(ingredient => (
+        {props.ingredientsAdded.map(ingredient => (
           <li id="burgerItem" key={ingredient} style={{backgroundColor: ingredient.color}}></li>
         ))}
       </ul>
