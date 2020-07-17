@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Ingredients from './ingredients'
+import IngredientList from './IngredientList'
 import BurgerPane from './BurgerPane.js'
 
 const burger = [
@@ -20,11 +20,14 @@ const burger = [
 ]
 
 function App() {
+  const [ingredients, setIngredients] = useState(burger)
+  const [burgerPaneIngredients , setBurgerPaneIngredients] = useState([])
+
   return (
     <div className="App">
       <h1>Burger Stacker</h1>
-      <Ingredients burger={burger}/>
-      <BurgerPane />
+      <IngredientList ingredients={ingredients}/>
+      <BurgerPane ingredient={burgerPaneIngredients}/>
     </div>
   );
 }
