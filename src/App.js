@@ -6,7 +6,7 @@ import IngredientList from "./IngredientList";
 function App() {
   // an array of ingredient data
   // this is the thing that is changing
-  let [ingredients, initIngredients] = useState([
+  let burgerSeed = [
     {name: 'Kaiser Bun', color: 'saddlebrown'},
     {name: 'Sesame Bun', color: 'sandybrown'},
     {name: 'Gluten Free Bun', color: 'peru'},
@@ -19,11 +19,25 @@ function App() {
     {name: 'Tomato', color: 'tomato'},
     {name: 'Bacon', color: 'maroon'},
     {name: 'Onion', color: 'lightyellow'}
-  ])
+  ]
 
   // use the useState hook to set the initial ingredients to be stacked to 
   // an empty array - that way we can fill it with stackable toppings
-  let [thenIngredients, setIngredients] = useState([])
+  const [ingredients, setIngredients] = useState(burgerSeed)
+  const [burgerPaneIngredients, setBurgerPaneIngredients] = useState([])
+
+  //handle the data event
+  const addToStack = (e) => {
+    //we are going to pass down this function as property
+    console.log(`Ingredient was clicked!`)
+    //get burgerSeed ingredient from user click event on Ingredient List li
+    let result = e.target.innerText;
+    //add clicked burger seed ingredient to my setBurgerPaneIngredients
+    //accomplish this with a modifier/built in ES6 syntax called spread operator
+    //I don't want a nested array, I want to access individual values
+    setBurgerPaneIngredients([result, ...burgerPaneIngredients])
+    console.log(burgerPaneIngredients)
+  }
 
   // return the functions to render the components we call upon
   return (
@@ -32,8 +46,8 @@ function App() {
       {/* these brackets indicate the opening of another expression, a JS expression
       that is how we define JS within JSX */}
       {/*  */}
-      <IngredientList ingredients={ingredients}/>
-      <BurgerPane />
+      <IngredientList ingredients={ingredients} action={addToStack}/>
+      <BurgerPane ingredients={burgerPaneIngredients}/>
     </div>
     // end JSX expression
   );

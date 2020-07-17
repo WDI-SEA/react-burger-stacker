@@ -6,7 +6,7 @@ const BurgerPane = (props) => {
     return (
         <div className="burger-pane">
             <BurgerStack ingredients={props.ingredients} />
-            <ClearBurger />
+            <ClearBurger ingredients={props.clearBurger}/>
         </div>
     )
 }

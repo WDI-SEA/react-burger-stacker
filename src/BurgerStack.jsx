@@ -1,8 +1,19 @@
 import React, { useState } from "react";
+import Ingredients from "./Ingredients";
 
-const BurgerStack = () => {
+const BurgerStack = (props) => {
     return(
-        <h1>hi</h1>
+        <div className="foodStack">
+            <ul>
+                {props.ingredients.map((ingredient) => {
+                    return (
+                        <li>
+                            <Ingredients ingredient={ingredient} />
+                        </li>
+                    )
+                })}
+            </ul>
+        </div>
     )
 }
 

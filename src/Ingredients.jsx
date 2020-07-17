@@ -3,11 +3,7 @@ import React from "react";
 const Ingredients = (props) => {
     return (
         <div>
-            <ul>
-                {props.ingredients.map(ingredient => (
-                    <li className="foods">{ingredient.name}<button className="stackButton">Stack me!</button></li>
-                ))}
-            </ul>
+            <h4>{props.ingredient}</h4>
     </div>
     )
 }

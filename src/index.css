@@ -7,6 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 .App{
   display: flex;
   height: 600px;
@@ -21,18 +23,20 @@ code {
 }
 
 .ingredients{
-  border-radius: 8%;
+  border-radius: 10%;
   height: 400px;
   width: 250px;
   background-color: indianred;
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .burger-pane{
   height: 400px;
   width: 250px;
   border: 5px dotted dodgerblue;
-  border-radius: 8%;
+  border-radius: 20%;
 }
 
 .foods{
@@ -40,14 +44,20 @@ code {
 }
 
 .clearButton{
-  position: relative;
-  margin-top: 110%;
+  position: absolute;
+  margin-top: 300px;
+  margin-right: 150px;
   border-radius: 10px;
 }
 
 .stackButton{
   width: 80px;
-  height: 25px;
+  height: 30px;
   margin-left: 20px;
   border-radius: 10px;
+}
+
+.food-container{
+  width: 300px;
+  height: 25px;
 }
