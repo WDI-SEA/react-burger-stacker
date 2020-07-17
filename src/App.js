@@ -1,10 +1,9 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react';
 import IngredientList from './components/IngredientList';
 import Ingredients from './components/Ingredients'
 import BurgerPane from './components/BurgerPane';
 
-const ingredients = [
+const burgerSeed = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
   {name: 'Sesame Bun', color: 'sandybrown'},
   {name: 'Gluten Free Bun', color: 'peru'},
@@ -20,11 +19,26 @@ const ingredients = [
 ]
 
 function App() {
+  //use state hook to track update of ingredient data
+  const [ingredients, setIngredients] = useState(burgerSeed)
+  const [burgerPaneIngredients, setBurgerPaneIngredients] = useState([])
+
+  const addToStack = (e) => {
+    //get burgerSeed ingredient from user click event on IngredientList <li>
+    let result = e.target.innerText
+    //add clicked burgerSeed ingredient to setBurgerPaneIngredients
+    setBurgerPaneIngredients([result, ...burgerPaneIngredients])
+  }
+  const clearStack = (e) => {
+    //on click of clear button
+    //set burgerPaneIngredients to empty array
+    setBurgerPaneIngredients([])
+  }
+
   return (
   <div>
-    <Ingredients ingredients={ingredients} />
-   <IngredientList />
-   <BurgerPane />
+   <IngredientList ingredients={ingredients} action={addToStack}/>
+   <BurgerPane ingredients={burgerPaneIngredients} action={clearStack} />
   </div>
   )
 }

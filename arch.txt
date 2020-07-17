@@ -1,0 +1,9 @@
+App *burgerSeed data goes here since multiple comps need it 
+|--IngredientList 
+|  |--Ingredient(s)
+|
+|--BurgerPane
+|  |--BurgerStack
+|  |  |--Ingredient(s)
+|  |
+|  |--ClearBurger

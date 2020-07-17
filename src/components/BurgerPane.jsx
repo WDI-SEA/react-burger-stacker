@@ -1,10 +1,12 @@
 import React from 'react'
+import BurgerStack from './BurgerStack'
+import ClearBurger from './ClearBurger'
 
-const BurgerPane = () => {
+const BurgerPane = (props) => {
     return (
-        <div class="burger">
-            <h1>Your order is up!</h1>
-            <button>Clear Order</button>
+        <div>
+            <BurgerStack ingredients={props.ingredients}/>
+            <ClearBurger action={props.action} />
         </div>
     )
 }
