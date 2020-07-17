@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.wrap {
+  overflow: hidden;
+}
+
+.ingredient-list {
+  width: 50%;
+  float: left;
+}
+
+.burger-stack {
+  width: 50%;
+  float: right;
+}

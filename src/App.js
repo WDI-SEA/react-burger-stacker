@@ -15,7 +15,7 @@ const App = (props) => {
 
     return (
         <div className="App">
-            <div>
+            <div className="wrap">
                 <div>
                     <IngredientList ingredientDetail={IngredientDetail} addIngredient={addIngredient} />
                 </div>

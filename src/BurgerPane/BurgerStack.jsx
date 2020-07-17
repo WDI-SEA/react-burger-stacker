@@ -10,7 +10,7 @@ const BurgerStack = (props) => {
     // better to just create a style with centering in css and apply to div with the appropriate name
 
     return (
-        <div>
+        <div className="burger-stack">
             <h2>🍔 Your Burger Stack: 🍔</h2>
             <ClearBurger clearBurger={props.clearBurger }/>
             <div /*style={ stackStyle }*/>

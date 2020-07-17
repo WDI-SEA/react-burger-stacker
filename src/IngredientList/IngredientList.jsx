@@ -8,7 +8,7 @@ const IngredientList = (props) => {
     })
 
     return (
-        <div>
+        <div className="ingredient-list">
             <h2>Available Ingredients:</h2>
             { showIngredients }
         </div>
