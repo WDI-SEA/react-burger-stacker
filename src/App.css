@@ -78,7 +78,7 @@ div {
     flex-direction: column;
 } */
 
-.btn {
-    width: 80px;
+.clearBtn {
+    width: 120px;
     margin: 20px auto; 
 }

@@ -28,9 +28,10 @@ function App() {
         console.log(e)
     }
     
-    // const clearClick = (e) => {
-    //     setToppins(initialState)
-    // }
+    function clearClick(e) {
+        setToppins(initialState)
+        console.log(e)
+    }
 
     // useLayoutEffect (() => {
     //     console.log(toppins)
@@ -41,7 +42,7 @@ function App() {
               <div className="App">
                   <IngredientList ingredients={ingredients} action={addToStack} />
                   
-                  <BurgerPane toppins={toppins} />
+                  <BurgerPane toppins={toppins} action={clearClick} />
               </div>
         )
 }

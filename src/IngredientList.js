@@ -11,7 +11,7 @@ const IngredientList = (props) => {
     // },
     // [toppins])
 
-    const initialState = ["plate"]
+    // const initialState = ["plate"]
 
     // const addToStack = (e, props) => {
     //     console.log(props.toppins)
@@ -30,13 +30,13 @@ const IngredientList = (props) => {
                 </li> 
             )
             })        
-    let clearButton = <button className="clearBtn" onClick={(e) => props.action} />
+    
     
 
     return (
         <div className="ingredient-list">
             <h1>BURGS</h1>
-            clearButton
+            {/* clearButton */}
             {list}
             
             {/* {toppins} */}

@@ -16,6 +16,9 @@ const BurgerPane = (props) => {
         <div className="burgerPane">
             <h1>BUILD A BURG!!!</h1>
             {burg}
+            
+            <input type="button" className="clearBtn" value="Start a new burg" onClick={(e) => props.action('blep')} />
+
             <style jsx>
                 {/* {`
                     #${props.toppins.name} {
@@ -23,9 +26,11 @@ const BurgerPane = (props) => {
                     }
                 `} */}
             </style>
+            
         </div>
     );
-         
+
+
     
 
 
