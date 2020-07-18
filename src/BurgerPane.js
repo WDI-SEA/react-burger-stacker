@@ -7,8 +7,9 @@ import './App.css'
 const BurgerPane = (props) => {
     let burg = props.toppins.map((item) => {
         return (
-                <div className={item.color} value={item.color}>
-                    {item}
+                
+                <div style={{backgroundColor:`${item.color}`}}>
+                    {item.name}
                 </div> 
             )
             })   

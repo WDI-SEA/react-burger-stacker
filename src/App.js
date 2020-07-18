@@ -1,4 +1,4 @@
-import React, {useState,useLayoutEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 import './App.css';
 import IngredientList from './IngredientList'
 import BurgerPane from './BurgerPane'
@@ -17,11 +17,17 @@ function App() {
         {name: 'Lettuce', color: 'lawngreen'},
         {name: 'Tomato', color: 'tomato'},
         {name: 'Bacon', color: 'maroon'},
-        {name: 'Onion', color: 'lightyellow'}
+        {name: 'Onion', color: 'lightyellow'},
+        {name: 'Barbecue Sauce', color: 'red'}
       ]
 
-    const initialState = ["Plate"]
+    const initialState = [{name:"Plate", color:"purple"}]
     const [toppins,setToppins] = useState(initialState)
+
+    useEffect(() => {
+        console.log(toppins)    
+    },
+    [toppins])
 
     function addToStack(e) {
         setToppins([e, ...toppins])

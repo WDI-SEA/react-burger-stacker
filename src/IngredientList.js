@@ -22,11 +22,13 @@ const IngredientList = (props) => {
     //     props.setToppins(initialState)
     // }
     
+    // useEffect???
+
     let list = props.ingredients.map((item) => {
         return (
-                <li name={item.name} key={item.name}>
+                <li className={item.color}>
                     {item.name}
-                    <input type="button" value={item.name} onClick={(e) => props.action(item.name)} />
+                    <input type="button" value={item.name} onClick={(e) => props.action(item)} />
                 </li> 
             )
             })        
