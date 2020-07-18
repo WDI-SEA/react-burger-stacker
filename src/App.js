@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState,useLayoutEffect} from 'react';
 import './App.css';
 import IngredientList from './IngredientList'
-// import BurgerPane from './BurgerPane'
+import BurgerPane from './BurgerPane'
 import { render } from '@testing-library/react';
 
 function App() {
@@ -20,14 +20,32 @@ function App() {
         {name: 'Onion', color: 'lightyellow'}
       ]
 
-          return (
+    const initialState = ["Plate"]
+    const [toppins,setToppins] = useState(initialState)
+
+    function addToStack(e) {
+        setToppins([e, ...toppins])
+        console.log(e)
+    }
+    
+    // const clearClick = (e) => {
+    //     setToppins(initialState)
+    // }
+
+    // useLayoutEffect (() => {
+    //     console.log(toppins)
+    // },
+    // [toppins])
+
+            return (
               <div className="App">
-                  <IngredientList ingredients={ingredients}/>
-                  {/* <BurgerPane /> */}
+                  <IngredientList ingredients={ingredients} action={addToStack} />
+                  
+                  <BurgerPane toppins={toppins} />
               </div>
         )
 }
 
-
+// action={clearClick()}  //TOO MANY RERENDERS?
 
 export default App;

@@ -1,61 +1,51 @@
 import React, {useState} from 'react'
-import BurgerPane from './BurgerPane'
+// import BurgerPane from './BurgerPane'
 
 const IngredientList = (props) => {
 
-    const initialState = ["Plate"]
-    const [toppins,setAdded] = useState(initialState)
+    // const initialState = ["Plate"]
+    // const [toppins,setAdded] = useState(initialState)
 
+    // useLayoutEffect (() => {
+    //     console.log(toppins)
+    // },
+    // [toppins])
 
+    const initialState = ["plate"]
 
-    const handleClick = (i) => {
-        setAdded([i, ...toppins])
-        // setAdded(i.concat(toppins))
-        // console.log(toppins)
-        // setAdded(isAdded)
-        console.log(toppins)
-
-        // toppins.push(list)
-    }
-
-    const clearClick = () => {
-        setAdded(initialState)
-    }
+    // const addToStack = (e, props) => {
+    //     console.log(props.toppins)
+    //     // props.setToppins(e, ...props.toppins)
+    // }
+    
+    // const clearClick = () => {
+    //     props.setToppins(initialState)
+    // }
     
     let list = props.ingredients.map((item) => {
         return (
                 <li name={item.name} key={item.name}>
                     {item.name}
-                    <input type="button" value={item.name} onClick={() => {handleClick(item.name)}} />
+                    <input type="button" value={item.name} onClick={(e) => props.action(item.name)} />
                 </li> 
             )
             })        
+    let clearButton = <button className="clearBtn" onClick={(e) => props.action} />
     
-            
-            
-            
-            // function burg(b) {b.map((item) => {
-            //     return (
-            //             <li name={item.name}>
-            //                 {item}
-            //             </li> 
-            //         )
-            //         })
-            //     }
 
     return (
         <div className="ingredient-list">
             <h1>BURGS</h1>
+            clearButton
             {list}
-            <input type="button" class="btn" value="clear plate" onClick={() => {clearClick()}} />
+            
             {/* {toppins} */}
-            <div className="burgerBox">
-                <BurgerPane toppins={toppins} />
-            </div>
+            {/* <div className="burgerBox"> */}
+                {/* <BurgerPane toppins={toppins} /> */}
+                {/* <IngredientList ingredients={ingredients}/> */}
+            {/* </div> */}
         </div>
     );
 }
 
 export default IngredientList
-
-
