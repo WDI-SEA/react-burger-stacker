@@ -12,11 +12,12 @@ const Ingredients = (props) => {
             <ul>
                 {props.ingredients.map((ingredient) => {
                    return (
-                   <li onClick={(e) => props.action(e)}>
+                   <li id={ingredient} onClick={(e) => props.action(e)}>
                         <Ingredient ingredient={ingredient.name} />
                     </li>
                 )})}
             </ul>
+
         </div>
     )
 

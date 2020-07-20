@@ -4,7 +4,7 @@ function BurgerClear(props) {
     return (
         <div>
             <button onClick={(e) => props.action(e)}>
-                EAT ME
+                Clear Burger
             </button>
         </div>
     )

@@ -8,6 +8,7 @@ const Ingredients = (props) => {
     return (
         <div className="flex-column">
             {props.ingredient}
+            
         </div>
     )
 
