@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import IngredientList from './IngredientList';
 import BurgerPane from './BurgerPane';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 let burgerSeed = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
