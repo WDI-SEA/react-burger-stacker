@@ -1,0 +1,7 @@
+App *burgerSeed
+|--IngredientList
+|   |--Ingredients
+|
+|--BurgerPane
+|
+|
