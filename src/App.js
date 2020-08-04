@@ -26,6 +26,7 @@ function App() {
 
     function addToStack(e) {
       let result = e.target.innerText;
+      console.log(result)
       // get burgerSeed ingredient from user clisk event on IngredientList li
       // add clicked burgerSeed ingredient to setBurgerPane
       setBurgerPaneIngredients([result, ...burgerPaneIngredients]);

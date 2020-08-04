@@ -8,7 +8,7 @@ function IngredientList(props) {
         {props.ingredients.map((ingredient) => {
           return (
           <li id={ingredient} onClick={(e) => props.action(e)}>
-            <Ingredient ingredient={ingredient} />
+            <Ingredient ingredient={ingredient.name} />
           </li>
           )})}
       </ul>
