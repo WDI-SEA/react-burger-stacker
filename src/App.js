@@ -5,10 +5,10 @@ import BurgerPane from "./BurgerPane";
 
 function App() {
   return (
-    <>
+    <div className={'display'}>
       <IngredientList/>
       <BurgerPane/>
-    </>
+    </div>
   );
 }
 
