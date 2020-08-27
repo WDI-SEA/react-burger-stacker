@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 100px;
 }
 
 .App-logo {
@@ -28,13 +32,14 @@
   color: #61dafb;
 }
 
+.ingredient-list-div {
+  color: green;
+}
+
 .burger-pane-div {
   color: orange;
 }
 
-.ingredient-list-div {
-  color: green;
-}
 
 @keyframes App-logo-spin {
   from {

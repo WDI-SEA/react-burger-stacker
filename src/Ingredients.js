@@ -20,7 +20,7 @@ export default function Ingredients() {
         return (
             <>
             <li style={{color: ing.color, listStyle: 'none'}}>{ing.name}</li>
-            <button type="submit">Add to Borgor</button><br /><br />
+            <button type="submit">Add {ing.name} to Borgor</button><br /><br />
             </>
         ) 
     })

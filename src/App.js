@@ -5,11 +5,11 @@ import IngredientList from './IngredientList'
 
 function App() {
   const [burger, setBurger] = useState([])
-  
+
   return (
     <div className="App">
-      <BurgerPane />
       <IngredientList />
+      <BurgerPane />
     </div>
   );
 }
