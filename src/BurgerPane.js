@@ -1,5 +1,7 @@
 import React from 'react';
-import './App.css'
+import BurgerStack from './BurgerStack';
+import ClearBurger from './ClearBurger';
+import './App.css';
 
 export default function BurgerPane() {
     return (

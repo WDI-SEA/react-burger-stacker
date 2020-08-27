@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css'
+import Ingredients from './Ingredients';
+import './App.css';
 
 
 export default function IngredientList() {
