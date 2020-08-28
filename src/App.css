@@ -7,10 +7,20 @@
   flex-direction: row;
 }
 
+.made {
+  display: flex;
+  flex-direction: column;
+}
+
 .ing-display {
   display: flex;
   flex-direction: column;
   background-color: hotpink;
+}
+
+.burgerIngredients {
+  /*height: 200px;*/
+  /*background-color: #61dafb;*/
 }
 
 

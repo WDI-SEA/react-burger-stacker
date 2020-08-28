@@ -18,25 +18,27 @@ const ingredients = [
   {name: 'Onion', color: 'lightyellow'}
 ]
 
-
 function App(props) {
 
     const [burgerIngredients, setBurgerIngredients] = useState([])
 
     let addIngredient = (e) => {
       let newBurgerIngredients = [e.target.value];
-      let finalBooger = newBurgerIngredients.concat(burgerIngredients)
-      setBurgerIngredients(finalBooger)
-      console.log(burgerIngredients);
+      let finalBurger = newBurgerIngredients.concat(burgerIngredients)
+      setBurgerIngredients(finalBurger)
+      console.log(`burgerIngredients from app.js ${burgerIngredients}`);
     }
 
-    console.log(`ingredients from app.js ${ingredients.name}`)
+  const clearStack = (e) => {
+    setBurgerIngredients([])
+  }
+
     return (
       <div className={'display'}>
         <IngredientList ingredients={ingredients}
-                        onClick={addIngredient}
-        />
-        <BurgerPane/>
+                        onClick={addIngredient} />
+        <BurgerPane ingredients={burgerIngredients}
+                    action={clearStack} />
       </div>
     );
 }

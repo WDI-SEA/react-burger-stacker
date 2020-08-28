@@ -1,9 +1,13 @@
 import React from "react";
+import BurgerStack from "./BurgerStack";
+
 
 export default function BurgerPane(props) {
+  console.log(`from burger pane this is the props ing ${props.ingredients}`)
   return (
-    <>
-      <h1>this is the burger pane</h1>
-    </>
+    <div className={'made'}>
+      <span>🍔🥬🍅🥓🧅🍔</span>
+      <BurgerStack ingredients={props.ingredients} />
+    </div>
   );
 }

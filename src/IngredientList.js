@@ -1,5 +1,4 @@
 import React from "react";
-import App from "./App";
 import IngredientButton from "./IngredientButton";
 
 function IngredientList(props) {
