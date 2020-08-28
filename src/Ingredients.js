@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Ingredients() {
+export default function Ingredients(props) {
     let burgerIngredients = [
         {name: 'Kaiser Bun', color: 'saddlebrown'},
         {name: 'Sesame Bun', color: 'sandybrown'},
@@ -16,12 +16,20 @@ export default function Ingredients() {
         {name: 'Onion', color: 'purple'}
     ]
 
-    const allIngredients = burgerIngredients.map(ing => {
+    const allIngredients = burgerIngredients.map((ing, i) => {
         return (
-            <>
+            <div key={i}>
             <li style={{color: ing.color, listStyle: 'none'}}>{ing.name}</li>
-            <button type="submit">Add {ing.name} to Borgor</button><br /><br />
-            </>
+
+            <button type="submit"
+            onClick={()=> {
+                // USE UNSHIFT INSTEAD OF PUSH
+                // props.addIngredient(props.burger.unshift(ing.name))
+                return props.addIngredient(ing.name)
+            }}>
+            Add {ing.name} to Borgor
+            </button><br /><br />
+            </div>
         ) 
     })
 

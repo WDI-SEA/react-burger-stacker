@@ -11,7 +11,7 @@ export default function IngredientList(props) {
             <h1>This the Ingredient List</h1>
             {/* we'll need to use map to list all ingredients */}
             <ul>
-                <Ingredients />
+                <Ingredients addIngredient={props.addIngredient}/>
             </ul>
         </div>
     )
