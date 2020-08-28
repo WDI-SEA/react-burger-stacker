@@ -49,11 +49,26 @@ export default class Burger extends Component {
       });
   }
 
+  burgerContent = () => {
+      let {
+        lettuce,
+        tomato,
+        cheese,
+        meat
+      } = this.state;
+
+      let burger = [];
+
+
+  }
+
   render() {
     return (
       <>
           <div className="burgerIngredients">
-              Burger
+              <div className="topSide"></div>
+              Content
+              <div className="bottomSide"></div>
           </div>
           <div className="ingredientsBlock">
               <p>Lettuce 🥬</p>

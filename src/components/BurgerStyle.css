@@ -42,3 +42,23 @@
   display: table;
   width: 95px;
 }
+
+.topSide {
+  background-image: url(../assets/top.jpg);
+  background-size: 300px;
+  height: 110px;
+  width: 100%;
+  display: table;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bottomSide {
+  background-image: url(../assets/bottom.jpg);
+  background-size: 300px;
+  height: 60px;
+  width: 100%;
+  display: table;
+  background-repeat: no-repeat;
+  background-position: center;
+}
