@@ -6,7 +6,7 @@ const BurgerStack = (props) => {
     <div>
       {props.ingredients.map((ingredient, i) => {
         return (
-          <p style={{color: `${ingredient.color}`}}>
+          <p>
             <BurgerIngredients key={i} ingredient={ingredient} />
           </p>
         );
