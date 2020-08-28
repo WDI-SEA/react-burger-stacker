@@ -62,3 +62,43 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.lettuceSide {
+  background-image: url(../assets/lettuce.jpg);
+  background-size: 300px;
+  height: 27px;
+  width: 100%;
+  display: table;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tomatoSide {
+  background-image: url(../assets/tomato.jpg);
+  background-size: 300px;
+  height: 27px;
+  width: 100%;
+  display: table;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cheeseSide {
+  background-image: url(../assets/cheese.jpg);
+  background-size: 300px;
+  height: 27px;
+  width: 100%;
+  display: table;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.meatSide {
+  background-image: url(../assets/meat.jpg);
+  background-size: 300px;
+  height: 27px;
+  width: 100%;
+  display: table;
+  background-repeat: no-repeat;
+  background-position: center;
+}

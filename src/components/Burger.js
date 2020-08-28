@@ -59,7 +59,23 @@ export default class Burger extends Component {
 
       let burger = [];
 
-
+      // output the lettuce
+      for (let i = 0; i < lettuce; i++){
+          burger.push(<div key={burger.length} className="lettuceSide"></div>);
+      }
+      // output the tomato
+      for (let i = 0; i < tomato; i++){
+          burger.push(<div key={burger.length} className="tomatoSide"></div>);
+      }
+      // output the cheese
+      for (let i = 0; i < cheese; i++){
+          burger.push(<div key={burger.length} className="cheeseSide"></div>);
+      }
+      // output the meat
+      for (let i = 0; i < meat; i++){
+          burger.push(<div key={burger.length} className="meatSide"></div>);
+      }
+      return burger;
   }
 
   render() {
@@ -67,7 +83,7 @@ export default class Burger extends Component {
       <>
           <div className="burgerIngredients">
               <div className="topSide"></div>
-              Content
+              {this.burgerContent()}
               <div className="bottomSide"></div>
           </div>
           <div className="ingredientsBlock">
