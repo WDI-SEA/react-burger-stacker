@@ -1,13 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Ingredients extends Component {
-    render() {
-        return (
+const Ingredients = (props) => {
+
+    const ingredients = props.ingredients.map((ingredient, i) => {
+        return <li key={i} style={{color:ingredient.color}}>
+            {ingredient.name}
+            <button onClick={(e) => props.addIngredients(ingredient.name)}> + </button>
+        </li>
+    })
+    return (
             <div>
-            <li style={{color:this.props.ingredients.color}}>{this.props.ingredients.name}</li>
+            <li>{ingredients}</li>
             </div>
-        )
-    }
+    )
 }
 
 export default Ingredients
