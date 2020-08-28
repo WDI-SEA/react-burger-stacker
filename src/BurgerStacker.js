@@ -52,6 +52,14 @@ function BurgerStacker(props) {
     setIngredientList(newIngredientList);
   }
 
+  const undoLastIngredient = (e) => {
+    let lastIngredient = burger.shift()
+    let ingredientArray = lastIngredient.split(',')
+    let ingredientObj = {name: ingredientArray[0], color: ingredientArray[1]}
+    let newIngredientList = [ingredientObj, ...ingredientList]
+    setIngredientList(newIngredientList)
+  }
+
   return (
     <div>
 
@@ -92,6 +100,8 @@ function BurgerStacker(props) {
           </ul>
           <h5>.</h5>
           <h4>Burger Stacking Area</h4>
+          <button onClick={undoLastIngredient}>Undo</button>
+          <br/>
           <button onClick={clearBurger}>Clear</button>
         </div>
       </div>
