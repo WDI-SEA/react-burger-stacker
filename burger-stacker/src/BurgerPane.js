@@ -1,15 +1,17 @@
-import React from 'react';
-import IngredientList from './IngredientList';
-import IngredientButton from './IngredientButton';
+import React, { useState } from "react";
+import BurgerStack from "./BurgerStack";
+import ClearBurger from './ClearBurger'
 
 
-let BurgerPane = (props) => {
-    return (
-        <div>
-            <h1>Build your burger</h1>
-                {/* {IngredientButton} */}
-        </div>
-    )
-}
 
-export default BurgerPane
+const BurgerPane = (props) => {
+  return (
+    <div className>
+      <h2>🍔 Here's your buuuurgeeer: 🍔</h2>
+      <BurgerStack ingredients={props.ingredients} />
+      <ClearBurger action={props.action} />
+    </div>
+  );
+};
+
+export default BurgerPane;

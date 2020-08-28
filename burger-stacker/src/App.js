@@ -23,10 +23,14 @@ function App() {
   const [burgerIngredients, setBurgerIngredients] = useState([])
 
   let addIngredient = (e) => {
-    let newBurgerIngredients = burgerIngredients;
-    newBurgerIngredients.unshift(e.target.value) 
-    setBurgerIngredients(newBurgerIngredients)
+    let newBurgerIngredients = [e.target.value];
+    let finalBooger = newBurgerIngredients.concat(burgerIngredients) 
+    setBurgerIngredients(finalBooger)
     console.log(burgerIngredients);
+  }
+
+  const clearStack = (e) => {
+    setBurgerIngredients([])
   }
 
   return (
@@ -34,7 +38,8 @@ function App() {
       <IngredientList ingredients={ingredients} 
       onClick={addIngredient}
       />
-      <BurgerPane />
+      <BurgerPane ingredients={burgerIngredients} action={clearStack}
+      />
     </div>
   );
 }

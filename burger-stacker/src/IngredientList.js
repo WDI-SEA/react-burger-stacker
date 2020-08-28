@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import BurgerPane from './BurgerPane';
 import IngredientButton from './IngredientButton';
 
 const IngredientList = (props) => {
 
     const newList = props.ingredients.map((i) => { 
         return ( 
-            <IngredientButton name={i.name} onClick={props.onClick}/>
+            <IngredientButton name={i.name} onClick={props.onClick} color={i.color} />
         ) 
     })
 
