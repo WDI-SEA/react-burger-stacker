@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+/* .container {
+  display: inline-flex;
+} */
+
 .ing-butt {
-  color: blue;
+  color: red;
+  width: 120px;
 }
