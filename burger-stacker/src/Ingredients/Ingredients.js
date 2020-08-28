@@ -3,7 +3,9 @@ import React, {Component} from 'react';
 class Ingredients extends Component {
     render() {
         return (
-            <li>{this.props.doThis.name}</li>
+            <div>
+            <li style={{color:this.props.ingredients.color}}>{this.props.ingredients.name}</li>
+            </div>
         )
     }
 }

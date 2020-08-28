@@ -1,25 +1,25 @@
 import React, {Component} from 'react';
 import Ingredients from '../Ingredients/Ingredients'
+import BurgerStack from '../Burger/BurgerStack';
 
 class IngredientsList extends Component {
 
     state = {
-        ingredientsArray: this.props.ingredients
+        ingredientsArray: this.props.ingredients,
     }
 
     addIngredient = e => {
-        e.preventDefault()
-        let burgerList=this.state.ingredientsArray
-        let addIngredient=this.state.addIngredient
+        console.log(e)
+
+        let addIngredient=this.state.addIngredient;
         this.setState({
-            burgerList: burgerList.push(addIngredient),
-            addIngredient: ''
+            addIngredient: this.state.ingredientAdd
         })
     }
 
     toBurger = e => {
         this.setState({
-            addIngredient: e.target.value
+            addIngredient: this.state.ingredientAdd
         })
     }
 
@@ -27,8 +27,9 @@ class IngredientsList extends Component {
 
         let ingredientsList = this.state.ingredientsArray.map( (item, index) => (
             <>
-            <Ingredients doThis={item} key={index} />
-            {/* <button onClick={() => this.toBurger()}>+</button> */}
+            <Ingredients ingredients={item} key={index} />
+            <input hidden type="text" name="ingredientAdd" value={this.state.ingredientAdd}></input>
+            <button onClick={(e) => this.addIngredient(e)}>+</button>
             </>
         ))
 
@@ -36,7 +37,6 @@ class IngredientsList extends Component {
             <div>
                 <h1>Ingredients</h1>
                 <ul>{ingredientsList}</ul>
-
                 <h1>Burger</h1>
                 {/* <ul>{burgerList}</ul> */}
             </div>
