@@ -21,8 +21,8 @@ let IngredientsList = (props) => {
         {name: 'Onion', color: 'lightyellow'}
       ]
 
-    const addIngredients = (ingredients) => {
-        setBurger(burger.concat(ingredients))
+    const addIngredients = (ingredient) => {
+        setBurger(burger.concat(ingredient))
     }
 
         return (
@@ -30,7 +30,7 @@ let IngredientsList = (props) => {
                 <h1>Ingredients</h1>
                 <ul><Ingredients ingredients={ingredients} addIngredients={addIngredients}/></ul>
                 <h1>Burger</h1>
-                {/* <ul>{burgerList}</ul> */}
+                <ul><BurgerStack burger={burger}/></ul>
             </div>
         )
 }
