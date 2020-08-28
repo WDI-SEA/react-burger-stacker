@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ClearBurger = () => {
-return(<h1>Clear burger</h1>
-)
+function ClearBurger  (props)  {
+    return <button onClick={props.clearBurger}>Clear Burger </button>
 }
+
 
 export default ClearBurger

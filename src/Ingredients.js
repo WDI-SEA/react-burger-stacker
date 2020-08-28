@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Ingredients = () => {
+function Ingredients (props) {
 //starter data
 let ingredients =  [
     {name: 'Kaiser Bun', color: 'saddlebrown'},
@@ -16,20 +16,16 @@ let ingredients =  [
     {name: 'Bacon', color: 'maroon'},
     {name: 'Onion', color: 'lightyellow'}
   ]
-  const availableIngredients = ingredients.map(ingredient => {
+  const availableIngredients = ingredients.map((ingredient, i) => {
     return (
-        <>
-        <li style={{background: ingredient.color, }}>{ingredient.name}</li>
-        <button type="submit">Add Ingredients</button><br /><br />
-        </>
+        <div key={i}>
+        <li style={{background: ingredient.color }}>{ingredient.name}</li>
+        <button type="submit"
+             onClick={() => props.addToBurger(ingredient.name)}>
+            Add {ingredient.name} </button>
+        </div>
     ) 
 })
 
-return (
-    <> 
-    <h5>Here are the Ingredients</h5>
-    {availableIngredients}
-    </>
-)
-} 
+}
 export default Ingredients
