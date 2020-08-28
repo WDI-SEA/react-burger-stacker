@@ -16,31 +16,32 @@ const ingredients = [
   {name: 'Tomato', color: 'tomato'},
   {name: 'Bacon', color: 'maroon'},
   {name: 'Onion', color: 'lightyellow'}
-]
+];
 
 function App(props) {
 
-    const [burgerIngredients, setBurgerIngredients] = useState([])
+  const [burgerIngredients, setBurgerIngredients] = useState([]);
 
-    let addIngredient = (e) => {
-      let newBurgerIngredients = [e.target.value];
-      let finalBurger = newBurgerIngredients.concat(burgerIngredients)
-      setBurgerIngredients(finalBurger)
-      console.log(`burgerIngredients from app.js ${burgerIngredients}`);
-    }
+
+  let addIngredient = (e) => {
+    let newBurgerIngredients = [e.target.value];
+    let finalBurger = newBurgerIngredients.concat(burgerIngredients);
+    setBurgerIngredients(finalBurger);
+    console.log(`burgerIngredients from app.js ${burgerIngredients}`);
+  };
 
   const clearStack = (e) => {
-    setBurgerIngredients([])
-  }
+    setBurgerIngredients([]);
+  };
 
-    return (
-      <div className={'display'}>
-        <IngredientList ingredients={ingredients}
-                        onClick={addIngredient} />
-        <BurgerPane ingredients={burgerIngredients}
-                    action={clearStack} />
-      </div>
-    );
+  return (
+    <div className={'display'}>
+      <IngredientList ingredients={ingredients}
+                      onClick={addIngredient}/>
+      <BurgerPane ingredients={burgerIngredients}
+                  action={clearStack}/>
+    </div>
+  );
 }
 
 export default App;
