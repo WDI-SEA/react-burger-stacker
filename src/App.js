@@ -32,12 +32,19 @@ let clearBurger = () => {
 	setChosenIngredients( [] );
 };
 
+let undoList = (e, ingredients) => {
+  e.preventDefault();
+
+  const index = ingredients.indexOf(e.target.value);
+
+  console.log(setChosenIngredients([e.target.value]))
+}
 return(
   <div className="container">
-   <h1>Minute Burger</h1>
+   <h1 className="title">Minute Burger</h1>
   <div class="App">
     <div class="item">
-      <IngredientsList ingredients={ingredients} addIngredient={addIngredient} />
+      <IngredientsList ingredients={ingredients} addIngredient={addIngredient} undoList={undoList} />
     </div>
     <div class="item">
       <BurgerPane chosenIngredients={chosenIngredients} clearBurger={clearBurger} />
