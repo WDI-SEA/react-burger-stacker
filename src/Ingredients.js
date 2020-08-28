@@ -1,12 +1,20 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class Ingredients extends Component {
-    render () {
-        return (
-            <>
-            </>
-        )
-    }
+function Ingredients(props) {
+
+    return (
+        <div >
+            <ul>
+                {props.ingredients.map((newIngredient, i) => (
+                    <li key={i}>
+                        {newIngredient.name}
+                        <button onClick={(e) => {props.addIngredient(e, newIngredient)}}>
+                            +</button>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 }
 
 export default Ingredients
