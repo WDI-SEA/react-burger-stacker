@@ -12,7 +12,16 @@ export default class Burger extends Component {
   render() {
     return (
       <>
-          Hi burger;
+          <div className="burgerIngredients">
+              Burger
+          </div>
+          <div className="ingredientsBlock">
+              <p>Lettuce</p>
+              <div className="ingrBtns">
+              <button onClick={() => this.addRemoveIngredient('add', 'lettuce')} className="ingrBtn">Add</button>
+              <button onClick={() => this.addRemoveIngredient('remove', 'lettuce')} className="ingrBtn">Remove</button>
+              </div>
+          </div>
       </>
     );
   }
