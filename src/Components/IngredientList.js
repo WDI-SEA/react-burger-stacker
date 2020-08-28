@@ -9,8 +9,9 @@ const IngredientList = (props) => {
     
 return (
     <>
-    <h1>List of Ingredients</h1>
+    
     <div className='IngredientHolder'>
+    <h1>List of Ingredients</h1>
         {ingredientButtons}
     </div>
     </>
