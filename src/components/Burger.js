@@ -87,22 +87,22 @@ export default class Burger extends Component {
               <div className="bottomSide"></div>
           </div>
           <div className="ingredientsBlock">
-              <p>Lettuce 🥬</p>
+              <p>Lettuce<br></br><span>🥬</span></p>
               <div className="ingrBtns">
               <button onClick={() => this.addRemoveIngredient('add', 'lettuce')} className="ingrBtn">Add</button>
               <button onClick={() => this.addRemoveIngredient('remove', 'lettuce')} className="ingrBtn">Remove</button>
               </div>
-              <p>Tomato 🍅</p>
+              <p>Tomato<br></br><span>🍅</span></p>
               <div className="ingrBtns">
               <button onClick={() => this.addRemoveIngredient('add', 'tomato')} className="ingrBtn">Add</button>
               <button onClick={() => this.addRemoveIngredient('remove', 'tomato')} className="ingrBtn">Remove</button>
               </div>
-              <p>Cheese 🧀</p>
+              <p>Cheese<br></br><span>🧀</span></p>
               <div className="ingrBtns">
               <button onClick={() => this.addRemoveIngredient('add', 'cheese')} className="ingrBtn">Add</button>
               <button onClick={() => this.addRemoveIngredient('remove', 'cheese')} className="ingrBtn">Remove</button>
               </div>
-              <p>Meat 🍖</p>
+              <p>Meat<br></br><span>🐮</span></p>
               <div className="ingrBtns">
               <button onClick={() => this.addRemoveIngredient('add', 'meat')} className="ingrBtn">Add</button>
               <button onClick={() => this.addRemoveIngredient('remove', 'meat')} className="ingrBtn">Remove</button>
