@@ -7,7 +7,7 @@ function IngredientList(props) {
             <label for="ingredients">Search Ingredients: </label>
             <input type="text" name="ingredients" />
             <button>Add On!</button>
-            <Ingredients ingredients={props.ingredients} addIngredient={props.addIngredient}/>
+            <Ingredients ingredients={props.ingredients} addIngredient={props.addIngredient} undoList={props.undoList}/>
         </div>
     )
 }

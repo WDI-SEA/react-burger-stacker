@@ -32,12 +32,10 @@ let clearBurger = () => {
 	setChosenIngredients( [] );
 };
 
-let undoList = (e, ingredients) => {
+let undoList = (e, i) => {
   e.preventDefault();
-
-  const index = ingredients.indexOf(e.target.value);
-
-  console.log(setChosenIngredients([e.target.value]))
+  chosenIngredients.splice(i, 1)
+ setChosenIngredients(chosenIngredients)
 }
 return(
   <div className="container">
