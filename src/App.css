@@ -12,6 +12,10 @@ ul{
 
 
 }
+li{
+  height: 50px;
+  border-radius: 20px ;
+}
 
 .item{
   height: 600px;
