@@ -1,9 +1,20 @@
 import React from "react";
+import App from "./App";
+import IngredientButton from "./IngredientButton";
 
-export default function IngredientList(props) {
+function IngredientList(props) {
+  const newList = props.ingredients.map((i, k) => {
+    return <IngredientButton onClick={props.onClick} name={i.name} color={i.color}/>;
+  });
   return (
-    <>
-      <h1>this is the ingredient list</h1>
-    </>
+    <div>
+      <ul className={'ing-display'}>
+        <h1>choose from:</h1>
+          {newList}
+      </ul>
+    </div>
   );
 }
+
+
+export default IngredientList;

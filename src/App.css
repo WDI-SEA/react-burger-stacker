@@ -7,6 +7,13 @@
   flex-direction: row;
 }
 
+.ing-display {
+  display: flex;
+  flex-direction: column;
+  background-color: hotpink;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
