@@ -41,9 +41,3 @@ function App(props) {
 export default App;
 
 
-
-numbers [1, 2, 3]
-
-...numbers
-
-1, 2, 3, 4
