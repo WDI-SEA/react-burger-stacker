@@ -7,8 +7,7 @@ function Ingredients(props) {
             <ul>
                 {props.ingredients.map((newIngredient, i) => (
                 <li key={i}>
-                        {newIngredient.name}
-                        <button onClick={(e) => {props.addIngredient(e, newIngredient)}}>+</button>
+                        <button onClick={(e) => {props.addIngredient(e, newIngredient)}}> {newIngredient.name}</button>
                     </li>
                 ))}
             </ul>

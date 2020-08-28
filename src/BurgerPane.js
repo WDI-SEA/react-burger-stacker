@@ -2,6 +2,7 @@ import React from 'react';
 import BurgerStack from './BurgerStack';
 import ClearBurger from './ClearBurger';
 
+
 const BurgerPane = (props) => {
     return(
         <div class="list burgerlist">

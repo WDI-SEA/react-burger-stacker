@@ -33,6 +33,8 @@ let clearBurger = () => {
 };
 
 return(
+  <div className="container">
+   <h1>Minute Burger</h1>
   <div class="App">
     <div class="item">
       <IngredientsList ingredients={ingredients} addIngredient={addIngredient} />
@@ -41,6 +43,9 @@ return(
       <BurgerPane chosenIngredients={chosenIngredients} clearBurger={clearBurger} />
     </div>
   </div>
+
+  </div>
+ 
 )
 
 }

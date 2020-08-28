@@ -1,9 +1,17 @@
 .App {
   text-align: center;
   display: grid;
+  grid-gap: 5px;
   grid-template-columns: 1fr 1fr;
 }
-
+.container {
+  text-align: center;
+}
+.item {
+  border: solid 3px #282c34;
+  border-radius: 10px;
+  margin: 50px;
+}
 
 .App-logo {
   height: 40vmin;
@@ -41,5 +49,10 @@
 }
 
 ul {
+  padding: 5px;
   list-style-type: none;
+}
+
+.list {
+  padding: 10px;
 }
