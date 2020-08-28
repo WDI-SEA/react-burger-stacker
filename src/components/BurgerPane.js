@@ -1,14 +1,26 @@
 import React from 'react'
-import BurgerStack from './BurgerStack'
-import ClearBurger from './ClearBurger'
 
 
-const BurgerPane = () => {
+
+
+const BurgerPane = (props) => {
+    const burgerIngredients = props.ing.map((ingredient, index) => {
+        return(
+            <li key={index}>
+            <button onClick={()=>{props.handleClick(index)}}>
+            {ingredient.name}
+            </button>
+            </li> 
+            
+        ) 
+    })
     return(
         <div>
-            <BurgerStack />
+            
             Burger Stacking Area
-            <ClearBurger />
+            <ul>
+                {burgerIngredients}
+            </ul>
         </div>
     ) 
 }

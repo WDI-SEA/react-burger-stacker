@@ -1,42 +1,28 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import IngredientList from './components/IngredientList';
-import BurgerPane from './components/BurgerPane';
-
-
-let ingredients = [
-  {name: 'Kaiser Bun', color: 'saddlebrown'},
-  {name: 'Sesame Bun', color: 'sandybrown'},
-  {name: 'Gluten Free Bun', color: 'peru'},
-  {name: 'Lettuce Wrap', color: 'olivedrab'},
-  {name: 'Beef Patty', color: '#3F250B'},
-  {name: 'Soy Patty', color: '#3F250B'},
-  {name: 'Black Bean Patty', color: '#3F250B'},
-  {name: 'Chicken Patty', color: 'burlywood'},
-  {name: 'Lettuce', color: 'lawngreen'},
-  {name: 'Tomato', color: 'tomato'},
-  {name: 'Bacon', color: 'maroon'},
-  {name: 'Onion', color: 'lightyellow'}
-]
+// import IngredientList from './components/IngredientList';
+import BurgerPane from './components/BurgerPane'
+import Ingredient from './components/Ingredient'
 
 
 
-const App = () => {
-  let [ingredientStack, setIngredientStack] = useState([])
-  const ingredientsClick = (index) => {
-    let ingredient = ingredients[index]
-    console.log("Index", index)
-    ingredientStack.push(ingredient)
+const App = (props) => {
+  const [ingredientStack, setIngredientStack] = useState([])
+  const hc = (index) => {
+   setIngredientStack([...ingredientStack, props.ingredients[index]])
+   console.log(index)
   }
 
+  const clearBurger = () => {
+    setIngredientStack([])
+  }
   return (
     
     <div className="App">
-    <IngredientList ingredients={ingredients} ingredientsClick={ingredientsClick}/>
-    <BurgerPane />
+    <Ingredient ingredients={props.ingredients} handleClick={hc} />
+    <BurgerPane  ing={ingredientStack}/>
+    <button onClick={clearBurger}>Clear Burger</button>
     </div>
-    
     
   );
 }
