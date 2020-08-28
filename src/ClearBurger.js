@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function ClearBurger() {
-    return <h6>Clear that dang burger</h6>
+export default function ClearBurger(props) {
+    return <button onClick={props.clearBurger}>Clear Borgor </button>
 }

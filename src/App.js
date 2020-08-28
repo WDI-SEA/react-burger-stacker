@@ -5,16 +5,17 @@ import IngredientList from './IngredientList'
 
 function App() {
   const [burger, setBurger] = useState([])
+  const [color, setColor] = useState([])
 
-  const addIngredient = (ing) => {
-    console.log(burger)
-    return setBurger(burger.concat(ing))
-  }
+  const addIngredient = (ing) => setBurger(burger.concat(ing))
+  
+
+  const clearBurger = () => setBurger([])
 
   return (
     <div className="App">
       <IngredientList addIngredient={addIngredient}/>
-      <BurgerPane />
+      <BurgerPane burger={burger} clearBurger={clearBurger}/>
     </div>
   );
 }
