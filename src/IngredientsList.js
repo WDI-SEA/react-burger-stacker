@@ -5,18 +5,9 @@ export default function IngredientsList({ingredients}) {
     
 
   const allIngredients = ingredients.map(item => {
-
-  let addIng = (e) => {
-    let newBurger = []
-    ingredients.unshift(e.target.value)
-    .then(response => {
-      newBurger.push(e.target.value)
-    })
-  }
   
     return (
-      <IngredientItem ingredient={item} key={Math.random()}
-        handleClick={addIng}/>
+      <IngredientItem ingredient={item} key={Math.random()}/>
     )
   })
 
