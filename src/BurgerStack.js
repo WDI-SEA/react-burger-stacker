@@ -3,7 +3,7 @@ import Ingredients from './Ingredients';
 
 export default function BurgerStack(props) {
 
-    let userBurger = props.burger.reverse().map((b, i) => {
+    let userBurger = props.burger.map((b, i) => {
         return <li key={i} style={{listStyle: 'none'}}> {b} </li>
     })
 
@@ -11,7 +11,7 @@ export default function BurgerStack(props) {
         <>
             <h5>This the Burger Stack</h5>
             <ul>
-                {userBurger}
+                {userBurger.reverse()}
             </ul>
         </>
     )

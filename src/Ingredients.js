@@ -15,18 +15,14 @@ export default function Ingredients(props) {
         {name: 'Bacon', color: 'maroon'},
         {name: 'Onion', color: 'purple'}
     ]
-
+    
     const allIngredients = burgerIngredients.map((ing, i) => {
         return (
             <div key={i}>
             <li style={{color: ing.color, listStyle: 'none'}}>{ing.name}</li>
 
             <button type="submit"
-            onClick={()=> {
-                // USE UNSHIFT INSTEAD OF PUSH
-                // props.addIngredient(props.burger.unshift(ing.name))
-                return props.addIngredient(ing.name)
-            }}>
+            onClick={() => props.addIngredient(ing.name)}>
             Add {ing.name} to Borgor
             </button><br /><br />
             </div>

@@ -7,7 +7,9 @@ function App() {
   const [burger, setBurger] = useState([])
   const [color, setColor] = useState([])
 
-  const addIngredient = (ing) => setBurger(burger.concat(ing))
+  const addIngredient = (ing) => {
+    setBurger(burger.concat(ing))
+  }
   
 
   const clearBurger = () => setBurger([])
