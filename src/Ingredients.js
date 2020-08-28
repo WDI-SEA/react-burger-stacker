@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Ingredients (props) {
+export default function Ingredients(props) {
 //starter data
 let ingredients =  [
     {name: 'Kaiser Bun', color: 'saddlebrown'},
@@ -26,6 +26,10 @@ let ingredients =  [
         </div>
     ) 
 })
-
+return (
+    <> 
+    <h5>Here are the Ingredients</h5>
+    {availableIngredients}
+    </>
+)
 }
-export default Ingredients

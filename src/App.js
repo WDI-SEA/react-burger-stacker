@@ -1,9 +1,9 @@
 import React, {useState}  from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import IngredientList from "./IngredientList"
 import BurgerPane from './BurgerPane'
-import ingredients from "./Ingredients"
+// import ingredients from "./Ingredients"
 
 
 

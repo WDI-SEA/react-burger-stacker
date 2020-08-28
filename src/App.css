@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
 }
 
 .App-logo {
@@ -35,4 +39,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+li{
+  width: 300px;
+}
+
+.ingredientList{
+justify-content: left;
+align-items: left;
+text-align: left;
+margin-left: 600px;
+}
+.burgerPane{
+  margin-top:100px;
+  font-size: 30px;
+}
+.burgerApp{
+  width: 900px;
+  justify-content:center;
+  align-items: center;
 }

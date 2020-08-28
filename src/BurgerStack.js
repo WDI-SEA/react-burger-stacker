@@ -1,5 +1,5 @@
 import React from 'react'
-import Ingredients from "./Ingredients"
+// import Ingredients from "./Ingredients"
 
 function BurgerStack (props)  {
     let buildABurger = props.burger.map((burger, i) => {
