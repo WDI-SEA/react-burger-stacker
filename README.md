@@ -27,20 +27,6 @@ Here is a rough wireframe of the general layout:
 5. Decide where the state should live.
 6. Write the handler callbacks that you pass into children to update state.
 
-### Sample Idea for Component Hierarchy:
-
-```
-App
-|--IngredientList
-|  |--Ingredient(s)
-|
-|--BurgerPane
-|  |--BurgerStack
-|  |  |--Ingredient(s)
-|  |
-|  |--ClearBurger
-```
-
 ### Notes:
 
 The order of items in the `stack` array will affect the order in which they appear on the page. Make sure you are adding ingredients to the `stack` in the correct way to make each ingredient stack on the previous one.
