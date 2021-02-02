@@ -4,7 +4,9 @@ import Ingredient from './Ingredients';
 class IngredientList extends Component{
     render(){
         return(
-            <p>{this.props.ingredient.name}</p>
+            <div>  
+            <Ingredient ingredients={this.props.ingredient.name}/><button>+</button><button>-</button>
+            </div>
         )
     }
 };

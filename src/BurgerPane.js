@@ -5,7 +5,11 @@ import ClearBurger from './ClearBurger';
 class BurgerPane extends Component{
     render(){
         return(
-            <h1>BURGERPANE</h1>
+            <div id="burgerpane">
+                <BurgerStack />
+                <h1>Burger Pane</h1>
+                <ClearBurger />
+            </div>
         )
     }
 }

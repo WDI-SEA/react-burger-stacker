@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Ingredient from './Ingredients';
 
 class BurgerStack extends Component{
     render(){

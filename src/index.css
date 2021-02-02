@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+#burgerstacker{
+  display: flex;
+  width: 50%;
+  border: 1px solid black;
+  justify-content: space-around;
+  margin: 32px auto;
+  padding: 16px;
+}
+
+#burgerpane{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border: 1px solid red;
+  padding: 16px;
+  width: 100%;
+}

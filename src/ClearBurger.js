@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ClearBurger extends Component{
     render(){
         return(
-            <h1>ClearBurger</h1>
+            <button>Clear Burger</button>
         )
     }
 }
