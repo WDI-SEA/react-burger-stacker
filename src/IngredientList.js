@@ -6,7 +6,7 @@ class IngredientList extends Component {
     return (
       <div>
         {/* map of ingredient with button in unordered list? */}
-        <Ingredient />
+        <Ingredient ingredients={this.props.ingredients} />
       </div>
     )
   }
