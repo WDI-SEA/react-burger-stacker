@@ -1,0 +1,12 @@
+App--
+    IngredientList--
+        Buns--
+            buns
+        Patties--
+            patties
+        Toppings--
+            toppings
+    BurgerPane--
+        BurgerStack
+            Ingredients--
+        ClearBurger--
