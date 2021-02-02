@@ -28,6 +28,14 @@
   color: #61dafb;
 }
 
+#burgerstacker{
+  display: flex;
+  width: 50%;
+  border: 1px solid black;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
