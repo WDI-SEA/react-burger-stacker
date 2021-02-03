@@ -4,7 +4,7 @@ import Ingredients from './Ingredients';
 class BurgerStack extends Component {
     render() {
         return (
-            <div>
+            <div className="stack">
                 <Ingredients ingredients={this.props.ingredients} />
             </div>
         )

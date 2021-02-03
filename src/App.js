@@ -13,6 +13,7 @@ const ingredients =
   {name: 'Lettuce Wrap', color: 'olivedrab'},
   {name: 'Beef Patty', color: '#3F250B'},
   {name: 'Soy Patty', color: '#3F250B'},
+  {name: 'Tide Pod', color: '#3336FF'},
   {name: 'Black Bean Patty', color: '#3F250B'},
   {name: 'Chicken Patty', color: 'burlywood'},
   {name: 'Lettuce', color: 'lawngreen'},
@@ -22,13 +23,22 @@ const ingredients =
 ]
 
 class App extends Component{
+  state = {
+    burger: [],
+    newIngredient:''
+}
+
   render() {
     return (
       <div className="App">
-        {ingredients.map((ingredient) => (
-          <IngredientList ingredient={ingredient} />
-        ))}
-        <BurgerPane />
+        <div>
+          {ingredients.map((ingredient) => (
+            <IngredientList ingredient={ingredient} />
+          ))}
+        </div>
+        <div>
+          <BurgerPane />
+        </div>
       </div>
     );
   }
