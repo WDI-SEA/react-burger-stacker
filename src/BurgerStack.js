@@ -6,7 +6,7 @@ class BurgerStack extends Component {
     return (
       <div>
         {/* Ingredients to be represented as other divs? for burger rendering */}
-        <Ingredient />
+    
       </div>
     )
   }

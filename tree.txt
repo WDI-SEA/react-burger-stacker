@@ -31,4 +31,12 @@ BurgerPane - main component where the burger stuff is rendered
   Burger stack - where ingredients and individual burger order is constructed
     Ingredients - visual representaiton corresponding to the ingredients list able to be selected by each user
 
-    
+burger array
+method of pushing ingredients to the burger array
+clearing the burger array 
+
+state ={
+burger array = []
+
+}
+
