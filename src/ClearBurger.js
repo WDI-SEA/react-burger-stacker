@@ -3,7 +3,7 @@ class ClearBurger extends Component {
     render() {
         return(
             <div>
-                <button type="submit"><strong>Clear Burger</strong></button>
+                <button><strong>Clear Burger</strong></button>
             </div>
         )
     }

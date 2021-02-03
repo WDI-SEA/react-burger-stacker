@@ -23,21 +23,31 @@ const ingredients =
 ]
 
 class App extends Component{
-  state = {
-    burger: [],
-    newIngredient:''
+  constructor(props){
+    super(props)
+    this.state = {
+        burger: [],
+        newIngredient:''
+    }
+    this.addIngredient=this.addIngredient.bind(this)
 }
 
+addIngredient(newIng){
+  let temp = this.state.burger
+  console.log(this.state)
+  temp.push(newIng)
+  this.setState({burger: temp})
+}
   render() {
     return (
       <div className="App">
         <div>
           {ingredients.map((ingredient) => (
-            <IngredientList ingredient={ingredient} />
+            <IngredientList ingredient={ingredient} addIngredient={this.addIngredient} />
           ))}
         </div>
         <div>
-          <BurgerPane />
+          <BurgerPane burger={this.state.burger} />
         </div>
       </div>
     );

@@ -5,7 +5,7 @@ class IngredientList extends Component {
     render() {
         return (
             <div class="ingredsList">
-                <Ingredients ingredients={this.props.ingredient.name} /><button type="submit">></button>
+                <Ingredients ingredients={this.props.ingredient.name} addIngredient={this.props.addIngredient}/>
             </div>
         )
     }
