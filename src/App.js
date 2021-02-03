@@ -19,15 +19,55 @@ const ingredients = [
   {name: 'Onion', color: 'lightyellow'}
 ]
 
+
+
 class App extends Component {
+  constructor(props){
+    super()
+    this.state = {
+      //add in state variables
+      burger: [],
+      newIngredient: ``
+    }
+  }
+
+  addIngredient = (e) =>{
+    //adds a burger item
+    console.log(this.state.newIngredient)
+    let tempBurger = this.state.burger
+    tempBurger.splice(0, 0, this.state.newIngredient)
+
+    this.setState({
+      burger: tempBurger
+    })
+  }
+
+  updateIngredient = (e) => {
+    // from on click grab the newIngredient 
+    e.preventDefault()
+    this.setState({newIngredient: `${e.target.value}`})
+    console.log(e.target.value)
+    this.addIngredient(e)
+  }
+
+  clearIngredients = (e) => {
+    e.preventDefault()
+    this.setState({
+      burger: []
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Burger Stacker</h1>
-        {/* Ingredient list
-        <IngredientList ingredients={ingredients} />
-  
-        <BurgerPlate ingredients={ingredients} /> */}
+        <div id="ingredientArea">
+          <IngredientList ingredients={ingredients} updateIngredient={this.updateIngredient} />
+
+        </div>
+        <div id="burgerArea">
+          <BurgerPlate burger={this.state.burger} /> 
+        </div>
       </div>
     )
 
