@@ -9,7 +9,7 @@ class BurgerStack extends Component {
   render () {
     let yummyBurger = this.props.burger.map((item, index) => {
       return (
-        <p key={index} > new burger ingredient {item} </p>
+        <p key={index} > {item} </p>
       )
     })
     return (
