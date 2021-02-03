@@ -1,3 +1,4 @@
+import { Component } from 'react';
 import './App.css';
 import IngredientList from './IngredientList';
 import BurgerPane from './BurgerPane';
@@ -24,15 +25,59 @@ const ingredients = [{
 }];
 
 
-function App() {
-  return (
-    <div className="App">
-      {ingredients.map((ingredient) => (
-        <IngredientList ingredient={ingredient} />
-      ))}
-      <BurgerPane />
-    </div>
-  );
+// function App() {
+//   return (
+//     <div className="App">
+//       {ingredients.map((ingredient) => (
+//         <IngredientList ingredient={ingredient} />
+//       ))}
+//       <BurgerPane />
+//     </div>
+//   );
+// }
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      burger: [],
+      newIngredient: ''
+    }
+  }
+
+  addIngredient = (e) => {
+    let tempOrderArray = this.state.burger
+    tempOrderArray.push(this.state.newIngredient)
+    this.setState({burger: tempOrderArray})
+  }
+
+  updateIngredient = (e) => {
+    e.preventDefault()
+    this.setState({newIngredient: `${e.target.value}`})
+  }
+
+  clearIngredient = (e) => {
+    e.preventDefault()
+    this.setState({
+      burger: []
+    })
+  }
+
+  render() {
+    console.log(this.burger, "added ingredients")
+    return(
+      <div className="container">
+        <div>
+          {ingredients.map((ingredient) => (
+            <IngredientList ingredient={ingredient} addIngredient={this.addIngredient} /> 
+          ))}
+        </div>
+        <div>
+          <BurgerPane burger={this.state.burger} clearIngredient={this.clearIngredient}/>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App;
