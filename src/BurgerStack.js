@@ -3,8 +3,15 @@ import Ingredient from './Ingredients';
 
 class BurgerStack extends Component{
     render(){
+        let burger = this.props.burger.map((item,index) =>{
+            return(
+                <p key={index}>{item}</p>
+            )
+        })
         return(
-            <h1>BurgerStack</h1>
+            <div>
+                {burger}
+            </div>
         )
     }
 }

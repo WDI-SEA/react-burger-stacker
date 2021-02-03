@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class Ingredient extends Component {
     render() {
         return (
-            <span>{this.props.ingredients}</span>
+            <p style={{ backgroundColor: this.props.ingredient.color }}>{this.props.ingredient.name}</p>
+            
         )
     }
 };

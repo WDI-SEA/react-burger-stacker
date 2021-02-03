@@ -9,20 +9,27 @@ Here is a rough wireframe of the general layout:
 ___
 ## User Stories
 
-* As a user, I want to see all available burger ingredients listed on the left side.
-* I want the ability to add any ingredient onto the burger stack using a button.
-* I want to see each ingredient I select added to the top of the burger stack on the right side.
-* I want the ability to clear the burger stack so I can start again.
-* I want to be able to add as many ingredients of any type as I want (ingredients don't go away.)
+[] As a user, I want to see all available burger ingredients listed on the left side.
+[] I want the ability to add any ingredient onto the burger stack using a button.
+[] I want to see each ingredient I select added to the top of the burger stack on the right side.
+[] I want the ability to clear the burger stack so I can start again.
+[] I want to be able to add as many ingredients of any type as I want (ingredients don't go away.)
 
 ___
 ## Suggested Ways To Get Started
 
-1. Use `create-react-app` to generate a project called `burger-stacker`.
-2. Go into the newly created directory and open it up in your text editor.
-3. Clear out the generated code from the `App` component.
-4. Think about what components you need to make.
-5. Write the static versions of your components.
+1. Use `create-react-app` to generate a project called `burger-stacker`. ✅
+2. Go into the newly created directory and open it up in your text editor. ✅
+3. Clear out the generated code from the `App` component.✅
+4. Think about what components you need to make.✅
+5. Write the static versions of your components.✅
+    App
+    --IngredientList
+        --Ingredients
+        --BurgerPane
+            --BurgerStack
+                --Ingredients
+            --ClearBurger
 6. Layout the component hierarchy (decide which ones are children of others).
 7. Decide what the state should be.
 8. Decide where the state should live.

@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
-import BurgerStack from './BurgerStack';
 import ClearBurger from './ClearBurger';
+import Ingredient from './Ingredients';
 
-class BurgerPane extends Component{
-    render(){
-        return(
+
+class BurgerPane extends Component {
+    constructor(props){
+        super(props)
+        // this.props.burgerIngredients = this.props.burgerIngredients.bind(this)
+    }
+    render() {
+        console.log(`🎃🎃🎃🎃🎃🎃🎃 ${this.props.burgerIngredients}`)
+
+        return (
             <div id="burgerpane">
-                <BurgerStack />
                 <h1>Burger Pane</h1>
-                <ClearBurger />
+            {/* {this.props.burgerIngredients.map((ingredient) => {
+        // <Ingredient ingredient={ingredient} />
+        {this.props.burgerIngredients.name}
+    })} */}
+                {this.props.burgerIngredients.name}
+                {/* {selectedIngredients} */}
+                <ClearBurger clearBurger={this.props.clearBurger} />
             </div>
         )
     }

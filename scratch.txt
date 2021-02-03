@@ -1,0 +1,11 @@
+//decide what the state should be
+state should be empty
+
+//decide where the state should live
+state should live in burger
+
+//write the handler callbacks that you pass into children to update state
+
+function to add ingredient to hamburger stack
+    -- need hamburgerStack array
+        --unshift ingredients into array
