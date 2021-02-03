@@ -66,7 +66,7 @@ class App extends Component {
 
         </div>
         <div id="burgerArea">
-          <BurgerPlate burger={this.state.burger} /> 
+          <BurgerPlate burger={this.state.burger} clearIngredients={this.clearIngredients} /> 
         </div>
       </div>
     )

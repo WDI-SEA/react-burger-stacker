@@ -14,7 +14,7 @@ class BurgerPlate extends Component {
         {/* Burger Stack component */}
         <BurgerStack burger={this.props.burger} />
         {/* Clear Burger? */}
-        <ClearBurger />
+        <ClearBurger clearIngredients={this.props.clearIngredients} />
       </div>
     )
   }
