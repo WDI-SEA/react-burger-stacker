@@ -14,8 +14,14 @@
 }
 .pane{
   border: 1px solid black;
-  height: 100px;
-  width: 100px;
+  /* height: auto;
+  width: auto; */
+  display: flex;
+  flex-direction: column;
+}
+
+.stack{
+  text-align: center;
   display: flex;
   flex-direction: column;
 }
