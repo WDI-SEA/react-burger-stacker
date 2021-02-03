@@ -6,15 +6,19 @@ import Ingredient from "./Ingredient";
 class BurgerStack extends Component {
     
 
-
     render(){
-        let listIngredient=this.props.burgerArray.map((burger)=>(
-            <div id="Ingredients">
-                <Ingredient name={burger.name} color={burger.color} />
-            </div>
+        let listIngredient=this.props.ingredientArray.map((ingredient,index)=>(
+            
+            
+               <li> <Ingredient name={ingredient.name} color={ingredient.color} key={index}/></li>
+            
         ));
+        
         return( 
+            <>
             {listIngredient}
+            </>
+            
         )
         
     }

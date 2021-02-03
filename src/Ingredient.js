@@ -5,9 +5,9 @@ class Ingredient extends Component {
         let color=this.props.color;
         let name=this.props.name;
         return(
-            <div>
+           
                 <li style={{background:color}}>{name}</li>
-            </div>
+            
         )
     }
 }
