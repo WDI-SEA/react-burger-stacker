@@ -26,29 +26,27 @@ class App extends Component {
     super()
     this.state = {
       //add in state variables
-      burger: [],
-      newIngredient: ``
+      burger: []
     }
   }
 
   addIngredient = (e) =>{
     //adds a burger item
-    console.log(this.state.newIngredient)
     let tempBurger = this.state.burger
-    tempBurger.splice(0, 0, this.state.newIngredient)
+    tempBurger.splice(0, 0, e.target.value)
 
     this.setState({
       burger: tempBurger
     })
   }
 
-  updateIngredient = (e) => {
-    // from on click grab the newIngredient 
-    e.preventDefault()
-    this.setState({newIngredient: `${e.target.value}`})
-    console.log(e.target.value)
-    this.addIngredient(e)
-  }
+  // updateIngredient = (e) => {
+  //   // from on click grab the newIngredient 
+  //   e.preventDefault()
+  //   this.setState({newIngredient: `${e.target.value}`})
+  //   console.log(e.target.value)
+  //   this.addIngredient(e)
+  // }
 
   clearIngredients = (e) => {
     e.preventDefault()
@@ -62,7 +60,7 @@ class App extends Component {
       <div className="App">
         <h1>Burger Stacker</h1>
         <div id="ingredientArea">
-          <IngredientList ingredients={ingredients} updateIngredient={this.updateIngredient} />
+          <IngredientList ingredients={ingredients} updateIngredient={this.addIngredient} />
 
         </div>
         <div id="burgerArea">
