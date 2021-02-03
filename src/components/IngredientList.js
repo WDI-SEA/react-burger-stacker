@@ -5,13 +5,14 @@ class IngredientList extends Component {
     render() {
         let allIngredients = this.props.ingredients.map((ingredient) => {
             return (
-                <div>
-                    <button onClick={this.props.addItem}><Ingredient ingredient={ingredient} /></button></div>
+                <li onClick={this.props.addItem}><Ingredient ingredient={ingredient} /></li>
             )
         })
         return (
             <div>
-                {allIngredients}
+                <ul>
+                    {allIngredients}
+                </ul>
             </div>
         )
     }
