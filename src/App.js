@@ -32,6 +32,7 @@ class App extends Component {
 
   addIngredient = (e) =>{
     //adds a burger item
+    console.log(e.target.value)
     let tempBurger = this.state.burger
     tempBurger.splice(0, 0, e.target.value)
 
