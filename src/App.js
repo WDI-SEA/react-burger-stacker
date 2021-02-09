@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import IngredientList from './components/IngredientList';
 import BurgerPane from './components/BurgerPane';
@@ -20,54 +20,32 @@ const ingredients = [
 ]
 
 
-
-class App extends Component {
-  constructor(props){
-    super()
-    this.state = {
-      //add in state variables
-      burger: []
-    }
+// convert to named function
+function App() {
+  // useState
+  const [burgerbits, setBurgerbits] = useState([]);
+  
+  // functions 
+    //add ingredient 
+  const addIngredient = () => {
+    setBurgerbits([...burgerbits]);
   }
-
-  addIngredient = (e) =>{
-    //adds a burger item
-    console.log(e.target.value)
-    let tempBurger = this.state.burger
-    tempBurger.splice(0, 0, e.target.value)
-
-    this.setState({
-      burger: tempBurger
-    })
+    // clear incredients
+  const clearIngredients = () => {
+    setBurgerbits([]);
   }
+  
+  return (
+    <div>
+    <h1>Burger Stacker</h1>
+  <main className='panes'>
+    <IngredientList ingredients={ingredients} />
+    <BurgerPane burgerBits={burgerbits} />
+  </main>
+    </div>
+  )
+};
 
-  // updateIngredient = (e) => {
-  //   // from on click grab the newIngredient 
-  //   e.preventDefault()
-  //   this.setState({newIngredient: `${e.target.value}`})
-  //   console.log(e.target.value)
-  //   this.addIngredient(e)
-  // }
 
-  clearIngredients = (e) => {
-    e.preventDefault()
-    this.setState({
-      burger: []
-    })
-  }
-
-  render() {
-    return (
-      <div>
-      <h1>Burger Stacker</h1>
-    <main className='panes'>
-      <IngredientList ingredients={this.state.ingredients} />
-      <BurgerPane burgerBits={this.state.burgerBits} />
-    </main>
-      </div>
-    )
-
-  }
-}
 
 export default App;

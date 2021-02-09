@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import BurgerStack from './BurgerStack';
 import ClearBurger from './ClearBurger';
 
-class BurgerPane extends Component {
-  render () {
+function BurgerPane() {
+  
     return (
       <div className="pane">
         <h3>Make your own burger</h3>
@@ -12,7 +12,7 @@ class BurgerPane extends Component {
       </div>
       
     )
-  }
+  
 };
 
 export default BurgerPane; 
