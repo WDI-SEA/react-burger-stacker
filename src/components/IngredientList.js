@@ -6,6 +6,7 @@ import Toppings from './Toppings';
 class IngredientList extends Component {
     constructor(props) {
         super()
+
     }
     render() {
         // console.log(Buns.state.bunsList, 'bun bun bun')
@@ -13,11 +14,11 @@ class IngredientList extends Component {
         return (
             <div className="IngredientList">
                 <h3>Buns:</h3>
-                <Buns buns={this.props.ingredient.buns} updateIngredient={this.props.updateIngredient}/>
+                <Buns buns={this.props.ingredient.buns} addIngredients={this.props.addIngredients}/>
                 <h3>Patties:</h3>
-                <Patties patties={this.props.ingredient.patties} updateIngredient={this.props.updateIngredient}/>
+                <Patties patties={this.props.ingredient.patties} addIngredients={this.props.addIngredients}/>
                 <h3>Toppings:</h3>
-                <Toppings toppings={this.props.ingredient.toppings} updateIngredient={this.props.updateIngredient}/>
+                <Toppings toppings={this.props.ingredient.toppings} addIngredients={this.props.addIngredients}/>
             </div>
         )
     }

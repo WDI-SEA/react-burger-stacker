@@ -38,16 +38,18 @@ const ingredients = [{
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super()
+
     this.state = {
       burger: [],
       newIngredient: ''
     }
   }
 
-  addIngredient = (e) => {
+  addIngredient = (e, ingredient) => {
     let tempOrderArray = this.state.burger
-    tempOrderArray.push(this.state.newIngredient)
+    console.log(tempOrderArray, 'temp temp')
+    tempOrderArray.push(ingredient)
     this.setState({burger: tempOrderArray})
   }
 
@@ -64,7 +66,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.burger, "added ingredients")
+    console.log(this.state.burger, "added ingredients")
     return(
       <div className="container">
         <div>

@@ -1,6 +1,22 @@
 import React, { Component } from 'react'
 
 class Buns extends Component {
+    constructor(props) {
+        super()
+
+        // this.state = {
+        //     burger: this.props.buns,
+        //     newIngredient: ''
+        //   }
+    }
+
+    // addIngredient = (e) => {
+    //     let tempOrderArray = this.state.burger
+    //     console.log(tempOrderArray, 'temp temp')
+    //     tempOrderArray.push(this.state.newIngredient)
+    //     this.setState({burger: tempOrderArray})
+    // }
+
     render() {
         return (
             <section>
@@ -11,7 +27,7 @@ class Buns extends Component {
                             <section>
                                 <li key={index}>{bun.name}</li>
                                 <form>
-                                    <button value={this.props.buns.name} onClick={(e) => this.props.addIngredient(e)}>add bun</button>
+                                    <button onClick={(e) => this.props.addIngredient(e, bun.name)}>add bun</button>
                                     {/* <button type="submit" onClick={(e) => this.removeBuns(e)}>remove bun</button> */}
                                 </form>
                             </section>
