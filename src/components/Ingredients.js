@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react'
 
-class Ingredients extends Component {
-    render() {
-        return (
-            <div className="Ingredients">
-                <p>-- -- ingredients here</p>
-            </div>
-        )
+function Ingredients(props) {
+    
+    if (props.ingredient) {
+        return <p style={{backgroundColor: props.ingredient.color, margin: 0}}>{props.ingredient.name}</p>
+    }
+    else {
+        return <p>Error</p>
     }
 }
 
-export default Ingredients;
+export default Ingredients

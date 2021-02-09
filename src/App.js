@@ -1,85 +1,53 @@
-import { Component } from 'react';
-import './App.css';
-import IngredientList from './IngredientList';
-import BurgerPane from './BurgerPane';
+import React, { useState } from 'react'
+import './App.css'
 
-const ingredients = [{
-  buns: [
+import IngredientList from './components/IngredientList'
+import BurgerPane from './components/BurgerPane'
+
+function App() {
+  const Ingredients = [
     {name: 'Kaiser Bun', color: 'saddlebrown'},
     {name: 'Sesame Bun', color: 'sandybrown'},
     {name: 'Gluten Free Bun', color: 'peru'},
-    {name: 'Lettuce Wrap', color: 'olivedrab'}
-  ],
-  patties: [
+    {name: 'Lettuce Wrap', color: 'olivedrab'},
     {name: 'Beef Patty', color: '#3F250B'},
     {name: 'Soy Patty', color: '#3F250B'},
     {name: 'Black Bean Patty', color: '#3F250B'},
     {name: 'Chicken Patty', color: 'burlywood'},
-  ],
-  toppings: [
     {name: 'Lettuce', color: 'lawngreen'},
     {name: 'Tomato', color: 'tomato'},
     {name: 'Bacon', color: 'maroon'},
     {name: 'Onion', color: 'lightyellow'}
   ]
-}];
 
+  const [addedIngredients, setIngredients] = useState([{
+    name: '',
+    color: ''
+  }])
 
-// function App() {
-//   return (
-//     <div className="App">
-//       {ingredients.map((ingredient) => (
-//         <IngredientList ingredient={ingredient} />
-//       ))}
-//       <BurgerPane />
-//     </div>
-//   );
-// }
-
-class App extends Component {
-  constructor(props) {
-    super()
-
-    this.state = {
-      burger: [],
-      newIngredient: ''
-    }
+  const addIng = (e) => {
+    setIngredients([{
+      name: e.target.innerText,
+      color: e.target.style.backgroundColor
+    }, ...addedIngredients])
   }
 
-  addIngredient = (e, ingredient) => {
-    let tempOrderArray = this.state.burger
-    console.log(tempOrderArray, 'temp temp')
-    tempOrderArray.push(ingredient)
-    this.setState({burger: tempOrderArray})
+  const clearOrder = () => {
+    setIngredients([{
+      name: '',
+      color: ''
+    }])
   }
 
-  updateIngredient = (e) => {
-    e.preventDefault()
-    this.setState({newIngredient: `${e.target.value}`})
-  }
-
-  clearIngredient = (e) => {
-    e.preventDefault()
-    this.setState({
-      burger: []
-    })
-  }
-
-  render() {
-    console.log(this.state.burger, "added ingredients")
-    return(
+  return (
+    <body>
+      <h1>Hello Burger stacker again</h1>
       <div className="container">
-        <div>
-          {ingredients.map((ingredient) => (
-            <IngredientList ingredient={ingredient} addIngredient={this.addIngredient} /> 
-          ))}
-        </div>
-        <div>
-          <BurgerPane burger={this.state.burger} clearIngredient={this.clearIngredient}/>
-        </div>
+        <IngredientList ingredients={Ingredients} addIng={addIng} />
+        <BurgerPane addedIngredients={addedIngredients} clearOrder={clearOrder} />
       </div>
-    )
-  }
+    </body>
+  )
 }
 
-export default App;
+export default App

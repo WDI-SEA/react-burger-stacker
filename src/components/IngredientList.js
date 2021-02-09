@@ -1,27 +1,23 @@
-import React, { Component } from 'react';
-import Buns from './Buns';
-import Patties from './Patties';
-import Toppings from './Toppings';
+import React, { useState } from 'react'
+import Ingredients from './Ingredients'
 
-class IngredientList extends Component {
-    constructor(props) {
-        super()
+function IngredientList(props) {
+    // console.log(props.ingredients, 'getting data from app, ingredients')
 
-    }
-    render() {
-        // console.log(Buns.state.bunsList, 'bun bun bun')
-        // console.log(this.props,  "what is this??? =======")
+    let ingredientsList = props.ingredients.map((ingredient, i) => {
         return (
-            <div className="IngredientList">
-                <h3>Buns:</h3>
-                <Buns buns={this.props.ingredient.buns} addIngredients={this.props.addIngredients}/>
-                <h3>Patties:</h3>
-                <Patties patties={this.props.ingredient.patties} addIngredients={this.props.addIngredients}/>
-                <h3>Toppings:</h3>
-                <Toppings toppings={this.props.ingredient.toppings} addIngredients={this.props.addIngredients}/>
-            </div>
+            <li onClick={props.addIng} key={`ing-key${i}`}><Ingredients ingredient={ingredient} /></li>
         )
-    }
+    })
+
+    return (
+        <div className="ingredients">
+            <h3>ingredients</h3>
+            <ul className="ing-list">
+                {ingredientsList}
+            </ul>
+        </div>
+    )
 }
 
-export default IngredientList;
+export default IngredientList
