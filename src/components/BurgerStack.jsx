@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Ingredient from './Ingredient';
 
-class BurgerStack extends Component {
-  render () {
+function BurgerStack() {
+  
     let bits = this.props.burgerBits.map(bit => {
       return <li><Ingredient ingredient={bit} /></li>
     })
@@ -15,7 +15,6 @@ class BurgerStack extends Component {
       
     )
   }
-};
 
 export default BurgerStack; 
 
