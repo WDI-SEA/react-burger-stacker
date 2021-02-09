@@ -27,11 +27,11 @@ function App() {
   
   // functions 
     //add ingredient 
-  const addIngredient = () => {
-    setBurgerbits([...burgerbits]);
+  const addIngredient = (e) => {
+    setBurgerbits([{name: e.target.innerText, color: e.target.style.backgroundColor}, ...burgerbits]);
   }
     // clear incredients
-  const clearIngredients = () => {
+  const clearBurger = () => {
     setBurgerbits([]);
   }
   
@@ -39,8 +39,8 @@ function App() {
     <div>
     <h1>Burger Stacker</h1>
   <main className='panes'>
-    <IngredientList ingredients={ingredients} />
-    <BurgerPane burgerBits={burgerbits} />
+    <IngredientList ingredients={ingredients} addIngredient={addIngredient} />
+    <BurgerPane burgerBits={burgerbits} clearBurger={clearBurger} />
   </main>
     </div>
   )
