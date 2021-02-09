@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
-import BurgerStack from './BurgerStack';
+import React from 'react';
 
-class Ingredients extends Component {
-    render() {
-        return (
-            <div className='ingredients'>
-                <div>
-                    <p style={{backgroundColor: this.props.ingredients.color}}>
-                        {this.props.ingredients.name}
-                    </p>
-                </div>
+
+function Ingredients(props) {
+    return (
+        <div className='ingredients'>
+            <div>
+                <p style={{ backgroundColor: props.ingredients.color }}>
+                    {props.ingredients.name}
+                </p>
             </div>
-        )
-    }
+        </div>
+    )
 }
+
 
 export default Ingredients
