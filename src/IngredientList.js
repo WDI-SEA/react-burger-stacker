@@ -3,9 +3,18 @@ import Ingredients from './Ingredients';
 
 class IngredientList extends Component {
     render() {
+        // console.log(this.props.ingredient)
+        let allIngredients = this.props.ingredient.map((ingredient) => {
+            return(
+            <li onClick={this.props.addIngredient}>
+                <Ingredients ingredients={ingredient} />
+            </li>
+            )
+        })
+
         return (
             <div class="ingredsList">
-                <Ingredients ingredients={this.props.ingredient.name} addIngredient={this.props.addIngredient}/>
+                {allIngredients}
             </div>
         )
     }

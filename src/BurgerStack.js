@@ -3,9 +3,15 @@ import Ingredients from './Ingredients';
 
 class BurgerStack extends Component {
     render() {
+        let allIngredients = this.props.ingredients.map((ingredient) => {
+            return(
+                <Ingredients ingredients={ingredient} />
+            )
+        })
+
         return (
             <div className="stack">
-                <Ingredients ingredients={this.props.ingredients} />
+                {allIngredients}
             </div>
         )
     }
