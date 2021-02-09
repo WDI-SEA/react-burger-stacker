@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import IngredientList from './IngredientList';
-import BurgerPlate from './BurgerPlate';
+import IngredientList from './components/IngredientList';
+import BurgerPane from './components/BurgerPane';
 
 const ingredients = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
@@ -58,15 +58,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>Burger Stacker</h1>
-        <div id="ingredientArea">
-          <IngredientList ingredients={ingredients} updateIngredient={this.addIngredient} />
-
-        </div>
-        <div id="burgerArea">
-          <BurgerPlate burger={this.state.burger} clearIngredients={this.clearIngredients} /> 
-        </div>
+      <div>
+      <h1>Burger Stacker</h1>
+    <main className='panes'>
+      <IngredientList ingredients={this.state.ingredients} />
+      <BurgerPane burgerBits={this.state.burgerBits} />
+    </main>
       </div>
     )
 
