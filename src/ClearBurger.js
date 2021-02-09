@@ -1,4 +1,5 @@
 import React from 'react';
+
 function ClearBurger(props) {
     return (
         <div>
