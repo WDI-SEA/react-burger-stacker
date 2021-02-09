@@ -1,50 +1,51 @@
-
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Ingredients from './Ingredients';
 import BurgerStack from './BurgerStack';
 
-class Burger extends Component {
+export default function Burger() {
 
-  state = {
-    ingredientsArr: this.props.ingredientsArray,
-    burger: []
-  }
+  const ingredients = [
+    {name: 'Kaiser Bun', color: 'saddlebrown'},
+    {name: 'Sesame Bun', color: 'sandybrown'},
+    {name: 'Gluten Free Bun', color: 'peru'},
+    {name: 'Lettuce Wrap', color: 'olivedrab'},
+    {name: 'Beef Patty', color: '#3F250B'},
+    {name: 'Soy Patty', color: '#3F250B'},
+    {name: 'Black Bean Patty', color: '#3F250B'},
+    {name: 'Chicken Patty', color: 'burlywood'},
+    {name: 'Lettuce', color: 'lawngreen'},
+    {name: 'Tomato', color: 'tomato'},
+    {name: 'Bacon', color: 'maroon'},
+    {name: 'Onion', color: 'lightyellow'}
+  ]
 
-  addingIngredient = (e) => {
-    let tryingToAddIngredient = {name: e.target.innerText, color: e.target.style.backgroundColor}
-    console.log(tryingToAddIngredient)
-    let temp = this.state.burger
-    temp.push(tryingToAddIngredient)
-    console.log('Once you kill a cow, youve gotta make a burger...')
-    console.log(this.state.burger)
-    console.log(e.target.innerText)
-    this.setState({
-      burger: temp
-    })
-    
+  const [burger, setBurger] = useState([])
+
+  const addIngredient = (ingredient) =>{
+    let burgerCopy = burger
+    let newObject = ingredient
+    burgerCopy.push(newObject)
+    setBurger(burgerCopy)
+    console.log(burger)
+
   }
   
-  render() {
     return (
       <>
         <ul>
-          {this.state.ingredientsArr.map((ingredient, index) => {
-          return (
-            <button onClick={this.addingIngredient}>
+          {ingredients.map((ingredient, index) => (
+            <button key={index} onClick={() => addIngredient(ingredient)}>
             <Ingredients ingredient={ingredient} key={index} />
             </button>
-
-          )
-
-        })}
+          ))}
         </ul>
         
         <div>
-          <BurgerStack burger={this.state.burger} />
+          <button onClick={() => setBurger([])}>Clear Burger</button>
+          {burger.map((burgerPart, index) =>(
+            <BurgerStack burgerPart={burgerPart} />
+          ))}
         </div>
       </>
     )
-  }
 }
-
-export default Burger;
