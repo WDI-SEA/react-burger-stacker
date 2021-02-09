@@ -4,7 +4,12 @@ export default function BurgerStack(props) {
 
   return (
     <div>
-          <h1 style={{ backgroundColor: props.burgerPart.color }}> {props.burgerPart.name}</h1>
+      <ul>
+        {props.burger.map((burgerPart, index) => {
+          return(
+            <li key={index} style={{ backgroundColor: burgerPart.color }}> {burgerPart.name}</li>
+          )})}
+      </ul>
     </div>
   )
 }
