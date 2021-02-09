@@ -19,7 +19,6 @@ code {
   border: 1px solid black;
   justify-content: space-around;
   margin: 32px auto;
-  padding: 16px;
 }
 
 #burgerpane{
@@ -27,6 +26,14 @@ code {
   flex-direction: column;
   margin: 0 auto;
   border: 1px solid red;
-  padding: 16px;
   width: 100%;
+}
+
+.burger_stack > p{
+  padding: 0;
+  margin: 0;
+}
+
+.burger_stack{
+  margin: 32px;
 }

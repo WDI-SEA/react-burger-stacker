@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Ingredient from './Ingredients';
 
-class IngredientList extends Component {
-    render() {
-        let allIngredients = this.props.ingredients.map((ingredient) => {
-            return (
-                <li onClick={this.props.addItem}><Ingredient ingredient={ingredient} /></li>
-            )
-        })
+
+function IngredientList(props) {
+    let allIngredients = props.ingredients.map((ingredient, i) => {
         return (
-            <div>
-                <ul>
-                    {allIngredients}
-                </ul>
-            </div>
+            <li key={`ingredient-${i}`}onClick={props.addItem}><Ingredient ingredient={ingredient} /></li>
         )
-    }
-};
+    })
+    return (
+        <div>
+            <ul>
+                {allIngredients}
+            </ul>
+        </div>
+    )
+}
 
 export default IngredientList;

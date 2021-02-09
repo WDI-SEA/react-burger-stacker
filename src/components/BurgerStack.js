@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Ingredient from './Ingredients';
 
-class BurgerStack extends Component{
-    render(){
-        let burger = this.props.burgerStuff.map((item) =>{
+function BurgerStack(props){
+        let burger = props.burgerStuff.map((item, i) =>{
             return(
-                <Ingredient ingredient={item} />
+                <Ingredient ingredient={item} key={i}/>
             )
         })
         return(
-            <div>
+            <div className="burger_stack">
                 {burger}
             </div>
         )
     }
-}
 
 export default BurgerStack;
