@@ -3,7 +3,6 @@ import Ingredients from './Ingredients';
 
 
 function IngredientList(props) {
-    // console.log(this.props.ingredient)
     let allIngredients = props.ingredient.map((ingredient, i) => {
         return (
             <li onClick={props.addIngredient} key={i}>
