@@ -1,8 +1,8 @@
 import {Component} from 'react'
 import BurgerPane from './BurgerPane'
-import Ingredients from './Ingredients'
+import IngredientList from './IngredientList'
 
-let ingredientList = [
+const ingredients = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
   {name: 'Sesame Bun', color: 'sandybrown'},
   {name: 'Gluten Free Bun', color: 'peru'},
@@ -20,20 +20,18 @@ let ingredientList = [
 
 export default class App extends Component{
   render() {
-    const ingredients = ingredientList.map((ingr, index) =>{
-      return <Ingredients
-      color={ingr.color}
-      name={ingr.name}
-      key={index}
-      />
-    })
+    
     return(
-      <div>
-        Hello
-        {ingredients}
-        <BurgerPane/>
-      </div>
+        <div style={{display:"flex", alignItems: "flex-end"}}>
+          
+          <p><IngredientList ingredients = {ingredients}/></p>
+
+        </div>
+        
+        
+        
     )
   }
 }
+  
 
