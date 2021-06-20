@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import BurgerPane from './BurgerPane'
+import BurgerStack from './BurgerStack'
 import IngredientList from './IngredientList'
 
 const ingredients = [
@@ -19,13 +20,42 @@ const ingredients = [
 
 
 export default class App extends Component{
+
+  constructor(props){
+    super()
+    this.state = {
+      clickedIngredients: []
+
+    }
+  }
+ 
+      
+  clearBurger = () => {
+        
+    this.setState({
+        clickedIngredients: []
+    })
+    
+}
+     
+
+
+
+  
+
+
+
+
+
   render() {
     
     return(
         <div style={{display:"flex", alignItems: "flex-end"}}>
           
-          <p><IngredientList ingredients = {ingredients}/></p>
+          <p><IngredientList ingredients = {ingredients} addIngredients={this.props.addIngredients}/></p>
+          <button onClick={this.props.clearBurger}>Clear Burger</button>
 
+          <BurgerStack/>
         </div>
         
         
