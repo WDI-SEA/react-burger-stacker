@@ -11,7 +11,6 @@ export default class Buger extends Component {
         })
         return(
             <div>
-                This is the actual burger
                 {ingredients}
             </div>
         )

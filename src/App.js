@@ -29,11 +29,9 @@ export default class App extends Component {
   
   render() {
     return(
-      <div>
-        <IngredientList incrementCounter={() => this.setState({ counter: this.state.counter + 1 })} ingredients={burgerIngredients} />
-        <BurgerHome ingredients={burgerIngredients} counter={this.state.counter}/>
-        This is where everyone will live in peace and harmony
-       
+      <div style={{display: "flex", alignItems:"flex-end"}}>
+      <h1><IngredientList ingredients={burgerIngredients} /></h1>
+      <h1><BurgerHome ingredients={burgerIngredients} /></h1>
       </div>
     )
   }

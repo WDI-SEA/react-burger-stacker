@@ -3,18 +3,19 @@ import Ingredients from "./Ingredients"
 
 export default class IngredientList extends Component {
     render() {
-        const ingredients = this.props.ingredients.map((ingredient, index) => {
-            return <Ingredients
-            name={ingredient.name}
+        const ingredients = this.props.ingredients.map((item, index) => (
+            <li>
+            <Ingredients
+            name={item.name}
+            color={item.color}
             key={index}
             />
-        })
+            </li>
+        ))
         return(
-            <div>
-                <button onClick={() => this.props.incrementCounter()}>increment counter</button>
-                This is where the list of add-able ingredients will live.
+            <ul>
                 {ingredients}
-            </div>
+            </ul>
         )
     }
 }
