@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Ings = (props) => {
-    return (
-        <p style={{backgroundColor: props.color}}>
-            {props.name}
-        </p>
-    )
+export default class Ings extends Component {
+    render() {
+        return (
+            <button style={{backgroundColor: this.props.color}}>
+                {this.props.name}
+            </button>
+        )
+    }
 }
 
-// TERRY CODE
+// FUNCTIONAL COMPONENT METHOD
+// import React from 'react'
+
 // const Ings = (props) => {
 //     return (
 //         <p style={{backgroundColor: props.color}}>
@@ -17,4 +21,4 @@ const Ings = (props) => {
 //     )
 // }
 
-export default Ings
+// export default Ings
