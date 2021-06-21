@@ -3,9 +3,9 @@ import React, {Component} from 'react'
 class Ingredient extends Component {
     render() {
         return (
-            <div>   
-                
-            </div>
+            <p style={{backgroundColor: this.props.color}}>   
+                {this.props.ingredient}
+            </p>
         )
     }
 }
