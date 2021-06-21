@@ -5,9 +5,9 @@ import ClearBurger from './ClearBurger'
 const BurgerPane = () => {
     return (
         <div>
-            <h2>Hello from BurgerPane!</h2>
             <BurgerStack />
             <ClearBurger />
+            <h2>Burger</h2>
         </div>
     )
 }

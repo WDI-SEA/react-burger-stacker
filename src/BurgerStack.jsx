@@ -4,8 +4,8 @@ import BurgerIngList from './BurgerIngList'
 const BurgerStack = () => {
     return (
         <div>
-            <h3>Hello from BurgerStack!</h3>
             <BurgerIngList />
+            <h3>BurgerStack</h3>
         </div>
     )
 }

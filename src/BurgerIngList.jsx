@@ -4,7 +4,7 @@ const BurgerIngList = () => {
     return (
         <div>
             <h4>
-                Hello from BurgerIngList!
+                BurgerIngList
             </h4>
         </div>
     )
