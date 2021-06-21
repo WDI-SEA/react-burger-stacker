@@ -3,19 +3,24 @@ import Ingredients from './Ingredients'
 
 export default class IngredientList extends Component {
     render() {
-            return(
-                <div id='cat'>
-            
-                <div>
-                
-                </div>
-                    <div>
-                       <h1>Ingredients List</h1> 
-                    </div>
-                </div>    
-            )    
-    }   
+        const ingredients = this.props.ingredientData.map(item => (
+            <li onClick={(e) => this.props.addToBurger(e)}>
+                <Ingredients ingredients={item.name} color={item.color} />
+            </li>
+        ))
+            // return <IngredientList 
+            // name={ingredient.name}
+            // color={ingredient.color}
+            // key={index}
+            // />
+            return (
+                <ul>
+                {ingredients}
+                </ul>
+            )
+        }
 }    
+      
     // <form action="./IngredientList" method="post">
     // <label for="Ingredients">Ingredients</label>
     // <hidden input="ingredient_name" type="text" name="" value="">
