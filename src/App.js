@@ -19,11 +19,33 @@ const ingredients = [
 ]
 
 class App extends Component {
+  // create constructor
+  constructor(props) {
+    super()
+    this.state = {
+      clickedIngredients: []
+    }
+  }
+  // create a function to pass to IngredientList
+  addIngredients = (e) => {
+    // setup new variable to store the current state
+    let currentIngredient = this.state.clickedIngredients
+    currentIngredient.push(e.target.value)
+
+    // update the state
+    this.setState({clickedIngredients: currentIngredient})
+
+    console.log(this.state)
+  }
+
   render() {
     return (
       <div style={{display: 'flex', alignItems: 'flex-end'}}>
-        <IngredientList ingredients={ ingredients }/>
-        <BurgerPane />
+        <IngredientList 
+          ingredients={ ingredients }
+          addIngredients={this.addIngredients}
+        />
+        <BurgerPane ingredients={ this.state.clickedIngredients }/>
       </div>
     )
   }

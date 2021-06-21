@@ -6,7 +6,9 @@ export default class BurgerStack extends Component {
         return (
             <div>
                 <p>Hello from BurgerStack.jsx</p>
-                <Ingredients />
+                {this.props.ingredients.map(ingredient => {
+                    return <Ingredients name={ingredient}/>
+                })}
             </div>
         )
     }

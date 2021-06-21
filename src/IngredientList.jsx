@@ -12,6 +12,7 @@ export default class IngredientList extends Component {
                         color={ ingredient.color }
                         key={ index }
                     />
+                    <button onClick={this.props.addIngredients} value={ingredient.name}>Add To Stack</button>
                 </li>
             )
         })

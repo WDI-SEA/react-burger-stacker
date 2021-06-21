@@ -7,7 +7,7 @@ export default class BurgerPane extends Component {
         return (
             <div>
                 <p>Hello from BurgerPane.jsx</p>
-                <BurgerStack />
+                <BurgerStack ingredients={ this.props.ingredients }/>
                 <ClearBurger />
             </div>
         )
