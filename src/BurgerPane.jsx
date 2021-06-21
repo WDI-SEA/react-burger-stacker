@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import Ingredients from './Ingredients'
+import BurgerStack from './BurgerStack'
 import ClearBurger from './ClearBurger'
 
 export default class BurgerPane extends Component {

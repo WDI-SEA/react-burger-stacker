@@ -6,7 +6,7 @@ export default class IngredientList extends Component {
     render() {
         return (
         <div> 
-            <h1>I own Ingredients</h1>
+            <h1>Name: {this.props.name}</h1>
         </div>
         )
     }
