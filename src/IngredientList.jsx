@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import React, { Component } from 'react'
 import Ingredient from './Ingredient.jsx'
 export default class IngredientList extends Component{
     // map over an array of ingredients

@@ -15,4 +15,3 @@ export default class BurgerPane extends Component {
         )
     }
 }
-
