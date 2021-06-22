@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import {Component} from 'react'
 import IngredientList from './IngredientList'
 import BurgerPane from './BurgerPane'
 
-// array of ingredients
 const ingredients = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
   {name: 'Sesame Bun', color: 'sandybrown'},
@@ -18,37 +17,36 @@ const ingredients = [
   {name: 'Onion', color: 'lightyellow'}
 ]
 
-class App extends Component {
-  // create constructor
-  constructor(props) {
-    super()
-    this.state = {
+export default class App extends Component {
+  state = {
       clickedIngredients: []
-    }
   }
-  // create a function to pass to IngredientList
-  addIngredients = (e) => {
-    // setup new variable to store the current state
-    let currentIngredient = this.state.clickedIngredients
-    currentIngredient.push(e.target.value)
 
-    // update the state
-    this.setState({clickedIngredients: currentIngredient})
+  addToBurger = (e) => {
+    // get value of clicked ingredient and color
+    const newIngredient = {name: e.target.innerText, color: e.target.style.backgroundColor}
 
-    console.log(this.state)
+    // create a new array with current clickedIngredients status and append new ingredient
+    const updatedClickedIngredients = this.state.clickedIngredients.concat(newIngredient)
+
+    // setState with new clickIngredients array
+    this.setState({
+      clickedIngredients: updatedClickedIngredients
+    })
+  }
+
+  clearBurger = (e) => {
+    this.setState({
+      clickedIngredients: []
+    })
   }
 
   render() {
-    return (
-      <div style={{display: 'flex', alignItems: 'flex-end'}}>
-        <IngredientList 
-          ingredients={ ingredients }
-          addIngredients={this.addIngredients}
-        />
-        <BurgerPane ingredients={ this.state.clickedIngredients }/>
+    return(
+      <div style={{display: 'flex', alignItems:'flex-end'}}>
+        <IngredientList ingredients={ingredients} addToBurger={this.addToBurger} />
+        <BurgerPane clickedIngredients={this.state.clickedIngredients} clearBurger={this.clearBurger} />
       </div>
     )
   }
 }
-
-export default App;
