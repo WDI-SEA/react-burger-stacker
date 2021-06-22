@@ -19,19 +19,53 @@ const burgerIngredients = [
 
 
 export default class App extends Component {
+  //the joe notes
   constructor(props) {
     super(props);
 
-    this.state = {
-      counter: 0,
-    }
+    
+
+    this.clearBurger = this.clearBurger.bind(this);
+  }
+
+  state = {
+    addedIngredients: []
   }
   
+  addToBurger = (e) => {
+    const newIngredient = {name: e.target.innerText, color: e.target.style.backgroundColor}
+    //let updatedAddedIngredients = this.state.addedIngredients.concat(newIngredient)
+    const updatedAddedIngredients = [...this.state.addedIngredients, newIngredient]
+    this.setState({
+      addedIngredients: updatedAddedIngredients
+    })
+  }
+
+  // clearBurger = (e) => {
+  //   this.setState({
+  //     addedIngredients: []
+  //   })
+  // }
+
+  clearBurger() {
+    this.setState({
+      addedIngredients: []
+    })
+  }
+  //goals:
+  //get val of clicked ingredient and color
+  //create a new array with curent clicked ingredients and append new ingredient
+  //set state with new clicked ingredient array
+  //make new empty array on burger home
+  //the method will add a new ingredient to that array on click
+  //we will use concat to sidestep the mutation situation
+
+
   render() {
     return(
       <div style={{display: "flex", alignItems:"flex-end"}}>
-      <h1><IngredientList ingredients={burgerIngredients} /></h1>
-      <h1><BurgerHome ingredients={burgerIngredients} /></h1>
+      <h1><IngredientList ingredients={burgerIngredients} addToBurger={this.addToBurger}/></h1>
+      <h1><BurgerHome addedIngredients={this.state.addedIngredients} clearBurger={this.clearBurger} /></h1>
       </div>
     )
   }

@@ -3,16 +3,19 @@ import Ingredients from './Ingredients'
  
 export default class Buger extends Component {
     render() {
-        const ingredients = this.props.ingredients.map((ingredient, index) => {
-            return <Ingredients
-            name={ingredient.name}
-            key={index}
-            />
-        })
+        let ingredients = this.props.addedIngredients.reverse().map((item, index) => (
+            <li>
+                <Ingredients
+                    name={item.name}
+                    color={item.color}
+                    key={index}
+                />
+            </li>
+        ))
         return(
-            <div>
+            <ul>
                 {ingredients}
-            </div>
+            </ul>
         )
     }
 }
