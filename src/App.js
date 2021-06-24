@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import { useState } from 'react'
 import IngredientList from './IngredientList'
 import BurgerPane from './BurgerPane'
 
@@ -17,36 +17,40 @@ const ingredients = [
   {name: 'Onion', color: 'lightyellow'}
 ]
 
-export default class App extends Component {
-  state = {
-      clickedIngredients: []
-  }
+const App = () => {
+  // state = {
+  //     clickedIngredients: []
+  // }
+  const [clickedIngredients, setClickedIngredients] = useState([])
 
-  addToBurger = (e) => {
+  const addToBurger = (e) => {
     // get value of clicked ingredient and color
     const newIngredient = {name: e.target.innerText, color: e.target.style.backgroundColor}
 
     // create a new array with current clickedIngredients status and append new ingredient
-    const updatedClickedIngredients = this.state.clickedIngredients.concat(newIngredient)
+    const updatedClickedIngredients = clickedIngredients.concat(newIngredient)
 
     // setState with new clickIngredients array
-    this.setState({
-      clickedIngredients: updatedClickedIngredients
-    })
+    setClickedIngredients(updatedClickedIngredients)
+    // setClickedIngredients(clickedIngredients => [...clickedIngredients, updatedClickedIngredients])
+    // this.setState({
+    //   clickedIngredients: updatedClickedIngredients
+    // })
   }
 
-  clearBurger = (e) => {
-    this.setState({
-      clickedIngredients: []
-    })
+  const clearBurger = (e) => {
+    setClickedIngredients([])
+    // this.setState({
+    //   clickedIngredients: []
+    // })
   }
 
-  render() {
-    return(
-      <div style={{display: 'flex', alignItems:'flex-end'}}>
-        <IngredientList ingredients={ingredients} addToBurger={this.addToBurger} />
-        <BurgerPane clickedIngredients={this.state.clickedIngredients} clearBurger={this.clearBurger} />
-      </div>
-    )
-  }
+  return(
+    <div style={{display: 'flex', alignItems:'flex-end'}}>
+      <IngredientList ingredients={ingredients} addToBurger={addToBurger} />
+      <BurgerPane clickedIngredients={clickedIngredients} clearBurger={clearBurger} />
+    </div>
+  )
 }
+
+export default App
