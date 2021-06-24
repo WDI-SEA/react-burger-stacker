@@ -1,18 +1,17 @@
-import { Component } from 'react'
 import Ingredient from './Ingredient'
 
-export default class BurgerStack extends Component {
-    render() {
-        let ingredients = this.props.ingredients.reverse().map(item => (
-            <li>
-                <Ingredient ingredient={item.name} color={item.color} />
-            </li>
-        ))
+const BurgerStack = (props) => {
+    let ingredients = props.ingredients.reverse().map((item,index) => (
+        <li>
+            <Ingredient ingredient={item.name} color={item.color} key={ index }/>
+        </li>
+    ))
 
-        return (
-            <ul>
-                {ingredients}
-            </ul>
-        )
-    }
+    return (
+        <ul>
+            {ingredients}
+        </ul>
+    )
 }
+
+export default BurgerStack
