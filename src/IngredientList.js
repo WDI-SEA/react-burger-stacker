@@ -7,9 +7,9 @@ export default class IngredientList extends Component {
     // create an ingredient component for each item in the array
     
     render() {
-        let ingredientComponents = this.props.ingredients.map(item => (
-            <li>
-                <Ingredient ingredient={item.name} color={item.color}/>
+        let ingredientComponents = this.props.ingredients.map((item, index) => (
+            <li onClick={this.props.addToBurger}>
+                <Ingredient ingredient={item.name} color={item.color} key={ index } />
             </li>
         ))
 

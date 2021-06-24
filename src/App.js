@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import IngredientList from "./IngredientList"
+import BurgerPane from "./BurgerPane"
 
 const ingredients = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
@@ -18,11 +19,33 @@ const ingredients = [
 
 
 export default class App extends Component {
+  constructor(props) {
+    super()
+    this.state = {
+      burgerIngredients: []
+    }
+  }
+
+  addToBurger = (e) => {
+    let currentBurger = this.state.burgerIngredients
+    let newIngredient = {name: e.target.innerText, color: e.target.style.backgroundColor}
+    currentBurger.push(newIngredient)
+    this.setState({
+      burgerIngredients: currentBurger
+    })
+  }
+
+  clearBurger = () => {
+    this.setState({
+      burgerIngredients: []
+    })
+  }
+
   render() {
     return (
       <div style={{display: "flex", alignItems: "flex-end"}}>
-        <IngredientList ingredients={ingredients}/>
-        <h1>Burger Pane</h1>
+        <IngredientList ingredients={ingredients} addToBurger={this.addToBurger} />
+        <BurgerPane ingredients={this.state.burgerIngredients} clearBurger={this.clearBurger} />
       </div>
     )
   }
