@@ -1,9 +1,8 @@
-import React, {Component} from 'react'
 import Ingredient from './Ingredient'
 
-class BurgerStack extends Component {
-    render() {
-    let burgerIngredients = this.props.clickedIngredients.reverse().map((item) => (
+const BurgerStack = (props) => {
+    
+    let burgerIngredients = props.clickedIngredients.map((item) => (
         <li>
              <Ingredient ingredient={item.name} color={item.color} />
         </li>
@@ -11,10 +10,9 @@ class BurgerStack extends Component {
 
         return (
             <ul>    
-                {burgerIngredients}
+                {burgerIngredients.reverse()}
             </ul>
         )
-    }
 }
 
 export default BurgerStack
