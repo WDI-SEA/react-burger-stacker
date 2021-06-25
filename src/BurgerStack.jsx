@@ -1,12 +1,11 @@
 
-import React, { Component } from 'react'
+import React from 'react'
 import Ingredient from './Ingredient'
 
 
-export default class BurgerStack extends Component {
-    render() {
-        // call .map on our passed props array
-        let burgerIngredients = this.props.burgerIngredients.reverse().map((item, index) => (
+const BurgerStack = (props) => {
+          // call .map on our passed props array
+        let burgerIngredients = props.burgerIngredients.map((item, index) => (
             <li>
                 <Ingredient ingredient={item.name} color={item.color} key={`keyB${index}`} />
             </li>
@@ -14,9 +13,9 @@ export default class BurgerStack extends Component {
 
         return (
             <ul>
-                {burgerIngredients}
+                {burgerIngredients.reverse()}
             </ul>
         )
-    }
 }
 
+export default BurgerStack
