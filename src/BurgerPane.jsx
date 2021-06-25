@@ -1,30 +1,29 @@
-import React, { Component } from 'react'
+// FUNCTIONAL COMPONENT VERSION
 import BurgerStack from './BurgerStack'
 import ClearBurger from './ClearBurger'
 
-export default class BurgerPane extends Component {
-    render() {
-        return (
-            <div>
-                <BurgerStack clickedIngs={this.props.clickedIngs}/>
-                <ClearBurger clearBurger={this.props.clearBurger}/>
-            </div>
-        )
-    }
+const BurgerPane = (props) => {
+    return (
+        <div>
+            <BurgerStack clickedIngs={props.clickedIngs}/>
+            <ClearBurger clearBurger={props.clearBurger}/>
+        </div>
+    )
 }
+export default BurgerPane
 
-// FUNCTIONAL COMPONENT METHOD
-// import React from 'react'
+// CLASS-BASED VERSION
+// import React, { Component } from 'react'
 // import BurgerStack from './BurgerStack'
 // import ClearBurger from './ClearBurger'
 
-// const BurgerPane = () => {
-//     return (
-//         <div>
-//             <BurgerStack />
-//             <ClearBurger />
-//         </div>
-//     )
+// export default class BurgerPane extends Component {
+//     render() {
+//         return (
+//             <div>
+//                 <BurgerStack clickedIngs={this.props.clickedIngs}/>
+//                 <ClearBurger clearBurger={this.props.clearBurger}/>
+//             </div>
+//         )
+//     }
 // }
-
-// export default BurgerPane
