@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React  from 'react'
 import BurgerStack from './BurgerStack'
 import ClearBurger from './ClearBurger'
 
 
-export default class BurgerPane extends Component {
-    render() {
+export default function BurgerPane (props) {
+    
         return (
             <div>
-                <BurgerStack clickedIngredients={this.props.clickedIngredients} />
-                <ClearBurger clearBurger={this.props.clearBurger} />
+                <BurgerStack clickedIngredients={props.clickedIngredients} />
+                <ClearBurger clearBurger={props.clearBurger} />
             </div>
         )
-    }
+    
 }
