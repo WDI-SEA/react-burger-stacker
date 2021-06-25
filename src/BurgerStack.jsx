@@ -2,7 +2,7 @@ import Ingredients from './Ingredients'
 
   
 const BurgerStack = (props) => {
-    let burgerIngredients = props.clickedIngredients.reverse().map((item) => (
+    let burgerIngredients = props.clickedIngredients.map((item) => (
         <li>
             <Ingredients ingredients={item.name} color={item.color} />
         </li>
@@ -10,7 +10,7 @@ const BurgerStack = (props) => {
 
     return (
         <ul>
-            {burgerIngredients}
+            {burgerIngredients.reverse()}
         </ul>
     )
 }
