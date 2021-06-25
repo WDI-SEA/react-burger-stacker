@@ -18,9 +18,6 @@ const ingredients = [
 ]
 
 const App = () => {
-  // state = {
-  //     clickedIngredients: []
-  // }
   const [clickedIngredients, setClickedIngredients] = useState([])
 
   const addToBurger = (e) => {
@@ -32,17 +29,10 @@ const App = () => {
 
     // setState with new clickIngredients array
     setClickedIngredients(updatedClickedIngredients)
-    // setClickedIngredients(clickedIngredients => [...clickedIngredients, updatedClickedIngredients])
-    // this.setState({
-    //   clickedIngredients: updatedClickedIngredients
-    // })
   }
 
   const clearBurger = (e) => {
     setClickedIngredients([])
-    // this.setState({
-    //   clickedIngredients: []
-    // })
   }
 
   return(
