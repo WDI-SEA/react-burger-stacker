@@ -1,3 +1,4 @@
+import React, {Component} from 'react'
 
 const ClearBurger = (props) => {
         return (

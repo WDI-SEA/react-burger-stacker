@@ -1,3 +1,4 @@
+import React, {Component} from 'react'
 
 const Ingredient = (props) => {
         return (
@@ -8,3 +9,4 @@ const Ingredient = (props) => {
 }
 
 export default Ingredient
+
