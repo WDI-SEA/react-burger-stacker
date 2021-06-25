@@ -28,20 +28,18 @@ const App = () => {
         setClickedIngs(updatedClickedIngs)
     }
 
-    const clearBurger = (e) => {
-        setClickedIngs([])
-    }
-
     return (
         <div>
             <h1>Build-a-Burger!</h1>
             <div class="kitchen-box">
-                <div class="ing-box">
+                <fieldset class="ing-box">
+                    <legend>Ingredients</legend>
                     <IngList ingredients={ingredients} addToBurger={addToBurger} />
-                </div>
-                <div class="burger-box">
-                    <BurgerPane clickedIngs={clickedIngs} clearBurger={clearBurger} />
-                </div>
+                </fieldset>
+                <fieldset class="burger-box">
+                    <legend>Burger</legend>
+                    <BurgerPane clickedIngs={clickedIngs} clearBurger={() => setClickedIngs([])} />
+                </fieldset>
             </div>
         </div>
     )

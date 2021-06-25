@@ -2,20 +2,17 @@
 import Ings from './Ings'
 
 const IngList = (props) => {
-    const ingredients = props.ingredients.map(e => {
-        return (
-            <p onClick={(e) => props.addToBurger(e)}>
-                <Ings
-                    name={e.name}
-                    color={e.color} 
-                />
-            </p>
-        )
-    })
+    const ingredients = props.ingredients.map(e => (
+        <p onClick={(e) => props.addToBurger(e)}>
+            <Ings
+                name={e.name}
+                color={e.color} 
+            />
+        </p>
+    ))
     return (
         <div>
             {ingredients}
-            <h2>Ingredients</h2>
         </div>
     )
 }
