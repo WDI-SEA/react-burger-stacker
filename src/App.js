@@ -1,8 +1,8 @@
-import { Component } from 'react'
+import React, { useState } from 'react'
 import IngredientList from './IngredientList'
 import BurgerPane from './BurgerPane.jsx'
 
-const ingredientData = [
+const ingredients = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
   {name: 'Sesame Bun', color: 'sandybrown'},
   {name: 'Gluten Free Bun', color: 'peru'},
@@ -17,20 +17,28 @@ const ingredientData = [
   {name: 'Onion', color: 'lightyellow'}
 ]
 
-class App extends Component {
-  render() {
-    const ingredientStuff = ingredientData.map((ingredients, index) => {
-      return <IngredientList 
-        name={ingredients.name}
-        key={index}
-      />
-    })
+function App() {
+     const [fixins, setFixins] = useState ([]) 
+    
+
+  const addToBurger = (e) => {
+   let newIngredient = {name: e.target.innerText, color: e.target.style.backgroundColor}
+    setFixins([newIngredient, ...fixins])
+  }
+
+  const clearBurger = (e) => { 
+    setFixins([])
+   }
+
+
     return (
-    <div>
-      {ingredientStuff}
-    </div>
+      <div style={{display: "flex", alignItems:"flex-end" }}>
+        <IngredientList ingredients={ingredients} addToBurger={addToBurger}/>
+        <BurgerPane clickedIngredients={fixins} clearBurger={clearBurger} />
+      </div>
     )
   }
-}
 
-export default App;
+
+
+export default App

@@ -1,13 +1,13 @@
-import { Component } from 'react'
+import React from 'react'
 
-export default class ClearBurger extends Component {
-    render() {
+const ClearBurger = (props) => {
         return (
             <div>
-                <h1>
-                    I am owned by BurgerPane 
-                </h1>
+                <button onClick={(e) => props.clearBurger(e)}>
+                    Clear Burger Stack
+                </button>
             </div>
         )
-    }
 }
+export default ClearBurger
+// clear burger needs to reset array to empty it

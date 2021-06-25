@@ -1,13 +1,19 @@
-import { Component } from 'react'
-import Ingredients from './Ingredients'
+import React from 'react'
+import Ingredient from './Ingredient'
 
 
-export default class BurgerStack extends Component {
-    render() {
+const BurgerStack = (props) => {
+    let burgerIngredients = props.clickedIngredients.map((item) => (
+        <li>
+            <Ingredient ingredient={item.name} color={item.color} />
+        </li>
+    ))
+
         return (
-            <div>
-                <h1>I own Ingredients</h1>
-            </div>
+           <ul>
+               {burgerIngredients.reverse()}
+           </ul>
         )
-    }
 }
+export default BurgerStack
+// should make an array of ingredients
