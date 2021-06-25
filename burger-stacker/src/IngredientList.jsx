@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Ingredients from './Ingredients'
 
-export default class IngredientList extends Component {
-    render() {
-        const ingredients = this.props.ingredientData.map(item => (
-            <li onClick={(e) => this.props.addToBurger(e)}>
+const IngredientList = (props) => {
+        const ingredients = props.ingredientData.map(item => (
+            <li onClick={(e) => props.addToBurger(e)}>
                 <Ingredients ingredients={item.name} color={item.color} />
             </li>
         ))
@@ -18,8 +17,9 @@ export default class IngredientList extends Component {
                 {ingredients}
                 </ul>
             )
-        }
-}    
+}
+  
+export default IngredientList;
       
     // <form action="./IngredientList" method="post">
     // <label for="Ingredients">Ingredients</label>

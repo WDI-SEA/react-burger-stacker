@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import IngredientList from './IngredientList'
 import BurgerPane from './BurgerPane'
+
 
 const ingredientData = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
@@ -16,30 +17,22 @@ const ingredientData = [
   {name: 'Bacon', color: 'maroon'},
   {name: 'Onion', color: 'lightyellow'}
 ]
-class App extends Component {
-  constructor(props) {
-    super()
-    this.state = {
-      burgerIngredients: []
-    }
-  }
 
-  addToBurger = (e) => {
+function App() {
+      const [fixins, setFixins] = useState([])
+
+  const addToBurger = (e) => {
     // get value of clicked ingredient and color
     const newIngredient = {name: e.target.innerText, color: e.target.style.backgroundColor}
     // create a new array with current current burgerIngredients status and append new ingredient
-    const updatedBurgerIngredients = this.state.burgerIngredients.concat(newIngredient)
+    // const updatedBurgerIngredients = fixins.concat(newIngredient)
     // setState with new BurgerIngredients array 
-    this.setState({ burgerIngredients: updatedBurgerIngredients })
+    setFixins([newIngredient, ...fixins])
   } 
 
-  clearBurger = (e) => {
-    this.setState({
-      burgerIngredients: []
-    })
+  const clearBurger = (e) => {
+    setFixins([])
   }
-
-  render() {
     // const ingredients = ingredientData.map((ingredient, index) => {
       // return <Ingredients
       // name={ingredient.name}
@@ -48,13 +41,11 @@ class App extends Component {
       
     return (
       <div style={{display: "flex", alignItems:"flex-end" }}>
-        <IngredientList ingredientData={ingredientData} addToBurger={this.addToBurger} />
-        <BurgerPane burgerIngredients={this.state.burgerIngredients} clearBurger={this.clearBurger} />
+        <IngredientList ingredientData={ingredientData} addToBurger={addToBurger} />
+        <BurgerPane burgerIngredients={fixins} clearBurger={clearBurger} />
       </div>
     )
-  }  
-}
-  
-   
+}  
 
+   
 export default App;
