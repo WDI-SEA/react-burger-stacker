@@ -27,11 +27,16 @@ const App = () => {
   const addToBurger = (e) => {
     let currentBurger = burgerIngredients
     let newIngredient = {name: e.target.innerText, color: e.target.style.backgroundColor}
-    currentBurger.push(newIngredient)
+    // currentBurger.push(newIngredient)
+
+
+
+  
     console.log('clicked')
   
       // burgerBuild
-   
+      burgerBuild([newIngredient,...currentBurger])
+       
   }
 
   const clearBurger = (e) => {

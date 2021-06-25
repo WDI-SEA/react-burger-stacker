@@ -7,8 +7,8 @@ const IngredientList = (props) => {
     // create an ingredient component for each item in the array
 
       let ingredientComponents = props.ingredients.map((item, index) => (
-          <li onClick={(e) => props.addToBurger(e)}>
-          <Ingredient addToBurger={props.addToBurger} ingredient={item.name} color={item.color} key={index} />
+          <li onClick={(e) => props.addToBurger(e)} key={index}>
+          <Ingredient addToBurger={props.addToBurger} ingredient={item.name} color={item.color} />
          </li>
          
         ))
@@ -19,7 +19,7 @@ const IngredientList = (props) => {
                 {ingredientComponents}
             </ul>
         )
-  
+        
 }
 
 export default IngredientList
