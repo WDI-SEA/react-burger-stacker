@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import MyBurger from './MyBurger';
 import reportWebVitals from './reportWebVitals';
+
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MyBurger />
   </React.StrictMode>,
   document.getElementById('root')
 );
