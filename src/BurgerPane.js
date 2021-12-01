@@ -14,6 +14,7 @@ export default class BurgerPane extends Component {
             <section className='pane'>
                 <h3>The Burger</h3>
                 { burgerBits }
+                <button onClick={this.props.clear}>Clear Burger</button>
             </section>
         )
     }

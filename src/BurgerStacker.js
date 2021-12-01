@@ -32,6 +32,11 @@ export default class BurgerStacker extends Component {
     }
 
     //clear burger stack function
+    clearBurger = () => {
+        this.setState({
+            burgerIngredients: []
+        })
+    }
 
     render () {
         return (
@@ -43,7 +48,8 @@ export default class BurgerStacker extends Component {
                         add={this.addToStack} 
                     />
                     <BurgerPane 
-                        ingredients={this.state.burgerIngredients} 
+                        ingredients={this.state.burgerIngredients}
+                        clear={this.clearBurger}
                     />
                 </div>
             </main>
