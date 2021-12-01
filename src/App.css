@@ -1,21 +1,22 @@
-.App {
+* {
   text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.panes {
   display: flex;
   flex-direction: row;
-  column-gap: 5%;
-  justify-content: center;
 }
 
-.ingredientListContainer {
+.pane {
+  margin: 1em;
+  padding: 0 2em;
+  width: 45%;
   border: 2px solid black;
-  width: 40%;
-  background-color: azure;
-}
-
-.burgerPlateContainer {
-  border: 2px solid black;
-  width: 40%;
-  background-color: azure;
+  border-radius: 10px;
 }
 
 .App-logo {
