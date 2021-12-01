@@ -2,8 +2,20 @@
   text-align: center;
   display: flex;
   flex-direction: row;
-  column-gap: 25%;
+  column-gap: 5%;
   justify-content: center;
+}
+
+.ingredientListContainer {
+  border: 2px solid black;
+  width: 40%;
+  background-color: azure;
+}
+
+.burgerPaneContainer {
+  border: 2px solid black;
+  width: 40%;
+  background-color: azure;
 }
 
 .App-logo {

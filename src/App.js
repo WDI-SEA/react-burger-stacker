@@ -6,6 +6,10 @@ import BurgerPane from './BurgerPane';
 
 
 export default class App extends Component {
+  state = {
+    burger: []
+  }
+
   render() {
     return (
       <div className="App">
