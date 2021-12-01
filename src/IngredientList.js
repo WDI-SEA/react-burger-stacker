@@ -1,14 +1,21 @@
 import React, { Component } from 'react'
-import Ingredient from './Ingredient'
+
 
 export default class IngredientList extends Component {
 
     render () {
-       
+       let allIngredients = this.props.ingredients.map((ingredient, i) => {
+           return (
+               <li>{ingredient.name}</li>
+           )
+       })
         
         return (
             <div className="ingredient-List">
-               <Ingredient />
+             
+               <ul>
+                   {allIngredients}
+               </ul>
             </div>
         )
     }

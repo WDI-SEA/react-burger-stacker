@@ -1,5 +1,6 @@
 import './App.css';
-import IngredientList from './FilmDetails'
+import IngredientList from './IngredientList'
+import BurgerPane from './BurgerPane'
 
 function App() {
   let ingredients = [

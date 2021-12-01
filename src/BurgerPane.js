@@ -1,15 +1,23 @@
 import React, { Component } from 'react'
-import Ingredient from './Ingredient'
+
 
 export default class BurgerPane extends Component {
 
     render () {
        
-        
-        return (
-            <div className="burger-pane">
-               <Ingredient />
-            </div>
-        )
-    }
+      
+            let allIngredients = this.props.ingredients.map((ingredient, i) => {
+                return (
+                    <li>{ingredient.color}</li>
+                )
+            })
+             
+             return (
+                 <div className="burger-pane">
+                    <ul>
+                        {allIngredients}
+                    </ul>
+                 </div>
+             )
+    }   
 }
