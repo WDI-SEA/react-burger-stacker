@@ -7,7 +7,7 @@ export default class IngredientList extends Component {
     render() {
         // here we need to store our group of ingredients(the component)
         let allIngredients = this.props.ingredients.map(mapIngredient => (
-            <li>
+            <li onClick={this.props.add}>
                 <Ingredient ingredient={mapIngredient} />
             </li>
         ))
