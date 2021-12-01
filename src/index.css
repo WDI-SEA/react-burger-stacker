@@ -27,3 +27,7 @@ code {
   width: 400px;
   color: black;
 }
+
+ul {
+  list-style: none;
+}
