@@ -1,29 +1,47 @@
-import React, { Component } from 'react'
-import Ingredients from './Ingredients'
-
-
-const ingredients = [
-  {name: 'Kaiser Bun', color: 'saddlebrown'},
-  {name: 'Sesame Bun', color: 'sandybrown'},
-  {name: 'Gluten Free Bun', color: 'peru'},
-  {name: 'Lettuce Wrap', color: 'olivedrab'},
-  {name: 'Beef Patty', color: '#3F250B'},
-  {name: 'Soy Patty', color: '#3F250B'},
-  {name: 'Black Bean Patty', color: '#3F250B'},
-  {name: 'Chicken Patty', color: 'burlywood'},
-  {name: 'Lettuce', color: 'lawngreen'},
-  {name: 'Tomato', color: 'tomato'},
-  {name: 'Bacon', color: 'maroon'},
-  {name: 'Onion', color: 'lightyellow'}
-]
+import React, { Component } from "react";
+import Ingredients from "./Ingredients";
+import "./MyBurger.css";
+import NewBurger from "./NewBurger";
 
 export default class MyBurger extends Component {
+  state = {
+    ingredientsArray: this.props.theIngredients,
+    newFood: [],
+  };
+
+  addFood = (e) => {
+    console.log(e.target.color);
+    e.preventDefault();
+    let currentArray = this.state.newFood;
+    let addedThings = { name: e.target.name };
+    currentArray.unshift(addedThings);
+    this.setState({
+      newFood: currentArray,
+    });
+  };
+
+  clearFood = (e) => {
+    this.setState({
+      newFood: [],
+    });
+  };
+
   render() {
     return (
-      <div>
-        <h1>Burger Stacker</h1>
-        <Ingredients theIngredients={ingredients}/>
+      <div className="container">
+        <div className="title">
+          <h1>Burger Stacker</h1>
+        </div>
+        <div className="Burger">
+          <NewBurger burgerItems={this.state.newFood} delete={this.clearFood} />
+        </div>
+        <div className="ingredients">
+          <Ingredients
+            completeIngredients={this.state.ingredientsArray}
+            changedIngredients={this.addFood}
+          />
+        </div>
       </div>
-    )
+    );
   }
 }
