@@ -4,7 +4,13 @@ class Ingredients extends Component {
     render() {
         // console.log(this.props.fullList[0])
         const items = this.props.itemsList.map((item, index) => {
-            return <li key={index}>{item.name} <button>></button></li>
+            return (
+            <li key={index}>{item.name}
+                <form onClick={this.props.onClick}>
+                    <button type="submit">Add Item</button>
+                </form>
+            </li> 
+            )
         })
 
         return (
