@@ -20,11 +20,13 @@ const ingredientsOfThings = [
   {name: 'Onion', color: 'lightyellow'}
 ]
 
+const burgerBuild = []
+
 ReactDOM.render(
   <React.StrictMode>
     <div className="flex-container">
-      <IngredientList ingredientsBook = { ingredientsOfThings } />
-      <BurgerPane />
+      <IngredientList ingredientsBook = { ingredientsOfThings } burgerBuild = {burgerBuild}/>
+      <BurgerPane burgerBuild = { burgerBuild }/>
     </div>
 
   </React.StrictMode>,
