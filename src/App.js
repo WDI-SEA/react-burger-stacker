@@ -9,10 +9,10 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
+        <div className="ingredientListContainer">
           <IngredientList ingredients={this.props.ingredients} />
         </div>
-        <div>
+        <div className="burgerPaneContainer">
           <BurgerPane />
         </div>
       </div>
