@@ -1,15 +1,12 @@
-import React, { Component } from 'react'
 import './App.css';
-
+import BurgerStacker from './components/BurgerStacker';
 
 
 function App() {
   
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
+        <BurgerStacker />
     </div>
   );
 }
