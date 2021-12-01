@@ -1,0 +1,16 @@
+.ingredient-list {
+    color:cornflowerblue;
+}
+
+.burger-ingredients {
+    color:darkslateblue;
+}
+
+.bothLists {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin: 0 auto;
+    /* padding-left: 600px;
+    padding-right: 600px; */
+}
