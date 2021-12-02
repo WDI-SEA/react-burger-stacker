@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css';
 import IngredientMenu from './IngredientMenu';
 
-
+// MOVE THIS TO STATE!!!! things in state can be unchanging :)
 const ingredients = [
   { name: 'Kaiser Bun', color: 'saddlebrown' },
   { name: 'Sesame Bun', color: 'sandybrown' },
@@ -18,10 +18,9 @@ const ingredients = [
   { name: 'Onion', color: 'lightyellow' }
 ]
 
-const emptyBurger = []
-
 class App extends Component {
   state = {
+    // remember to use SPREAD OPERATOR to add ingredients
     burgerIngredients: []
   }
   addIngredient = (e) => {
@@ -42,7 +41,7 @@ class App extends Component {
   }
 }
 
-
+// old function version of the boilerplate--using class so that state works as expected
 // function App() {
 //   // function to identify that a button has been clicked
 //   const addIngredient = (e) => {
