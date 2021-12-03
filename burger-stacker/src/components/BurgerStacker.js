@@ -24,7 +24,7 @@ const BurgerStacker = props => {
 	// }
 
 	const [ingredients, setIngredients] = useState([
-		{ name: 'Kaiser Bun', color: 'saddleorbrown' },
+		{ name: 'Kaiser Bun', color: 'saddlebrown' },
 		{ name: 'Sesame Bun', color: 'sandybrown' },
 		{ name: 'Gluten Free Bun', color: 'peru' },
 		{ name: 'Lettuce Wrap', color: 'olivedrab' },
