@@ -3,19 +3,19 @@ import React, { Component } from 'react'
 import Ingredient from './Ingredient'
 // we'll also want something that clears the burger
 
-export default class BurgerPane extends Component {
+const BurgerPane = props => {
     // we want to loop over the burgerbits that user has added
     // display one Ingredient component for every bit of the burger
-    render () {
-        let burgerBits = this.props.ingredients.map(mapIngredient => (
-            <Ingredient ingredient={mapIngredient} />
-        ))
-        return (
-            <section className='pane'>
-                <h3>Build Your Burger! 🍔</h3>
-                { burgerBits }
-                <button onClick={this.props.clear}>Clear Burger</button>
-            </section>
-        )
-    }
+    let burgerBits = props.ingredients.map(mapIngredient => (
+        <Ingredient ingredient={mapIngredient} />
+    ))
+    return (
+        <section className='pane'>
+            <h3>Build Your Burger! 🍔</h3>
+            {burgerBits}
+            <button onClick={props.clear}>Clear Burger</button>
+        </section>
+    )
 }
+
+export default BurgerPane
