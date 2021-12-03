@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import IngredientList from "./IngredientList";
 import BurgerPane from "./BurgerPane";
 
+console.log('is this working')
 export default class ListContainer extends Component {
 
     state = {
