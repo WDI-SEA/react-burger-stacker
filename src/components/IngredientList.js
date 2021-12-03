@@ -1,6 +1,6 @@
 // IngredientList will loop over props(ingredients) 
 // produces an Ingredient component for every ingredient in the array
-import React, { useState } from 'react'
+import React from 'react'
 import Ingredient from './Ingredient'
 function IngredientList (props) {
         // here we need to store our group of ingredients(the component)
