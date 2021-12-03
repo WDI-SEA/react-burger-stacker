@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 
-export default class Ingredients extends Component {
-    render() {
-        let allIngredients = this.props.completeIngredients.map((item, index) => {
+const Ingredients = props => {
+  
+        let allIngredients = props.completeIngredients.map((item, index) => {
             return <p key={index}>{item.name}
-            <button name={item.name} onClick={(e) => this.props.changedIngredients(e, index)}>
+            <button name={item.name} onClick={(e) => props.changedIngredients(e, index)}>
                 Add it</button>
             </p>
         })
+
         return (
           <div>
             <div className="film-list">
@@ -15,7 +16,8 @@ export default class Ingredients extends Component {
             </div>
           </div>
         );
-      }
-    }
+  }
+
+export default Ingredients
 
 

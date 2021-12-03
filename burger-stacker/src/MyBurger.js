@@ -9,7 +9,7 @@ const MyBurger = props => {
   //   newFood: [],
   // };
 
-  const [ingredientsArray, setIngredientsArr] = useState(props.theIngredients)
+  const [ingredientsArray, setIngredientsArray] = useState(props.theIngredients)
   const [newFood, setNewFood] = useState([])
 
   const addFood = (e) => {
