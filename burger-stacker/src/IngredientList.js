@@ -14,12 +14,12 @@ export default class IngredientList extends Component {
                 <h1>{ingredient.name}</h1>
                 <button onClick={(e) => this.props.addIngredient(e, ingredient.name)}>add</button>
               </div>
-            )
+            ) 
           })
 
         return (
             <div className='ingredient-list'>
-            <h1>ingredients</h1>
+            <h1>ingredients:</h1>
             <form>
             <ul>{allIngredients}</ul>
             </form>
