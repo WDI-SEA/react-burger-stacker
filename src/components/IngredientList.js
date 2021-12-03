@@ -1,5 +1,4 @@
 // ingredient list will loop over props(ingredients) and produce an Ingredient component for every ingredient in the arr
-import React, { Component } from 'react'
 import Ingredient from './Ingredient'
 
 const IngredientList = props => {

@@ -1,5 +1,4 @@
 // this is where the burger happens
-import React, { Component } from 'react'
 import Ingredient from './Ingredient'
 // we'll also want something that clears the burger
 
