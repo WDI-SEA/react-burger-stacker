@@ -1,11 +1,11 @@
-import { Component } from "react";
+import { useState } from "react";
 import List from './List.js'
 import Stack from './Stack.js'
 
-class Ingredients extends Component {
-
-    state = {
-        allIngredients: [
+const Ingredients = props => {
+        
+    const [allIngredients, setAllIngredients] = useState(
+        [
             {name: 'Kaiser Bun', color: 'saddlebrown'},
             {name: 'Sesame Bun', color: 'sandybrown'},
             {name: 'Gluten Free Bun', color: 'peru'},
@@ -18,43 +18,42 @@ class Ingredients extends Component {
             {name: 'Tomato', color: 'tomato'},
             {name: 'Bacon', color: 'maroon'},
             {name: 'Onion', color: 'lightyellow'}
-        ],
+        ]
+    )
 
-        addedIngredients: []
-    }
+    const [addedIngredients, setAddedIngredients] = useState([])
 
-    addIngredient = (e) => {
+
+    const addIngredient = (e) => {
         e.preventDefault()
-        let lastAdded = this.state.allIngredients[e.target.id]
-        let newArray = this.state.addedIngredients
+        let lastAdded = allIngredients[e.target.id]
+        let newArray = addedIngredients
 
         newArray.unshift(lastAdded)
 
-        this.setState({
-            addedIngredients: newArray
+        setAddedIngredients( prevAddedIngredients => {
+            return newArray
         })
-        console.log('added ingredients: ', this.state.addedIngredients)
+            
+        console.log('added ingredients: ', addedIngredients)
     }
 
-    clearStack = () => {
+    const clearStack = () => {
         console.log('clearing stack')
-        this.setState({
-            addedIngredients: []
-        })
+        setAddedIngredients([])
     }
 
-    render () {
-        return (
-        <>
-            <div className="leftColumn">
-                <List list={this.state.allIngredients} add={this.addIngredient}/>
-            </div>
-            <div className="rightColumn">
-                <Stack stackedItems={this.state.addedIngredients} clearStack={this.clearStack}/>
-            </div>
-        </>
-        )
-    }
+  
+    return (
+    <>
+        <div className="leftColumn">
+            <List list={allIngredients} add={addIngredient}/>
+        </div>
+        <div className="rightColumn">
+            <Stack stackedItems={addedIngredients} clearStack={clearStack}/>
+        </div>
+    </>
+    )
 }
 
 export default Ingredients
