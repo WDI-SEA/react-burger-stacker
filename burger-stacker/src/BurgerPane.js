@@ -1,23 +1,44 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import IngredientList from './IngredientList'
 
 
-export default class BurgerPane extends Component {
-    render () {
-        const renderedIngredients = this.props.selectedIngredients.map(ingredient => {
-            return (
-                <div className="ingredient-row">
-                  <h1>{ingredient}</h1>
-                </div>
-              )
-        })
+// export default class BurgerPane extends Component {
+//     render () {
+//         const renderedIngredients = this.props.selectedIngredients.map(ingredient => {
+//             return (
+//                 <div className="ingredient-row">
+//                   <h1>{ingredient}</h1>
+//                 </div>
+//               )
+//         })
+//         return (
+//             <div className='burger-ingredients'>
+//             <h1>burger:</h1>
+//             <ul>{renderedIngredients}</ul>
+//             <button onClick={(e) => this.props.clearList(e)}>Clear</button>
+//             </div>
+//         )
+
+//     }
+// }
+
+const BurgerPane = props => {
+    console.log('ingreds', props.selectedIngredients)
+
+    const renderedIngredients = props.selectedIngredients.map(ingredient => {
         return (
-            <div className='burger-ingredients'>
-            <h1>burger:</h1>
-            <ul>{renderedIngredients}</ul>
-            <button onClick={(e) => this.props.clearList(e)}>Clear</button>
+            <div className="ingredient-row">
+                <h1>{ingredient}</h1>
             </div>
         )
-
-    }
+    })
+    return (
+        <div className='burger-ingredients'>
+            <h1>burger:</h1>
+            <ul>{renderedIngredients}</ul>
+            <button onClick={props.clearList}>Clear</button>
+        </div>
+    )
 }
+
+export default BurgerPane
