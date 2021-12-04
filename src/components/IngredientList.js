@@ -3,22 +3,23 @@
 import React, { Component } from 'react'
 import Ingredient from './Ingredient'
 
-export default class IngredientList extends Component {
-    render () {
-        // here we need to store our group of ingredients(the component)
-        let allIngredients = this.props.ingredients.map(mapIng => (
-            <li onClick={this.props.add}>
-                <Ingredient ingredient={mapIng} />
-            </li>
-        ))
-        // then in our return, we'll render those as necessary
-        return (
-            <section className='pane'>
-                <h3>Ingredient List</h3>
-                <ul className="ingredient-list">
-                    { allIngredients }
-                </ul>
-            </section>
-        )
-    }
+const IngredientList = props => {
+
+    // here we need to store our group of ingredients(the component)
+    let allIngredients = props.ingredients.map(mapIng => (
+        <li onClick={props.add}>
+            <Ingredient ingredient={mapIng} />
+        </li>
+    ))
+    // then in our return, we'll render those as necessary
+    return (
+        <section className='pane'>
+            <h3>Ingredient List</h3>
+            <ul className="ingredient-list">
+                {allIngredients}
+            </ul>
+        </section>
+    )
 }
+
+export default IngredientList
