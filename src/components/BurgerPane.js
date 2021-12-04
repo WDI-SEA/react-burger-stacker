@@ -5,8 +5,8 @@ import Ingredient from './Ingredient'
 const BurgerPane = props => {
     // we want to loop over the burgerbits that user has added
     // display one Ingredient component for every bit of the burger
-    let burgerBits = props.ingredients.map(mapIngredient => (
-        <Ingredient ingredient={mapIngredient} />
+    let burgerBits = props.ingredients.map((mapIngredient, i) => (
+        <Ingredient ingredient={mapIngredient} key={i} />
     ))
     return (
         <section className='pane'>

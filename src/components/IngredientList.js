@@ -3,8 +3,8 @@ import Ingredient from './Ingredient'
 
 const IngredientList = props => {
     // here we need to store our group of ingredients(the component)
-    let allIngredients = props.ingredients.map(mapIng => (
-        <li onClick={props.add}>
+    let allIngredients = props.ingredients.map((mapIng, i) => (
+        <li onClick={props.add} key={i}>
             <Ingredient ingredient={mapIng} />
         </li>
     ))
