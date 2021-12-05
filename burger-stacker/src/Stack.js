@@ -1,15 +1,19 @@
-import React, {Component} from 'react'
+import React, { useState } from 'react'
+import Ingredient from './Ingredient.js'
+
 
 const Stack = props => {
 
-    console.log('stackedItems: ', props.stackedItems)
-    let burger = props.stackedItems.map((item) => {
+    
+
+
+    console.log('props.stackedItems: ', props.stackedItems)
+    let burger = props.stackedItems.map((item, i) => {
         return(
-        <div style={{backgroundColor: item.color } }>
-            <h1>{item.name}</h1>
-        </div>
+            <Ingredient ing={item} index={i}/>
         )
     })
+
     console.log('burger:', burger)
     return(
         <>

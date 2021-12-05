@@ -4,7 +4,7 @@ import Stack from './Stack.js'
 
 const Ingredients = props => {
         
-    const [allIngredients, setAllIngredients] = useState(
+    const [allIngredients] = useState(
         [
             {name: 'Kaiser Bun', color: 'saddlebrown'},
             {name: 'Sesame Bun', color: 'sandybrown'},
@@ -26,14 +26,9 @@ const Ingredients = props => {
 
     const addIngredient = (e) => {
         e.preventDefault()
+
         let lastAdded = allIngredients[e.target.id]
-        let newArray = addedIngredients
-
-        newArray.unshift(lastAdded)
-
-        setAddedIngredients( prevAddedIngredients => {
-            return newArray
-        })
+        setAddedIngredients([lastAdded, ...addedIngredients])
             
         console.log('added ingredients: ', addedIngredients)
     }
