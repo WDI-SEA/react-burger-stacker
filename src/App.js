@@ -1,5 +1,5 @@
 import './App.css';
-import BurgerStacker from './BurgerStacker'
+import BurgerStacker from './components/BurgerStacker'
 
 function App() {
 
