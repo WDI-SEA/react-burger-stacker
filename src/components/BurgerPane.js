@@ -8,8 +8,8 @@ const BurgerPane = props => {
     
     let burgerBits = props.ingredients.map(mapIng => (
         <Ingredient ingredient={mapIng}/>
-        ))
         
+        ))
         return (
             <section className="pane">
                 <h3>The Burger</h3>
