@@ -4,7 +4,7 @@ import IngredientList from './IngredientList'
 
 const BurgerStacker = () => {
 
-    const [ingredients, setIngredients] = useState([
+    const [ingredients] = useState([
         { name: 'Kaiser Bun', color: 'saddlebrown' },
         { name: 'Sesame Bun', color: 'sandybrown' },
         { name: 'Gluten Free Bun', color: 'peru' },
