@@ -18,8 +18,8 @@ const BurgerStacker = () => {
 			{ name: 'Bacon', color: 'maroon' },
 			{ name: 'Onion', color: 'lightyellow' },
 			{ name: 'Cheese', color: 'gold' }
-		]),
-		 [burgerIngredients, setBurgerIngredients] = useState([])
+		])
+		const [burgerIngredients, setBurgerIngredients] = useState([])
 	
 	// add to stack function(maybe passed to child?)
     const addToStack = (e) => {
@@ -27,11 +27,11 @@ const BurgerStacker = () => {
         let ingColor = e.target.style.backgroundColor
         console.log('is this what I want?', e.target.style.backgroundColor)
         let ingName = e.target.innerText
-		setBurgerIngredients = ([
-			{ name: ingName, color: ingColor },
-    		...burgerIngredients])
-    }
-
+		setBurgerIngredients (() => {
+			return [{ name: ingName, color: ingColor },
+    		...burgerIngredients]//sum wrong right here
+    })
+	}
     // remove from stack
     const removeFromStack = (e) => { //might be wrong here
         console.log('old stack', burgerIngredients)
