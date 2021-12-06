@@ -12,7 +12,7 @@ const BurgerStack = props =>{
                     props.stack.map((ingredients) => {
                         return(
                             <>
-                                <ul>{ingredients}</ul>
+                                <ul style={ {backgroundColor: props.color.color }}>{ingredients}</ul>
                             </>
                         )
                     })
