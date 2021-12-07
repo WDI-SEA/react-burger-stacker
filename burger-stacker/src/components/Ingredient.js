@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Ingredient extends Component {
-    render() {
+export default function Ingredient(props) {
+   
         return (
-            <p style={{backgroundColor: this.props.ingredient.color}} onClick={this.props.clicky}>
-            {this.props.ingredient.name}
+            <p style={{backgroundColor: props.ingredient.color}} 
+            onClick={props.clicky}>
+            {props.ingredient.name}
             </p>
         )
     }
-}
