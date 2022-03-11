@@ -15,7 +15,7 @@ class BurgerPane extends Component {
 
     return (
       <div className="burgerpane-wrapper">
-        <h2>BurgerPane</h2>  
+        <h2 className="burgerPane">Build your burger!</h2>  
         {ingredientItemsEmptyArr}
         <ClearBurger trashPlate={this.props.trashPlate}/>
       </div>

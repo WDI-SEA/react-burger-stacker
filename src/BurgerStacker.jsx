@@ -24,12 +24,23 @@ class BurgerStacker extends Component {
 		addedIngredients: [] 
 	}
 
-	clickHandler = (e) => {
-		const name = e.target.innerText
-		console.log('Thisss: ' + name)
-		this.setState({
-			addedIngredients: [name, ...this.state.addedIngredients]
-		})
+	// clickHandler = (e) => {
+	// 	const name = e.target.innerText
+	// 	console.log('Thisss: ' + name)
+	// 	this.setState({
+	// 		addedIngredients: [name, ...this.state.addedIngredients]
+	// 	})
+	// }
+
+	clickHandler = (ingredient) => {
+		// const name = e.target.innerText
+		// console.log('Thisss: ' + name)
+		// this.setState((prevState, props) => {
+		// 	addedIngredients: [...prevState.addedIngredients, {name, color}]
+		// })
+		let newBurgerList = this.state.addedIngredients
+		newBurgerList.push(ingredient)
+		this.setState({...newBurgerList.addedIngredients, newBurgerList})
 	}
 
 	trashPlate = () => {
@@ -42,7 +53,7 @@ class BurgerStacker extends Component {
 	render() {
 		return (
 			<div className='main-wrapper'>
-				<h1>hello from burger stacker main</h1>
+				<h1 className='main-header'>hello from burger stacker main</h1>
 				<div className="main-wrapper-comp">
 					<IngredientList ingredienstList={this.state.ingredientsList} addIngredientsHandler={this.clickHandler}/>
 					<BurgerPane trashPlate={this.trashPlate} addedIngredients={this.state.addedIngredients} ingredienstList={this.state.ingredientsList}/>

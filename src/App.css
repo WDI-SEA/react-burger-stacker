@@ -18,6 +18,8 @@
 }
 
 .burgerpane-wrapper {
+  padding-left: 50px;
+  padding-right: 50px;
   width: 50vw;
   /* height: 70vh; */
   display: flex;
@@ -39,4 +41,25 @@ h4 {
 p {
   margin-block-start: 0em;
   margin-block-end: 0em;
+}
+
+.h4-ingredient {
+  cursor: pointer;
+  text-align: center;
+  padding: 15px;
+}
+
+.burgerPane {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.center-btn {
+  padding-top: 40px;
+  margin: 0 auto;
+
+}
+
+.main-header {
+  text-align: center;
 }
