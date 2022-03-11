@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
+import Ingredient from './Ingredient';
 
 class BurgerPane extends Component {
      
     render() {
         let burgerStack = this.props.burgerPaneIngredients.map((ingredient, idx) => {
-            return <p>{ingredient.name}</p>
+            return <Ingredient ingredient={ingredient} key={idx}/>
         })
         return (
-            <div>
+            <div className='container'>
                 {burgerStack}
+                <input type="submit" />
             </div>
         );
     }

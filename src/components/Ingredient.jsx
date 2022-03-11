@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 
-class Ingredient extends Component {
-    state = {  } 
+class Ingredient extends Component { 
     render() { 
         return (
-            <div>
+            <div style={{backgroundColor: this.props.ingredient.color}}>
                 <p> name: {this.props.ingredient.name} | color: {this.props.ingredient.color}</p>
                 <input 
                     type="submit" 

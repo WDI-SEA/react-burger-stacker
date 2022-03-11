@@ -21,13 +21,15 @@ state = {
      {name: 'Onion', color: 'lightyellow'}
    ],
    burgerPaneIngredients: [],
+   isStacked: false
  } 
 
  addToStack = (ing) => {
   let burgerArrayCopy = [...this.state.burgerPaneIngredients]
   burgerArrayCopy.unshift(ing)
   this.setState({
-    burgerPaneIngredients: burgerArrayCopy
+    burgerPaneIngredients: burgerArrayCopy,
+    isStacked: true
   },() => console.log(this.state.burgerPaneIngredients))
  }
 
@@ -35,7 +37,7 @@ state = {
     return (
       <div className='App App-header'>
         <IngredientsList ingredients={this.state.ingredients} addToStack={this.addToStack} />
-        <BurgerPane burgerPaneIngredients={this.state.burgerPaneIngredients} />
+        <BurgerPane burgerPaneIngredients={this.state.burgerPaneIngredients} isStacke={this.state.isStacked} />
       </div>
     );
   }
