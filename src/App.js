@@ -38,7 +38,7 @@ state = {
    let burgerArrayCopy = [...this.state.burgerPaneIngredients]
    burgerArrayCopy.shift()
    this.setState({
-     burgerPaneIngredients: burgerArrayCopy
+     burgerPaneIngredients: burgerArrayCopy 
    })
  }
 
@@ -59,20 +59,26 @@ state = {
 
   render() { 
     return (
-      <div className='App App-header'>
-        <IngredientsList 
-          ingredients={this.state.ingredients} 
-          addToStack={this.addToStack} 
-          isStacked={this.state.isStacked}
-        />
-        <BurgerPane 
-          burgerPaneIngredients={this.state.burgerPaneIngredients} 
-          isStacked={this.state.isStacked} 
-          clearBurger={this.clearBurger}
-        />
-        <NewIngredientForm
-          addNewIngredient={this.addNewIngredient}   
-        />
+      <div>
+        <div className="main-container">
+          <NewIngredientForm
+            addNewIngredient={this.addNewIngredient}
+          />
+        </div>
+        <div className='App App-header'>
+          <IngredientsList 
+            ingredients={this.state.ingredients} 
+            addToStack={this.addToStack} 
+            isStacked={this.state.isStacked}
+          />
+          <BurgerPane 
+            burgerPaneIngredients={this.state.burgerPaneIngredients} 
+            isStacked={this.state.isStacked} 
+            clearBurger={this.clearBurger}
+            undoStack={this.undoStack}
+          />
+          
+        </div>
       </div>
     );
   }

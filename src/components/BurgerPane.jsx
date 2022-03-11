@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Ingredient from './Ingredient';
+import ClearBtn from './ClearBtn.jsx';
 
 class BurgerPane extends Component {
      
@@ -13,10 +14,10 @@ class BurgerPane extends Component {
                         burgerStack.length < 1 ? null :
                         <div className='container'>
                             {burgerStack}
-                            <input 
+                            <ClearBtn 
                                 type="submit" 
                                 value="Clear Burger!"
-                                onClick={this.props.clearBurger} 
+                                clearBurger={this.props.clearBurger} 
                             />
                         </div>
                     }

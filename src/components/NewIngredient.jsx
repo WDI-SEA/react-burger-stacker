@@ -20,10 +20,11 @@ class NewIngredientForm extends Component {
             color: ""
         })
     }
+    
     render() { 
         return (
             <form onSubmit={this.submitForm}>
-                <label htmlFor="name">name</label>
+                <label htmlFor="name">name: </label>
                 <input 
                     type="text" 
                     name="name" 
@@ -31,7 +32,7 @@ class NewIngredientForm extends Component {
                     value={this.state.name} 
                     onChange={this.textChangeHandler}
                 />
-                <label htmlFor="color">color</label>
+                <label htmlFor="color">color: </label>
                 <input 
                     type="text" 
                     name="color" 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Ingredient from './Ingredient';
+import NewIngredientForm from './NewIngredient';
 
 class IngredientsList extends Component {
 
