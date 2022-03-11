@@ -8,7 +8,7 @@ class ClearBurger extends Component {
 
   render() {
     return (
-      <button className="clear-btn" onClick={this.handleClearBtn}>Clear</button>
+      <button className="clear-btn" onClick={this.props.trashPlate}>Clear</button>
     )
   }
 }

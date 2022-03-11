@@ -32,13 +32,20 @@ class BurgerStacker extends Component {
 		})
 	}
 
+	trashPlate = () => {
+		console.log('clean')
+		this.setState({
+			addedIngredients: []
+		})
+	}
+
 	render() {
 		return (
 			<div className='main-wrapper'>
 				<h1>hello from burger stacker main</h1>
 				<div className="main-wrapper-comp">
 					<IngredientList ingredienstList={this.state.ingredientsList} addIngredientsHandler={this.clickHandler}/>
-					<BurgerPane addedIngredients={this.state.addedIngredients} />
+					<BurgerPane trashPlate={this.trashPlate} addedIngredients={this.state.addedIngredients} />
 				</div>
 			</div>
 			)

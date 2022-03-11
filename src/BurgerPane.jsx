@@ -17,7 +17,7 @@ class BurgerPane extends Component {
       <div className="burgerpane-wrapper">
         <h2>BurgerPane</h2>  
         {ingredientItemsEmptyArr}
-        <ClearBurger />
+        <ClearBurger trashPlate={this.props.trashPlate}/>
       </div>
     )
   }
