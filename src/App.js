@@ -20,7 +20,9 @@ class App extends Component {
       {name: 'Bacon', color: 'maroon'},
       {name: 'Onion', color: 'lightyellow'}
     ],
-    onBurger:[]
+    onBurger:[],
+    newIngredientName:"",
+    newIngredientColor:""
   };
 
   handleClick=(ingredient)=>{
@@ -34,10 +36,21 @@ class App extends Component {
       onBurger: []
     })
   }
+
+  
+
+  handleAddIngredent=(namee, colorr)=>{
+
+    this.setState((prevState, props)=>({
+      ingredients: [...prevState.ingredients,{name: namee, color:colorr} ]
+    }))
+
+  }
+
   render() {
     return (
       <div className="container">
-        <IngredientsPane ingredients={this.state.ingredients} onBurger={this.state.onBurger} handleClick={this.handleClick}/>
+        <IngredientsPane ingredients={this.state.ingredients} onBurger={this.state.onBurger} handleClick={this.handleClick} handleTextChange={this.handleTextChange} handleAddIngredent={this.handleAddIngredent}/>
         <BurgerPane ingredients={this.state.ingredients} onBurger={this.state.onBurger} handleClick={this.handleClick} clearBurger={this.clearBurger}/>
 
       </div>
