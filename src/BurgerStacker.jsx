@@ -45,7 +45,7 @@ class BurgerStacker extends Component {
 				<h1>hello from burger stacker main</h1>
 				<div className="main-wrapper-comp">
 					<IngredientList ingredienstList={this.state.ingredientsList} addIngredientsHandler={this.clickHandler}/>
-					<BurgerPane trashPlate={this.trashPlate} addedIngredients={this.state.addedIngredients} />
+					<BurgerPane trashPlate={this.trashPlate} addedIngredients={this.state.addedIngredients} ingredienstList={this.state.ingredientsList}/>
 				</div>
 			</div>
 			)

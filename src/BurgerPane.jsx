@@ -10,7 +10,7 @@ class BurgerPane extends Component {
 
   render() {
     const ingredientItemsEmptyArr = this.props.addedIngredients.map((ingredient, index) => {
-      return <Ingredient ingredient={ingredient} key={`BurgerPane-${index}`} />
+      return <Ingredient ingredient={ingredient} key={`BurgerPane-${index}`} ingredienstList={this.props.ingredienstList}/>
     })
 
     return (
