@@ -5,12 +5,10 @@ import Ingredients from './Ingredients';
 
 class ClearBurger extends Component {
     
-    clearBurger = () =>{
-        console.log('clear burger')
-    }
+    
     render() { 
         return (
-            <button onClick={this.clearBurger}>Clear Burger</button>
+            <button onClick={this.props.clearBurger}>Clear Burger</button>
         );
     }
 }

@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
-import BurgerStack from './BurgerStack'
 import ClearBurger from './ClearBurger';
 import Ingredients from './Ingredients';
 
 
 class BurgerPane extends Component {
+    state={
+        burgerArray: this.props.burgerIngredients
+    }
+    clearBurger = () =>{
+        console.log('clear burger')
+        this.setState({
+            burgerArray: []
+        })
+    }
+
     render() { 
         const burgerIngredientItems = this.props.burgerIngredients.map((ingredient, idx)=>{
             return <Ingredients key={`burgerIng-${idx}`} ingredient={ingredient}/>
@@ -12,9 +21,11 @@ class BurgerPane extends Component {
         return (
             <>
             <h1>Burger Pane</h1>
-            <li>{burgerIngredientItems}</li>
+            <ul>    
+                {burgerIngredientItems}
+            </ul>
           
-            <ClearBurger />
+            <ClearBurger burgerIngredientItemsProp={burgerIngredientItems} clearBurger={this.clearBurger}/>
             </>
         );
     }
