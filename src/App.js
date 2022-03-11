@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "./App.css"
 import IngredientsList from './components/IngredientsList';
 import BurgerPane from './components/BurgerPane';
+import NewIngredientForm from './components/NewIngredient.jsx';
 
 class App extends Component {
 // put the state here.
@@ -33,11 +34,45 @@ state = {
   },() => console.log(this.state.burgerPaneIngredients))
  }
 
+ undoStack = () => {
+   let burgerArrayCopy = [...this.state.burgerPaneIngredients]
+   burgerArrayCopy.shift()
+   this.setState({
+     burgerPaneIngredients: burgerArrayCopy
+   })
+ }
+
+ clearBurger = () => {
+   this.setState({
+     burgerPaneIngredients: [],
+     isStacked: false
+   })
+ }
+
+ addNewIngredient = (ing) => {
+   let ingredientsCopy = [...this.state.ingredients]
+   ingredientsCopy.push(ing)
+  this.setState({
+    ingredients: ingredientsCopy
+  })
+ }
+
   render() { 
     return (
       <div className='App App-header'>
-        <IngredientsList ingredients={this.state.ingredients} addToStack={this.addToStack} />
-        <BurgerPane burgerPaneIngredients={this.state.burgerPaneIngredients} isStacke={this.state.isStacked} />
+        <IngredientsList 
+          ingredients={this.state.ingredients} 
+          addToStack={this.addToStack} 
+          isStacked={this.state.isStacked}
+        />
+        <BurgerPane 
+          burgerPaneIngredients={this.state.burgerPaneIngredients} 
+          isStacked={this.state.isStacked} 
+          clearBurger={this.clearBurger}
+        />
+        <NewIngredientForm
+          addNewIngredient={this.addNewIngredient}   
+        />
       </div>
     );
   }
