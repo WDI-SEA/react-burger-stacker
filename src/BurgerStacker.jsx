@@ -39,7 +39,7 @@ class BurgerStacker extends Component {
 		// 	addedIngredients: [...prevState.addedIngredients, {name, color}]
 		// })
 		let newBurgerList = this.state.addedIngredients
-		newBurgerList.push(ingredient)
+		newBurgerList.unshift(ingredient)
 		this.setState({...newBurgerList.addedIngredients, newBurgerList})
 	}
 
