@@ -4,8 +4,6 @@ import Ingredients from './Ingredients';
 
 
 class ClearBurger extends Component {
-    
-    
     render() { 
         return (
             <button onClick={this.props.clearBurger}>Clear Burger</button>

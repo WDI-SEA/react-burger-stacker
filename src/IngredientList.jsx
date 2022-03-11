@@ -4,19 +4,23 @@ import Ingredients from './Ingredients';
 class IngredientList extends Component {
     render() { 
         
-        const ingredientListItem = this.props.ingredients.map((ingredient, idx) =>{
-                return <li><Ingredients key={`ing-${idx}`} ingredient={ingredient.name} addIngredient={this.props.addIngredient}/></li>
+        const ingredients = this.props.ingredients.map((ingredient, idx) =>{
+                return <Ingredients 
+                key={`ing-${idx}`} 
+                ingredient={ingredient} 
+                addToBurger={this.props.addToBurger}/>
         })  
 
         return (
 
-            <ul> Ingredient List:
-            {ingredientListItem}
-            </ul>
+            <section className='ingredient-list'>
+                <h1>Ingredient List: </h1>
+                {ingredients}
+            </section>
            
-            
+        
         );
     }
 }
  
-export default IngredientList
+export default IngredientList   
