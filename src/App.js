@@ -3,36 +3,51 @@ import './App.css';
 import IngredientList from './IngredientList'
 import BurgerPane from './BurgerPane'
 
-const ingredients = {
-  ingredient: [
-      {name: 'Kaiser Bun', color: 'saddlebrown'},
-      {name: 'Sesame Bun', color: 'sandybrown'},
-      {name: 'Gluten Free Bun', color: 'peru'},
-      {name: 'Lettuce Wrap', color: 'olivedrab'},
-      {name: 'Beef Patty', color: '#3F250B'},
-      {name: 'Soy Patty', color: '#3F250B'},
-      {name: 'Black Bean Patty', color: '#3F250B'},
-      {name: 'Chicken Patty', color: 'burlywood'},
-      {name: 'Lettuce', color: 'lawngreen'},
-      {name: 'Tomato', color: 'tomato'},
-      {name: 'Bacon', color: 'maroon'},
-      {name: 'Onion', color: 'lightyellow'}
-  ]
-}
 
 class App extends Component {
   state = {
-    burgerStack: []
+    burgerIngredients: []
+  }
+
+  clearBurger= () => {
+    this.setState({burgerIngredients: []})
+  }
+
+  // pass this all the way down to the ingredient component
+  addToBurger = (ingredient) => {
+    console.log('adding to burger')
+    // add the selected ingredient to the burgerIngredients state
+    // we need to know what the ingredient is. how do we get the ingredient?
+    // push the new ingredient to the burger
+    // with implicit return
+    // this.setState((prevState, props)=>({
+    //  burgerIngredients: [...prevState.burgerIngredients, {name:name, color:color}]
+    // }))
+    // which is the same as
+    // this.setState((prevState, props)=>{
+    //   return {burgerIngredients: [...prevState.burgerIngredients, {name:name, color:color}]}
+    // })
+    // and is the same as
+    let newBurgerList = this.state.burgerIngredients
+    // newBurgerList.push(ingredient) // this stacks it in the opposite direction
+    newBurgerList.unshift(ingredient) // this will stack it in the correct order/ bottom to top
+    this.setState({burgerIngredients: newBurgerList})
   }
 
   render() { 
-    return (
+    return ( // it can't return more than one. it can only return a single jsx element
       <>
         <h1 className='center'> The Burger Stacker</h1>
-        <div className='split'>
-          <IngredientList ingredients={ingredients.ingredient} burgerStack={this.state.burgerStack}/>
-          <BurgerPane ingredients={ingredients.ingredient} burgerStack={this.state.burgerStack}/>
-        </div>
+        <main className='split'>
+          <IngredientList 
+              ingredients={this.props.ingredientsList} 
+              addToBurger={this.addToBurger}
+          />
+          <BurgerPane 
+            burgerIngredients={this.state.burgerIngredients}
+            clearBurger={this.clearBurger}
+          />
+        </main>
       </>
     );
   }

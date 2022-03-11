@@ -1,31 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Ingredient from './Ingredient'
 
 class IngredientList extends Component {
-    handleAddIngredient = (e) => {
-        // e.preventDefault()
-        console.log('Clicking the ingredient to add')
-        this.setState({
-            burgerStack: []
-        })
-    }
-
-    render() { 
-        const ingredientList = this.props.ingredients.map((ingredient, index) => {
-            return <li className='border' key={`ingredientitem-${index}`}>{ingredient.name}</li>
-        })
+  render() {
+    const ingredients = this.props.ingredients.map(ingredient=> {
         return (
-            <>
-                <div onClick={this.handleAddIngredient} className='border'>
-                    <h1>Ingredient List</h1>
-                    <h4 className='center'>Click Ingredient To Add</h4>
-                    <ul>
-                        <Ingredient ingredientList={ingredientList} />
-                    </ul>
-                </div>
-            </>
-        );
-    }
+            <Ingredient 
+                ingredient={ingredient}
+                addToBurger={this.props.addToBurger}
+            />
+        )
+    })
+
+    return (
+        <section className="ingredient-list">
+            <h1>Ingredient list</h1>
+            {ingredients}
+        </section>
+    )
+  }
 }
- 
+
 export default IngredientList;
