@@ -5,7 +5,7 @@ import Ingredient from './Ingredient';
 class BurgerPane extends Component {    
     render() { 
         const burgerIngredients = this.props.burgerIngredients.map(layer => {
-            return <Ingredient ingredientName={layer.name}/>
+            return <Ingredient ingredientName={layer.name} ingredientColor={layer.color}/>
         })
         return (
             <>
