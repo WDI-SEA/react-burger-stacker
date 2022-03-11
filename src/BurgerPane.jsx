@@ -4,15 +4,7 @@ import Ingredients from './Ingredients';
 
 
 class BurgerPane extends Component {
-    state={
-        burgerArray: this.props.burgerIngredients
-    }
-    clearBurger = () =>{
-        console.log('clear burger')
-        this.setState({
-            burgerArray: []
-        })
-    }
+ 
 
     render() { 
         const burgerIngredientItems = this.props.burgerIngredients.map((ingredient, idx)=>{
@@ -25,7 +17,7 @@ class BurgerPane extends Component {
                 {burgerIngredientItems}
             </ul>
           
-            <ClearBurger burgerIngredientItemsProp={burgerIngredientItems} clearBurger={this.clearBurger}/>
+            <ClearBurger clearBurger={this.props.clearBurger}/>
             </>
         );
     }

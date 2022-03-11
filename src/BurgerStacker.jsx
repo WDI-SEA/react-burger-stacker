@@ -33,10 +33,10 @@ class BurgerStacker extends Component {
       })
   }
 
-  // clearBurger = () => {
-  //   console.log('clear burger')
-  //   this.setState({bugerIngredients: []})
-  // }
+  clearBurger = () => {
+    console.log('clear burger')
+    this.setState({burgerIngredients: []})
+  }
 
   render() { 
     return (
@@ -47,9 +47,9 @@ class BurgerStacker extends Component {
         ingredients={this.state.ingredients}
          />
         
-        <BurgerPane burgerIngredients={this.state.burgerIngredients}/>
+        <BurgerPane clearBurger={this.clearBurger} burgerIngredients={this.state.burgerIngredients}/>
 
-      
+        
       </>
     );
   }
