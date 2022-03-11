@@ -7,20 +7,35 @@
 }
 
 .ingredientList-wrapper {
+  padding-left: 50px;
   width: 50vw;
-  height: 70vh;
+  /* height: 70vh; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  justify-items: center;
+  /* justify-content: center; */
+  /* justify-items: center; */
 }
 
 .burgerpane-wrapper {
   width: 50vw;
-  height: 70vh;
+  /* height: 70vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
 }
 
+.clear-btn {
+  width: 150px;
+  height: 40px;
+}
+
+h4 {
+  margin-block-start: .9em;
+  margin-block-end: 0em;
+}
+
+p {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
