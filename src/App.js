@@ -1,42 +1,51 @@
+import './App.css'
 import {Component} from 'react'
-import './App.css';
 import IngredientList from './IngredientList'
 import BurgerPane from './BurgerPane'
-import ingredients from './ingredients'
 
-export default class App extends Component {
-  state = {
-    burgerStackIngredients: []
-  }
-  addIngredient = (e) => {
-    // console.log(`${e.target.name} added`)
-    const newStackIngredients = this.state.burgerStackIngredients
-    ingredients.forEach((el,idx) => {
-      if(el.name === `${e.target.name}`) {
-        // newStackIngredients.push(el)
-        newStackIngredients.splice(0,0,el)
-      }
-    })
-    this.setState({
-      burgerStackIngredients: newStackIngredients
-    }/* , ()=>console.log(this.state) */)
-  }
-  clearBurger = () => {
-    // console.log('cleared burger')
-    this.setState({
-      burgerStackIngredients: []
-    })
-  }
-  render() {
-    return(
-      <section>
-        <h1>App/BurgerStacker</h1>
-        <div className='row'>
-          <IngredientList ingredients={ingredients} addIngredient={this.addIngredient}/>
-          <BurgerPane ingredients={this.state.burgerStackIngredients} clearBurger={this.clearBurger}/>
-        </div>
-      </section>
-    )
-  }
+class App extends Component {
+
+    state = {
+        // ingredients: this.props.ingredientsList
+        burgerIngredients: []
+    }
+
+    addToBurger = (ingredient) => {
+        // console.log('adding to burger')
+        // add the selected ingredient to the burgerIngredients state
+        // push the new ingredient to the burger
+        // this.setState((prevState, props) => ({
+        //     burgerIngredients: [...prevState.burgerIngredients, {name, color}]
+        // }))
+        // {name, color} = {name:name, color:color}
+        let newBurgerList = this.state.burgerIngredients
+        // newBurgerList.push(ingredient)
+        newBurgerList.unshift(ingredient)
+        this.setState({burgerIngredients: newBurgerList})
+    }
+
+    clearBurger = () => {
+        this.setState({burgerIngredients: []})
+    }
+
+    render() {
+        return(
+            <>
+                <h1>Burgerstacker</h1>
+                <main>
+                    <IngredientList 
+                        ingredients={this.props.ingredientsList} 
+                        addToBurger={this.addToBurger} 
+                    />
+                    <BurgerPane 
+                        burgerIngredients={this.state.burgerIngredients} 
+                        clearBurger={this.clearBurger}
+                    />
+                </main>
+            </>
+        )
+    }
+
 }
 
+export default App
