@@ -1,21 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Ingredients extends Component {
-    
-    render() { 
-        return (
+export default function Ingredients({ingredient, addToBurger}){
+    return (
+        <div 
+        className='ingredient' 
+        onClick={()=>addToBurger(ingredient)}
+        >
             
-            <div 
-            className='ingredient' 
-            onClick={()=>this.props.addToBurger(this.props.ingredient)}
-            >
+            <p>{ingredient.name}</p>
 
-                 <p>{this.props.ingredient.name}</p>
-            </div>
-           
-       
-        );
-    }
+        </div>
+    )
 }
- 
-export default Ingredients

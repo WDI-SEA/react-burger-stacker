@@ -1,42 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import BurgerPane from './BurgerPane';
 import IngredientList from './IngredientList';
 
-class BurgerStacker extends Component {
+export default function BurgerStacker({ingredientList}){
 
-  state = { 
-    burgerIngredients: []
-  } 
-
-  addToBurger = (ingredient) =>{
-    this.setState((prevState, props)=>({
-      burgerIngredients: [ingredient, ...prevState.burgerIngredients]
-    }))
+  const [burgerIngredient, setBurger] = useState([])
+  
+  const addToBurger = (ingredient) => {
+    setBurger([ingredient, ...burgerIngredient])
   }
 
-  clearBurger = () => {
-    this.setState({burgerIngredients: []})
+
+  const clearBurger = () => {
+    setBurger([])
   }
 
-  render() { 
-    return (
-      <div>
+  return(
+    <div>
 
-        <h1>Burger Stacker</h1>
-          <IngredientList 
-          addToBurger={this.addToBurger}
-          ingredients={this.props.ingredientList}/>
-          
-          <BurgerPane 
-          clearBurger={this.clearBurger} 
-          burgerIngredients={this.state.burgerIngredients}/> 
-      </div>
-    
-    );
-  }
+      <h1>Burger Stacker</h1>
+      <IngredientList 
+      addToBurger={addToBurger}
+      ingredients={ingredientList}/>
+      
+      <BurgerPane 
+      clearBurger={clearBurger} 
+      burgerIngredients={burgerIngredient}/> 
+
+     </div>
+  
+  )
+  
 }
- 
-export default BurgerStacker;
 
 
