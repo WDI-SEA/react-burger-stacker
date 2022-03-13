@@ -1,27 +1,19 @@
-import React, { Component } from 'react';
-import Ingredient from './Ingredient';
+import Ingredient from "./Ingredient"
 
-class IngredientList extends Component {
-    render() {
-        const ingredients = this.props.ingredients.map(ingredient => {
-            return (
-                <Ingredient 
-                    ingredientName={ingredient.name}
-                    ingredientColor={ingredient.color}
-                    // indgredient={ingredient}
-                    addToBurger={this.props.addToBurger}
-                />
-            )
-        })
-        return (
-            <>
-                <section className='ingredient-list'>
+export default function IngredientList(props) {
+    const ingredientList = props.ingredientsList.map(i => {
+        return (<Ingredient 
+                    ingredientName={i.name}
+                    ingredientColor={i.color}
+                    addToBurger={props.addToBurger}                    
+                />)
+    })
+    return (
+        <>
+        <section className='ingredient-list'>
                 <h3>Ingredient List</h3>
-                    {ingredients}                
-                </section>
-            </>
-        )
-    }
+                {ingredientList}
+                </section>     
+        </>
+    )
 }
-
-export default IngredientList

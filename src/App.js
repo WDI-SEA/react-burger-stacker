@@ -1,35 +1,24 @@
-import React, { Component } from 'react';
-import './App.css';
+// import './App.css';
+import React, { useState } from 'react'
 import IngredientList from './IngredientList';
 import BurgerPane from './BurgerPane';
 
+export default function App(props) {
 
-class App extends Component {
+  const [burgerIngredients, setBurgerIngredients] = useState([])
   
-  state = {
-    burgerIngredients:[]
-  }
-  addToBurger = (name, color) => {
-    // push new ingredient to burger using spread operator
-    // this.setState((prevState, props)=>({
-    //   burgerIngredients:[...prevState.burgerIngredients, {name,color}]
-    // }))    
-
-    // push ingredients by creating a new array
-    let newBurgerList = this.state.burgerIngredients
-    newBurgerList.unshift({name:name,color:color})  // to add item to the fron of the array
-    // newBurgerList.push({name,color}) // if names are the same as the argument being passed 
-    this.setState({burgerIngredients:newBurgerList})
+  const addToBurger = (name,color) => {
+    let newBurgerList = [...burgerIngredients]
+    newBurgerList.unshift({name,color})     
+    setBurgerIngredients(newBurgerList)    
   }
 
-  clearBurgerPane = () => {
-    this.setState({burgerIngredients:[]})
+  const clearBurgerPane = () => {
+    setBurgerIngredients([])
   }
 
-  render () {
-    
-    return (
-      <>
+  return (
+    <>
       <div className='flex-container'>
         <div className='pane'>
           <h1>Burger Stacker</h1>
@@ -38,21 +27,22 @@ class App extends Component {
       
       
       <div className='flex-container'>  
-        <div className='pane'>
+        <div className='pane'>        
         <IngredientList 
-          ingredients={this.props.ingredientList} 
-          addToBurger={this.addToBurger} 
+          ingredientsList={props.ingredientsList} 
+          addToBurger={addToBurger} 
         />
         </div>
         <div className='pane'>
         <BurgerPane 
-          burgerIngredients={this.state.burgerIngredients}
-          clearBurgerPane={this.clearBurgerPane}
+          burgerIngredients={burgerIngredients}
+          clearBurgerPane={clearBurgerPane}
           />
         </div>
       </div>
-      </>
-    )
-  }
+      
+    </>
+  );
 }
-export default App
+
+

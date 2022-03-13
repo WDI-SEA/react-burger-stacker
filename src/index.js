@@ -21,7 +21,7 @@ const ingredientsList = [
 
 ReactDOM.render(
   <React.StrictMode>
-    <App ingredientList={ingredientsList}/>
+    <App ingredientsList={ingredientsList} />
   </React.StrictMode>,
   document.getElementById('root')
 );
