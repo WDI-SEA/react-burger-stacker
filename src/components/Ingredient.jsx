@@ -1,28 +1,21 @@
-import React, { Component } from 'react'
-// import App from '../App'
+const Ingredient = ({ingredient, isStacked, addToStack}) => {
 
-class Ingredient extends Component { 
-    state = {
-        // lastEl: this.props.ingredient
-    }
-    render() { 
-        return (
-            <div style={{backgroundColor: this.props.ingredient.color}}>
-                <p> {this.props.ingredient.name}</p>
-                {
-                    this.props.isStacked ? null
-                    :
-                    <input 
-                        type="submit" 
-                        value="Stack!"  
-                        onClick={() => {this.props.addToStack(this.props.ingredient)}}
-                    />
-                    
-                }
-                <hr />
-            </div>
-        );
-    }
+    return(
+        <div style={{backgroundColor: ingredient.color}}>
+            <p> {ingredient.name}</p>
+        {
+            isStacked ? null
+            :
+            <input 
+            type="submit" 
+            value="Stack!"  
+            onClick={() => {addToStack(ingredient)}}
+            />                    
+        }
+            <hr />
+        </div>
+    )
 }
+
  
 export default Ingredient;

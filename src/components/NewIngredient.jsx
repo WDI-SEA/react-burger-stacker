@@ -1,49 +1,48 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-class NewIngredientForm extends Component {
-    state = { 
-       name: "",
-       color: ""
-     }
+const NewIngredientForm = ({addNewIngredient}) => {
+    const [newIngredient, setNewIngredient] = useState({
+        name: "",
+        color: ""
+    })
 
-    textChangeHandler = (e) => {
-        this.setState({
+
+    const textChangeHandler = (e) => {
+        setNewIngredient({
+            ...newIngredient,
             [e.target.name]: e.target.value,      
-        }, () => console.log(this.state))
+        }, console.log(newIngredient))
     }
 
-    submitForm = (e) => {
+    const submitForm = (e) => {
         e.preventDefault()
-        this.props.addNewIngredient(this.state)
-        this.setState({
+        addNewIngredient(newIngredient)
+        setNewIngredient({
             name:"",
             color: ""
         })
     }
-    
-    render() { 
         return (
-            <form onSubmit={this.submitForm}>
+            <form onSubmit={submitForm}>
                 <label htmlFor="name">name: </label>
                 <input 
                     type="text" 
                     name="name" 
                     id="name" 
-                    value={this.state.name} 
-                    onChange={this.textChangeHandler}
+                    value={newIngredient.name} 
+                    onChange={textChangeHandler}
                 />
                 <label htmlFor="color">color: </label>
                 <input 
                     type="text" 
                     name="color" 
                     id="color" 
-                    value={this.state.color} 
-                    onChange={this.textChangeHandler}
+                    value={newIngredient.color} 
+                    onChange={textChangeHandler}
                 />
                 <button type='submit'>Add Ingredient</button>
             </form>
         );
     }
-}
  
 export default NewIngredientForm;

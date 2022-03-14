@@ -1,16 +1,11 @@
-import React, { Component } from 'react'
-
-class ClearBtn extends Component {
-    state = {  } 
-    render() { 
-        return (
-            <input 
-                type="submit" 
-                value="Clear Burger!"
-                 onClick={this.props.clearBurger} 
-            />
-        );
-    }
+const ClearBtn = ({clearBurger}) => {
+    return(
+        <input
+            type="submit"
+            value="Clear Burger!"
+            onClick={clearBurger}
+        />
+    )
 }
  
 export default ClearBtn;

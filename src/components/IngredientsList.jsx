@@ -1,25 +1,23 @@
-import React, { Component } from 'react';
-import Ingredient from './Ingredient';
-import NewIngredientForm from './NewIngredient';
+import Ingredient from './Ingredient'
+import { useEffect } from 'react'
 
-class IngredientsList extends Component {
+const IngredientsList = ({ingredients, addToStack}) => {
+  let ingredientsComponents = ingredients.map((ingredient, idx) => {
+    return (
+      <Ingredient
+        key={idx}
+        ingredient={ingredient}
+        addToStack={addToStack}
+      />
+    )
+  })
+  return(
+    <div>
 
-  render() { 
-    let ingredientsComponents = this.props.ingredients.map((ingredient, idx) => {
-      return (
-        <Ingredient 
-          key={idx}
-          ingredient={ingredient}
-          addToStack={this.props.addToStack}
-        />
-      )
-    })  
-  return ( 
-    <div className='container'>
       {ingredientsComponents}
     </div>
-    );
-  }
+  )
 }
+
  
 export default IngredientsList;
