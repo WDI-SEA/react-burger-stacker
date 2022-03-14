@@ -1,21 +1,22 @@
 import "./App.css";
-import { Component } from "react";
-import Ingredient from "./Ingredient";
-import Clear from "./Clear";
+import Ingredient from "./Ingredient.jsx";
+import Clear from "./Clear.jsx";
 
-class BurgerPane extends Component {
-  render() {
-    const burger = this.props.burgerIngredients.map((layer, index) => {
-      return <Ingredient key={`layer-index-${index}`} ingredient={layer} />;
-    });
+export default function BurgerPane(props) {
+  let burger = props.burgerIngredients.map((layer, index) => {
     return (
-      <section className="burger-pane">
-        <h1>BurgerPane</h1>
-        {burger}
-        <Clear clearBurger={this.props.clearBurger} />
-      </section>
+      <Ingredient
+        key={`layer-index-${index}`}
+        ingredient={layer}
+        addToBurger={() => {}}
+      />
     );
-  }
+  });
+  return (
+    <section className="burger-pane">
+      <h1>BurgerPane</h1>
+      {burger}
+      <Clear clearBurger={props.clearBurger} />
+    </section>
+  );
 }
-
-export default BurgerPane;

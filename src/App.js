@@ -1,46 +1,34 @@
 import "./App.css";
-import { Component } from "react";
+import { useState } from "react";
 import IngredientList from "./IngredientList";
 import BurgerPane from "./BurgerPane";
 
-class App extends Component {
-  state = {
-    burgerIngredients: [],
+export default function App(props) {
+  const [burgerIngredients, setBurgerIng] = useState([]);
+  const clearBurger = () => {
+    setBurgerIng([]);
   };
 
-  clearBurger = () => {
-    this.setState({ burgerIngredients: [] });
+  const addToBurger = (ingredient) => {
+    let newBurgerList = burgerIngredients.slice();
+    newBurgerList.push(ingredient);
+    setBurgerIng(newBurgerList);
   };
 
-  addToBurger = (ingredient) => {
-    // add the selected ingredient to the burgerIngredients
-
-    // This is one way to do it
-    // this.setState((prevState, props) => ({
-    //   burgerIngredients: [...prevState.burgerIngredients, { name, color }], // {name, color} same as {name: name, color: color}
-    // }));
-    let newBurgerList = this.state.burgerIngredients;
-    newBurgerList.unshift(ingredient);
-    this.setState({ burgerIngredients: newBurgerList });
-  };
-
-  render() {
-    return (
-      <>
-        <h1>BurgerStacker</h1>
-        <main>
-          <IngredientList
-            ingredients={this.props.ingredientsList}
-            addToBurger={this.addToBurger}
-          />
-          <BurgerPane
-            burgerIngredients={this.state.burgerIngredients}
-            clearBurger={this.clearBurger}
-          />
-        </main>
-      </>
-    );
-  }
+  return (
+    <>
+      <h1>BurgerStacker</h1>
+      <main>
+        <IngredientList
+          ingredients={props.ingredientsList}
+          addToBurger={addToBurger}
+        />
+        <BurgerPane
+          burgerIngredients={burgerIngredients}
+          clearBurger={clearBurger}
+          addToBurger={addToBurger}
+        />
+      </main>
+    </>
+  );
 }
-
-export default App;
