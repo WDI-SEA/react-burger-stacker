@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './App.css'
 import BurgerPane from './BurgerPane';
 import IngredientList from './IngredientList';
+import { useState } from 'react';
 
 const ingredients = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
@@ -18,49 +19,68 @@ const ingredients = [
   {name: 'Onion', color: 'lightyellow'}
 ]
 
-class BurgerStacker extends Component {
-	state = {
-		ingredientsList: ingredients,
-		addedIngredients: [] 
-	}
+// class BurgerStacker extends Component {
+// 	state = {
+// 		ingredientsList: ingredients,
+// 		addedIngredients: [] 
+// 	}
 
-	// clickHandler = (e) => {
-	// 	const name = e.target.innerText
-	// 	console.log('Thisss: ' + name)
+	// clickHandler = (ingredient) => {
+	// 	let newBurgerList = this.state.addedIngredients
+	// 	newBurgerList.unshift(ingredient)
+	// 	this.setState({...newBurgerList.addedIngredients, newBurgerList})
+	// }
+
+	// trashPlate = () => {
+	// 	console.log('clean')
 	// 	this.setState({
-	// 		addedIngredients: [name, ...this.state.addedIngredients]
+	// 		addedIngredients: []
 	// 	})
 	// }
 
-	clickHandler = (ingredient) => {
-		// const name = e.target.innerText
-		// console.log('Thisss: ' + name)
-		// this.setState((prevState, props) => {
-		// 	addedIngredients: [...prevState.addedIngredients, {name, color}]
-		// })
-		let newBurgerList = this.state.addedIngredients
-		newBurgerList.unshift(ingredient)
-		this.setState({...newBurgerList.addedIngredients, newBurgerList})
-	}
+// 	render() {
+// 		return (
+			// <div className='main-wrapper'>
+			// 	<h1 className='main-header'>hello from burger stacker main</h1>
+			// 	<div className="main-wrapper-comp">
+			// 		<IngredientList ingredienstList={this.state.ingredientsList} addIngredientsHandler={this.clickHandler}/>
+			// 		<BurgerPane trashPlate={this.trashPlate} addedIngredients={this.state.addedIngredients} ingredienstList={this.state.ingredientsList}/>
+			// 	</div>
+			// </div>
+// 			)
+// 	}
+// }
 
-	trashPlate = () => {
+const BurgerStacker = () => {
+
+	const [ingred, setIngredient] = useState({
+		ingredientsList: ingredients,
+		addedIngredients: []
+	})
+
+	const trashPlate = () => {
 		console.log('clean')
-		this.setState({
+		setIngredient({
 			addedIngredients: []
 		})
 	}
 
-	render() {
-		return (
-			<div className='main-wrapper'>
-				<h1 className='main-header'>hello from burger stacker main</h1>
-				<div className="main-wrapper-comp">
-					<IngredientList ingredienstList={this.state.ingredientsList} addIngredientsHandler={this.clickHandler}/>
-					<BurgerPane trashPlate={this.trashPlate} addedIngredients={this.state.addedIngredients} ingredienstList={this.state.ingredientsList}/>
-				</div>
-			</div>
-			)
+	const clickHandler = (ingredient) => {
+		let newBurgerList = ingred.addedIngredients
+		newBurgerList.unshift(ingredient)
+		let changeList = {...newBurgerList.addedIngredients, newBurgerList}
+		setIngredient(changeList)
 	}
+
+	return (
+		<div className='main-wrapper'>
+		<h1 className='main-header'>hello from burger stacker main</h1>
+		<div className="main-wrapper-comp">
+			<IngredientList ingredienstList={ingred.ingredientsList} addIngredientsHandler={clickHandler}/>
+			<BurgerPane trashPlate={trashPlate} addedIngredients={ingred.addedIngredients} ingredienstList={ingred.ingredientsList}/>
+		</div>
+	</div>
+	)
 }
 
 export default BurgerStacker;
