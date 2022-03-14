@@ -1,30 +1,53 @@
-import React, { Component } from "react";
 import Ingredient from "./Ingredient";
 
-class BurgerPane extends Component {
+const BurgerPane = (props) => {
 
-    render() {
-
-        const burger = this.props.burgerStack.map((item, idx) => {
-            return (
-                <Ingredient
-                    key={idx}
-                    ingredient={item}
-                />
-            )
-        })
-
+    const burger = props.burgerStack.map((item, idx) => {
         return (
-            <>
-                <div>
-                    <h1>Burjer Pane</h1>
-                    {burger}
-
-                    <button onClick={this.props.clearStack}>Clear Stack</button>
-                </div>
-            </>
+            <Ingredient
+                key={idx}
+                ingredient={item}
+            />
         )
-    }
+    })
+
+    return (
+        <>
+            <div>
+                <h1>Burjer Pane</h1>
+                {burger}
+
+                <button onClick={props.clearStack}>Clear Stack</button>
+            </div>
+        </>
+    )
 }
+
+
+// class BurgerPane extends Component {
+
+//     render() {
+
+// const burger = this.props.burgerStack.map((item, idx) => {
+//     return (
+//         <Ingredient
+//             key={idx}
+//             ingredient={item}
+//         />
+//     )
+// })
+
+//         return (
+//             <>
+// <div>
+//     <h1>Burjer Pane</h1>
+//     {burger}
+
+//     <button onClick={this.props.clearStack}>Clear Stack</button>
+// </div>
+//             </>
+//         )
+//     }
+// }
 
 export default BurgerPane

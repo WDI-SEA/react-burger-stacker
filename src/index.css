@@ -27,15 +27,16 @@ code {
   text-align: center;
 }
 
+
+
 .container{
   border: .2rem solid black;
-  /* position: relative; */
-  display: inline-block;
+  display: inline-flex;
   text-align: center;
   width: 25rem;
   height: 50 rem;
   margin: 0 auto;
-  padding: 1rem
+  flex-direction: row;
 }
 
 .ingredient-list{
