@@ -9,7 +9,7 @@ class Ingredient extends Component {
         <div className="ingredient" 
         onClick={()=>{
           this.props.addToBurger(this.props.ingredient)
-        }}>
+        }} >
             <p>{this.props.ingredient.name}</p>
         </div>
     )
@@ -17,3 +17,10 @@ class Ingredient extends Component {
 }
 
 export default Ingredient;
+
+export default function Clear(props){
+  const burger = props.burgerIngredients.map(layer=>{
+    return <Ingredient ingredient={}/>
+  })
+  
+}
