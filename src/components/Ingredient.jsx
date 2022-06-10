@@ -6,15 +6,16 @@ export default class Ingredient extends Component {
         return (
             <>
                 <div>
-                    <form className='flex justify-evenly'>
+                    <form className={this.props.isBurgerPane === false ? 'grid grid-cols-2':'grid grid-cols-1' }>
+                        
                         <p className="text-xs" style={{color: `${this.props.ingred.color}`}}>{this.props.ingred.name}</p>
-                        {console.log(this.props.ingred)}
+
                         { this.props.isBurgerPane === false ? 
                         <button
-                            className='text-xs'
+                            className='text-xs border rounded-lg max-h-[1.2rem] hover:text-slate-500'
                             type="button"
                             onClick={()=>{this.props.handleAddIngredientClick(this.props.ingred)}}
-                        >add</button>
+                        >Add</button>
                     : ""}
                     </form>
                 </div>

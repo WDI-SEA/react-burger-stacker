@@ -8,8 +8,9 @@ export default class BurgerPane extends Component {
         })
     return (
         <>
-            <div>BurgerPane</div>
+            <div>Burger Pane:</div>
             <button
+            className='text-xs border rounded-lg min-w-[3rem] hover:text-slate-500'
             onClick={this.props.handleBurgerClear}
             >CLEAR</button>
             {BurgerStack}
