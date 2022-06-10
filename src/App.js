@@ -25,13 +25,13 @@ export default class App extends Component {
     burg: []
   }
 
-  handleGrillBurger = (e) => {
-    const filteredIng = ingredients.filter(ingredient => {
+  handleClick = (e) => {
+    const filteredIngredient = ingredients.filter(ingredient => {
       return ingredient.name === e.target.value
     })
-    this.setState((previousState) => {
-      const burg = [...previousState.burg]
-      burg.unshift(filteredIng[0])
+    this.setState((prevState) => {
+      const burg = [...prevState.burg]
+      burg.unshift(filteredIngredient[0])
       return { burg: burg }
     })
   }
@@ -44,11 +44,11 @@ export default class App extends Component {
     return (
       <>
 
-        <h1>Welcome To the BBQ</h1>
+        <h1>Welcome To the Joint</h1>
         <div className='grid'>
           <IngredientList
             list={ingredients}
-            onIngredientClick={this.handleGrillBurger}
+            onIngredientClick={this.handleClick}
           />
           <BurgerBox
             burg={this.state.burg}

@@ -5,7 +5,7 @@ export default class BurgerBox extends Component {
     render() {
         return (
             <div>
-                <h2>Eat Up!</h2>
+                <h2>Food's Ready!</h2>
                 <Burger
                     burg={this.props.burg}
                 />
