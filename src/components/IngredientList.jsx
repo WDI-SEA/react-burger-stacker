@@ -22,7 +22,7 @@ export default class IngredientList extends Component {
             )
         })
         return (
-            <div id="ingredient-list">
+            <div className="ingredient-list">
                 <h1>Ingredient List</h1>
                {ingredients}
     

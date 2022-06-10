@@ -1,0 +1,14 @@
+
+
+
+App
+|--IngredientList
+|  |--Ingredient(s)
+|
+|--BurgerPane
+|  |--BurgerStack
+|  |  |--Ingredient(s)
+|  |
+|  |--ClearBurger
+
+
