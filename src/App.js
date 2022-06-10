@@ -15,7 +15,7 @@ const allIngredients = [
   { name: 'Lettuce', color: 'lawngreen' },
   { name: 'Tomato', color: 'tomato' },
   { name: 'Bacon', color: 'maroon' },
-  { name: 'Onion', color: 'lightyellow' }
+  { name: 'Onion', color: 'orange' }
 ]
 
 export default class App extends Component {
@@ -24,12 +24,11 @@ export default class App extends Component {
     ingredientsInBurger: []
   }
 
-  handleAddIngredient = (e) => {
-    e.preventDefault()
+  handleAddIngredient = (ingredObj) => {
+    console.log(ingredObj)
     const burgerArray = this.state.ingredientsInBurger
-    const ingredientToAdd = {[e.target.name]:e.target.value}
-    burgerArray.unshift(ingredientToAdd)   
-    console.log(this.state.ingredientsInBurger)
+    burgerArray.unshift(ingredObj)   
+    // console.log(this.state.ingredientsInBurger)
     this.setState({
       ingredientsInBurger: burgerArray
     })
@@ -52,6 +51,7 @@ export default class App extends Component {
         </div>
         <div className='panes'>
           <BurgerPane 
+          allIngredients = {this.state.allIngredients}
           ingredientsInBurger = {this.state.ingredientsInBurger}
           handleBurgerClear = {this.handleBurgerClear}
           isBurgerPane = {true}

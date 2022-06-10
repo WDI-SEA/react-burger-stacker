@@ -5,22 +5,16 @@ export default class Ingredient extends Component {
     render() {
         return (
             <>
-                <div style={{backgroundColor: "gray" }}>
-                    <form>
-                        <p style={{color: `${this.props.ingred.color}`}}>{this.props.ingred.name}</p>
-                    
-                        {/* <input
-                        name="color"
-                        readOnly= {this.props.ingred.color}
-                        hidden
-                        /> */}
+                <div>
+                    <form className='flex justify-evenly'>
+                        <p className="text-xs" style={{color: `${this.props.ingred.color}`}}>{this.props.ingred.name}</p>
+                        {console.log(this.props.ingred)}
                         { this.props.isBurgerPane === false ? 
                         <button
-                            type="submit"
-                            name="name"
-                            value={this.props.ingred.name}
-                            onClick={this.props.handleAddIngredientClick}
-                        >add to burger</button>
+                            className='text-xs'
+                            type="button"
+                            onClick={()=>{this.props.handleAddIngredientClick(this.props.ingred)}}
+                        >add</button>
                     : ""}
                     </form>
                 </div>
