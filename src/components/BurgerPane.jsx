@@ -9,13 +9,14 @@ class BurgerPane extends Component {
                     i={i} />
         })
         return (
-            <>
-            <h2>BurgerPane</h2>
-            <button onClick={this.props.handleRemoveFromStack}
-            >Clear Stack</button>
-
+        <div className="cols-start-2" >
+            <h2 className='text-xl row-start-2' >BurgerPane</h2>
+                <button className="bg-gray-400 border-gray-600 p-2"
+                    onClick={this.props.handleRemoveFromStack} >
+                        Clear Stack
+                </button>
             {stackToRender.reverse()}
-            </>
+        </div>
         )
     }
 }

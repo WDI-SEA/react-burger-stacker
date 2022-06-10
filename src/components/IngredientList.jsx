@@ -10,11 +10,11 @@ class IngredientList extends Component {
             handleAddToStack={this.props.handleAddToStack} />
         })
         return (
-            <>
-                <h2>IngredientList</h2>
+            <div className="cols-start-1" >
+                <h2 className="text-xl row-start-2" >IngredientList</h2>
 
                 {listToRender}
-            </>
+            </div>
         )
     }
 }
