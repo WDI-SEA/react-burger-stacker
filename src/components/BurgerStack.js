@@ -4,8 +4,8 @@ import React, { Component } from 'react'
 export default class BurgerStack extends Component{
     
     render(){
-        const addedStack = this.props.burgerStack.map(stack => {
-            return <div key={stack.id}
+        const addedStack = this.props.burgerStack.map((stack, i) => {
+            return <div key={`stack${i}`}
             
             style={{
                 backgroundColor: stack.color

@@ -8,7 +8,9 @@ export default class BurgerPane extends Component {
         return (
             <>
                 <div>
-                    <h1>Stack your Burger</h1>
+                    <h1 className="
+                    text-3xl font-bold underline
+                    ">Stack your Burger</h1>
                 </div>
                 <div>
                     <BurgerStack 

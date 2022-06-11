@@ -3,20 +3,24 @@ import React, { Component } from 'react'
 import IngredientList from './components/IngredientList';
 import BurgerPane from './components/BurgerPane';
 
+
 class App extends Component {
+  // declare state obj
   state = {
-    name: '',
-    color: '',
     burgerStack: []
   }
-  addToStack =  (e) => {
-     this.setState({
+  // event handlers
+  addToStack = (e) => {
+    const newStateIngredient = {
       name: e.target.name,
       color: e.target.value
+    }
+    const stateCopy = this.state.burgerStack
+    stateCopy.unshift(newStateIngredient)
+    this.setState({
+      burgerStack: stateCopy
     })
-    this.addStack()
   }
-  addStack = () => {this.state.burgerStack.push({ name: this.state.name, color: this.state.color })}
 
   clearStack = () => {
     this.setState({ burgerStack: [] })
