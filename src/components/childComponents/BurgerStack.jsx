@@ -1,15 +1,18 @@
-import React, { Component } from 'react'
 import Ingredients from './Ingredients'
 
-export default class BurgerStack extends Component {
-  render() {
-    const { burgerStack } = this.props
-
-    const burger = burgerStack.map(ingredient => {
-      const { name, color } = ingredient
-      return <Ingredients name={name} color={color} />
-    })
-
-    return <div>{burger}</div>
+const BurgerStack = ({ burgerStack }) => {
+  const randNum = () => {
+    return Math.floor(Math.random() * 10000)
   }
+
+  const burger = burgerStack.map(ingredient => {
+    const { name, color } = ingredient
+
+    let newKey = randNum()
+
+    return <Ingredients key={newKey} name={name} color={color} />
+  })
+  return <div>{burger}</div>
 }
+
+export default BurgerStack
