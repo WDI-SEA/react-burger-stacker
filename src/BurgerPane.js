@@ -1,31 +1,32 @@
-import React, { Component } from 'react'
-import Ingredient from './Ingredient'
+import React from 'react'
+import Ingredients from './Ingredient'
 
-class BurgerPane extends Component {
+
+const BurgerPane=(props)=>{
     
-	render() {
-    // map over all the added burger bits
-    // still going to use the Ingredient Comp
-    let burgerBits = this.props.ingredients.map((ing, idx) => (
-        <li key={idx}>
-            <Ingredient 
-                itemKey={idx}
+   // map over all the added burger bits
+   // still going to use the Ingredients Components
+   // let burgerBits = this.props.ingredients.map((ing, index)=>((
+    let burgerBits = props.ingredients.map((ing, index)=>((
+        <li key={index}>
+            <Ingredients
+                itemKey={index}
                 ingredient={ing}
-                clickFunc={this.props.remove}
+                clickFunction={props.remove}
             />
         </li>
-    ))
-		return (
-            <section>
-                <h3>Burger Pane</h3>
-                <ul>
-                    {burgerBits}
-                </ul>
-                <button onClick={this.props.clear}>Clear Burger</button>
-            </section>
-        )
-			
-	}
+
+    )))
+
+    return(
+        <section>
+            <h3> Burger Pane </h3>
+            <ul>
+                {burgerBits}
+            </ul>
+            <button onClick={props.clear}>Clear Burger</button>
+        </section>
+    )
 }
 
 export default BurgerPane
