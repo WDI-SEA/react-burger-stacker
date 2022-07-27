@@ -2,7 +2,7 @@ import React from 'react'
 
 import Ingredients from './Ingredient'
 
-const IngredientList =(props)=>{
+const IngredientList =({ ingredients, add, index})=>{
 
 
     // const ingredients= [
@@ -21,11 +21,11 @@ const IngredientList =(props)=>{
        // map over the ingredients
        // mapped over and created from Ingredient Component
 
-    let allIngredients = props.ingredients.map((ing, index)=>(
+    let allIngredients = ingredients.map((ing, index)=>(
         <li key={index}>
             <Ingredients
                 ingredient={ing}
-                clickFunction={(e) => props.add(e)}
+                clickFunction={add}
                 itemKey={index}
             />
         </li>

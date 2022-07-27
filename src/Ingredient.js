@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Ingredient =(props)=> {
+const Ingredient =({ingredient, clickFunction, itemKey})=> {
        // I want to render a background color
        // I want to render a name of a ingredient
        // if there is a key with this 'name' extract it
-const { name, color } = props.ingredient
+const { name, color } = ingredient
 return (
     <p
     style={{backgroundColor: color}}
-    onClick={props.clickFunction}
-    id={props.itemKey}
+    onClick={clickFunction}
+    id={itemKey}
     >
         {name}
     </p>
