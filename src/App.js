@@ -30,7 +30,8 @@ function App() {
           {
             starterData.map((item, index) => {
               return <p style={{
-                backgroundColor: item.color}}
+                backgroundColor: item.color
+              }}
                 onClick={() => {
                   setStack([item, ...stack])
                 }
@@ -48,6 +49,8 @@ function App() {
               )
             })
           }
+          <button onClick={() =>
+            setStack([])} >Clear all</button>
         </div>
       </div>
     </div>
