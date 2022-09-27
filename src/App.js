@@ -25,23 +25,26 @@ export default class App extends Component {
 
   render() {
     const items = [
-      'bun',
-      'bun',
-      'bun',
+      'seasame bun',
+      'brioche bun',
+      'gluten-free bun',
+      'jalepeno',
+      'bacon',
+      'pickle',
       'onion',
       'tomato',
       'lettuce',
-      'cheese',
-      'cheese',
-      'cheese',
-      'patty',
-      'patty',
-      'patty',
-      'bun',
-      'bun',
-      'bun'
+      'american cheese',
+      'cheddar cheese',
+      'pepperjack cheese',
+      'angus patty',
+      'spicy patty',
+      'veggie patty',
+      'seasame bun',
+      'brioche bun',
+      'gluten-free bun'
     ]
-    
+
     return (
       <div className="stacker-ctnr">
         <Interact

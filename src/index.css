@@ -20,6 +20,9 @@
   --onion: #deb;
   --lettuce: #9d5;
   --tomato: #e22;
+  --jalepeno: #460;
+  --bacon: #c20;
+  --pickle: #8a2;
 }
 
 body {
@@ -136,6 +139,8 @@ body {
   justify-content: center; align-items: center;
   width: 90%; height: 6rem;
   background: rgb(90 90 90 / .2);
+  text-align: center;
+  padding: .2em;
 }
 
 .stacker-selection .item {
@@ -175,6 +180,18 @@ body {
 
 .tomato {
   background: var(--tomato);
+}
+
+.jalepeno {
+  background: var(--jalepeno);
+}
+
+.bacon {
+  background: var(--bacon);
+}
+
+.pickle {
+  background: var(--pickle);
 }
 
 code {
