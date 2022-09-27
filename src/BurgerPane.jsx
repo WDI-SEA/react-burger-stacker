@@ -6,7 +6,8 @@ export default class BurgerPane extends Component {
     const ingredients = this.props.burgerIngredientsArray
     return(
       <div className="column2">
-        <ClearBurger />
+        <ClearBurger 
+        ClearBurger={this.props.clearBurger}/>
         <BurgerStack 
         burgerIngredients={ingredients}/>
       </div>

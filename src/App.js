@@ -28,9 +28,15 @@ export default class App extends Component {
     })
     this.setState(prevState => {
       return {
-        burgerIngredientsArray: [...prevState.burgerIngredientsArray, prevState.ingredient],
+        burgerIngredientsArray: [prevState.ingredient,...prevState.burgerIngredientsArray],
         ingredient: ''
       }
+    })
+  }
+  clearBurger = (e)=> {
+    console.log(this.state.burgerIngredientsArray)
+    this.setState({
+      burgerIngredientsArray:[]
     })
 
   }
@@ -43,7 +49,8 @@ export default class App extends Component {
           ingredientsArray={this.state.ingredientsArray}
           addIngredient={this.addIngredient}/>
           <BurgerPane 
-          burgerIngredientsArray={this.state.burgerIngredientsArray}/>
+          burgerIngredientsArray={this.state.burgerIngredientsArray}
+          clearBurger={this.clearBurger}/>
         </container>
 
       </div>

@@ -17,7 +17,6 @@ export default class IngredientList extends Component {
             <ul className="column1">
             Ingredient List
             {ingredients}
-            {/* {addIngredient} */}
       </ul>
       </div>
     )
