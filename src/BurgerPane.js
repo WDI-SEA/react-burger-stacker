@@ -6,9 +6,8 @@ export default class BurgerPane extends Component {
     render() {
         return (
             <div>
-                <h1>This is the BurgerPane</h1>
-                <BurgerStack />
-                <ClearBurger />
+                <BurgerStack burgerArray={this.props.burgerArray} />
+                <ClearBurger handleBurgerClear={this.props.handleBurgerClear} />
             </div>
         )
     }

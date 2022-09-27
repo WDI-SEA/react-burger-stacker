@@ -25,17 +25,35 @@ export default class App extends Component {
     burgerArray: []
 
   }
+
+  handleIngredientClick = e => {
+    const ingredient = this.state.burgerIngredients.find(({name}) => {
+        return (name === e.target.innerText);
+    });
+    this.setState(prevState => {
+        return {
+            burgerArray: [ingredient, ...prevState.burgerArray]
+        }
+    });
+}
+  handleBurgerClear = () => {
+      this.setState({burgerArray: []});
+  }
+
   render() {
     return (
       <div className='Container'>
         <div className='CreateCol'>
-          <h1>This is the Main app it holds the List of ingredients</h1>
-          <IngredientList ingredients={this.state.burgerIngredients} />
+          <IngredientList 
+          ingredients={this.state.burgerIngredients} 
+          handleIngredientClick={this.handleIngredientClick}
+          />
         </div>
 
         <div className='DisplayCol'>
-          <h1>And the BurgerPane</h1>
-          <BurgerPane />
+          <BurgerPane 
+          burgerArray={this.state.burgerArray}
+          handleBurgerClear={this.handleBurgerClear}/>
         </div>
       </div>
     )
