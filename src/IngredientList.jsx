@@ -17,12 +17,39 @@ export default class IngredientList extends Component {
             )
         })
         return (
-            <div className='ingredient-list'>
+            <div>
                 <h2>Ingredients</h2>
 
-                <div>
+                <div className='ingredient-list'>
                     {ingredientsList}
                 </div>
+
+                <form>
+                    <label htmlFor='name'>New Ingredient:</label>
+                    <input
+                        type='text'
+                        id='name'
+                        name='name'
+                        value={this.props.name}
+                        onChange={e => this.props.handleChange(e)}
+                    />
+
+                    <label htmlFor='color'>BG Color:</label>
+                    <input
+                        type='text'
+                        id='color'
+                        name='color'
+                        value={this.props.color}
+                        onChange={e => this.props.handleChange(e)}
+                    />
+
+                    <button
+                        type='submit'
+                        onClick={this.props.newIngredient}    
+                    >
+                        Add Ingredient!
+                    </button>
+                </form>
             </div>
         )
     }

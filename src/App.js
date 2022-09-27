@@ -20,7 +20,9 @@ const ingredients = [
 export default class App extends Component {
   state = {
     ingredients: ingredients,
-    burger: []
+    burger: [],
+    name: '',
+    color: ''
   }
 
   addToBurger = (e, name, color) => {
@@ -46,6 +48,27 @@ export default class App extends Component {
     })
   }
 
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
+  addNewIngredient = e => {
+    e.preventDefault()
+    this.setState(prevState => {
+      return {
+        ingredients: [
+          ...prevState.ingredients,
+          {
+            name: prevState.name,
+            color: prevState.color
+          }
+        ],
+        name: '',
+        color: ''
+      }
+    })
+  }
+
   render() {
     return (
       <>
@@ -54,7 +77,11 @@ export default class App extends Component {
         <div className='container'>
           <IngredientList
             ingredients={this.state.ingredients}
-            addIngredient={this.addToBurger}  
+            addIngredient={this.addToBurger}
+            handleChange={this.handleChange}
+            newIngredient={this.addNewIngredient}
+            name={this.state.name}
+            color={this.state.color}
           />
 
           <BurgerStack

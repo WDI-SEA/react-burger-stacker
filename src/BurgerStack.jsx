@@ -17,8 +17,9 @@ export default class BurgerStack extends Component {
             <div>
                 <h2>Borger</h2>
 
+                <button onClick={this.props.undoIngredient}>Undo</button>
+                
                 <div className='burger-stack'>
-                    <button onClick={this.props.undoIngredient}>Undo</button>
                     {burgerStack}
                 </div>
 
