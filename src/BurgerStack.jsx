@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-
+import Ingredients from './ingredients';
 export default class BurgerStack extends Component {
   render(){
     return(
       <div >
-        burgerStack
+        Stack of Burgers
       </div>
     )
   }
