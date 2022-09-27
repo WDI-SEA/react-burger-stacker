@@ -6,7 +6,8 @@ import styles from './App.css'
 export default class App extends Component {
 
   state = {
-    burgerStack: []
+    burgerStack: [],
+    ingredients: this.ingredients
   }
 
   ingredients = [
@@ -26,21 +27,27 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='main'>
-        
-        <div className='ingredient-list'>
-          <h2>Borger DNA</h2>
-          <IngredientList
-          ingredients={this.ingredients}
-          />
-        </div>
+      <div>
+        <h2>Burger Stacker!</h2>
+        <div className='main'>
+          
+          
+          <div className='ingredient-list'>
+            <h2>Borger DNA</h2>
+            <IngredientList
+              ingredients={this.ingredients}
+            />
+          </div>
 
-        <div className='burger-pane'>
-          <h2>Crafted Borger</h2>
-          <BurgerPane
-          ingredients={this.ingredients}
-          />
-        </div>
+          <div className='burger-pane'>
+            <h2>Crafted Borger</h2>
+            <BurgerPane
+            ingredients={this.ingredients}
+            />
+          </div>
+
+
+      </div>
 
       </div>
     )

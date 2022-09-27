@@ -8,7 +8,7 @@ export default class BurgerPane extends Component {
             <div>
                 (Burger Pane)
                 <BurgerStack
-                
+                    ingredients={this.props.ingredients}
                 />
 
                 <ClearBurger

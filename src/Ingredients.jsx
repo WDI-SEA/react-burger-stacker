@@ -8,7 +8,7 @@ export default class Ingredients extends Component {
         
         if (this.props.ingredient) {
             return (
-                <div>
+                <div style={{ backgroundColor: this.props.ingredient.color }}>
                     {this.props.ingredient.name}
                 </div>
             )
