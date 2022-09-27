@@ -19,7 +19,7 @@ export default class App extends Component {
         {name: 'Onion', color: 'lightyellow'}
       ],
       burgerIngredientsArray:[],
-      ingredient: ""
+      ingredient: ''
 }
   addIngredient = (e) => {
     console.log(this.state.burgerIngredientsArray)
