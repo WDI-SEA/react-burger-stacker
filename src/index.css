@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  user-select: none;
+}
+
+:root {
+  font-size: 16px;
+  --bg-clr-1: #4d7dad;
+  --bg-clr-2: #8dadbd;
+  --bg-act-1: #adcded;
+  --fnt-clr-1: #f1f1f1;
+  --fnt-clr-2: #333;
+  --sb-clr-1: rgb(190 210 230 / .7);
+  --sb-clr-2: rgb(190 210 230 / 1);
+  --sb-bg: rgb(90 90 90 / .0);
+  --bun: #b92;
+  --patty: #651;
+  --cheese: #cc4;
+  --onion: #deb;
+  --lettuce: #9d5;
+  --tomato: #e22;
+}
+
+body {
+  display: flex;
+  justify-content: center; align-items: center;
+  width: 100vw; height: 100vh;
+  background: linear-gradient(
+  120deg,
+  var(--bg-clr-1) 30%,
+  var(--bg-clr-2)
+  );
+  color: var(--fnt-clr-1);
+  overflow: overlay;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  margin-bottom: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sb-clr-1);
+  border: solid .2em transparent;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sb-clr-2);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sb-bg);
+  border: solid .2em transparent;
+}
+
+::-webkit-scrollbar-track-piece:end {
+  margin-bottom: 1em;
+}
+
+::-webkit-scrollbar-corner {
+ background: transparent;
+}
+
+.header {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.btn {
+  background: rgb(90 90 90 / .2);
+  font-size: 1em; font-weight: bold;
+  color: var(--fnt-clr-1);
+  border: none;
+  border-radius: .5em;
+  padding: .5em 1.5em;
+  margin: .5em;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgb(90 90 90 / .5);
+}
+
+.stacker-ctnr {
+  display: flex;
+  justify-content: center;
+  width: 100vw; height: 100vh;
+  max-width: 75em; max-height: 45em;
+}
+
+.stacker-menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 40em;
+  border-radius: 4%;
+  padding: 1.2em;
+}
+
+.stacker-menu:first-of-type {
+  background: rgb(90 90 90 / .2);
+}
+
+.stacker-menu:last-of-type {
+  justify-content: end;
+}
+
+.stacker-menu div:last-of-type:not(.item) {
+  margin-top: auto;
+  margin-bottom: .5em;
+}
+
+.stacker-selection {
+  position: absolute;
+  bottom: 0;
+  overflow: overlay;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: 27.5em;
+  gap: .5em;
+}
+
+.item {
+  display: flex;
+  justify-content: center; align-items: center;
+  width: 90%; height: 6rem;
+  background: rgb(90 90 90 / .2);
+}
+
+.stacker-selection .item {
+  width: 30%;
+  cursor: pointer;
+}
+
+.stacker-selection .item:hover {
+  font-size: 1.2em; font-weight: bold;
+}
+
+.item:not(.stacker-selection .item) {
+  font-size: 1.5em;
+}
+
+/* INGREDIENTS */
+.bun {
+  background: var(--bun);
+}
+
+.patty {
+  background: var(--patty);
+}
+
+.cheese {
+  background: var(--cheese);
+}
+
+.onion {
+  background: var(--onion);
+  color: var(--fnt-clr-2)
+}
+
+.lettuce {
+  background: var(--lettuce);
+}
+
+.tomato {
+  background: var(--tomato);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
