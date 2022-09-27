@@ -14,7 +14,11 @@ export default class BurgerStack extends Component {
         if(this.props.stack){
             const theStack = this.props.stack.map((item, i) => {
                 return (
-                    <li key={`item${i}`}>{item}</li>
+                    <li 
+                        style={{backgroundColor: item.color}}
+                        key={`item${i}`}>
+                        {item.name}
+                    </li>
                     )
             })
             return(

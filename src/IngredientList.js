@@ -5,9 +5,11 @@ export default class IngredientList extends Component{
 
 
 
-    handleClick = (filter) => {
+    handleClick = (name, color) => {
         this.setState({
-            stack: this.props.stack.push(filter)
+            stack: this.props.stack.push({
+                name: name, 
+                color: color})
         })
         console.log(this.props.stack)
     }
@@ -16,7 +18,8 @@ export default class IngredientList extends Component{
         const ingredients = this.props.ingredients.map((ingredient, i) => {
             return (
                 <li
-                    onClick= {() => {this.handleClick(`${ingredient.name}`)}}
+                    style={{ backgroundColor: ingredient.color}}
+                    onClick= {() => {this.handleClick(`${ingredient.name}`, `${ingredient.color}`)}}
                     key={`ingredient${i}`}
                 >
                     {ingredient.name}
