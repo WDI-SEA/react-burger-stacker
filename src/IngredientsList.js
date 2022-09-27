@@ -3,9 +3,11 @@ import React, { Component } from 'react'
 
 export default class IngredientsList extends Component {
   
+
+
   render() {
     const ingredients = this.props.supplies.map((ingredient, i) => {
-    return <li key={`ingredient-${i}`}>{ingredient.name} </li>
+    return <button key={`ingredient-${i}`}>{ingredient.name} </button>
   })
     console.log(ingredients)
     return (
