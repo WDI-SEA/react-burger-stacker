@@ -120,7 +120,7 @@ body {
 
 .stacker-menu div:last-of-type:not(.item) {
   margin-top: auto;
-  margin-bottom: .5em;
+  margin-bottom: .8em;
 }
 
 .stacker-selection {
@@ -141,6 +141,7 @@ body {
   background: rgb(90 90 90 / .2);
   text-align: center;
   padding: .2em;
+  box-shadow: 0 .2em .5em rgb(90 90 90 / .5);
 }
 
 .stacker-selection .item {

@@ -8,7 +8,7 @@ export default class Input extends Component {
         <Ingredient 
           key={`ingredient_${i}`}
           ingredient={ingredient}
-          // isStacked={false}
+          addIngredient={this.props.addIngredient}
         />
       )
     })

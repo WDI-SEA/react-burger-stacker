@@ -8,16 +8,18 @@ export default class App extends Component {
   }
 
   addIngredient = (ingredient) => {
-    console.log('stacked')
+    // console.log(`added ${ingredient} to stack`)
   
     this.setState(prevState => {
       return (
-        { stacked: [...prevState.stacked, ingredient] }
+        { stacked: [ingredient, ...prevState.stacked] }
       )
     })
+    console.log(this.state.stacked)
   }
 
   clearStack = () => {
+    console.log('cleared')
     this.setState({
       stacked: []
     })
@@ -49,10 +51,12 @@ export default class App extends Component {
       <div className="stacker-ctnr">
         <Interact
           items={items}
+          addIngredient={this.addIngredient}
         />
 
         <Stacker 
           stacked={this.state.stacked}
+          clearStack={this.clearStack}
         />
       </div>
     )

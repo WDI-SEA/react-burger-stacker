@@ -7,11 +7,12 @@ export default class Interact extends Component {
       <div className="stacker-menu">
         <div className="header">
           <h1>Burger Stacker</h1>
-          <p>Lorem Ipsum</p>
+          <p>Click on an ingredient to add to the stack</p>
         </div>
 
         <Input 
           items={this.props.items}
+          addIngredient={this.props.addIngredient}
         />
 
       </div>

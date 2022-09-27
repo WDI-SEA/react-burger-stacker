@@ -13,12 +13,11 @@ export default class Ingredient extends Component {
     const ingredient = this.props.ingredient
     const ingredientStyle = ingredient.includes('bun')   ? `bun`   :
                             ingredient.includes('patty') ? 'patty' : ingredient
-                            
 
     return (
       <div
         key={this.props.key}
-        className={`item ${ingredientStyle}`}
+        className={`item ${ingredientStyle} ${this.props.fadeIn ? 'fade-in' : ''}`}
         onClick={this.handleClick}
       >
         <p>{ingredient}</p>
