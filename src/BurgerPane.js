@@ -7,6 +7,8 @@ export default class BurgerPane extends Component{
     return(
       <>
       <h1> Build the burger in  here</h1>
+      <BurgerStack />
+      <button> Clear Burger </button>
       </>
     )
   }

@@ -8,7 +8,6 @@ export default class BurgerStack extends Component{
     return (
       <>
       <h1> This is the burger </h1>
-      <button> clear burgere</button>
       </>
     )
   }

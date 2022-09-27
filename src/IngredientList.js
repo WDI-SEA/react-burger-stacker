@@ -19,6 +19,7 @@ const ingredients =
   ]
 
 export default class IngredientList extends Component{
+  
   render(){
     const allIngredients = ingredients.map((ingredient, i)=>{
       return (

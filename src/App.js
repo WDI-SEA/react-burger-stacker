@@ -1,18 +1,23 @@
 import React, { Component} from "react";
 import IngredientList from "./IngredientList";
 import BurgerPane from "./BurgerPane";
-import "./App.css"
+import "./index.css"
 
 
 
 export default class App extends Component{
   render(){
     return(
-      <>
-      <h1> Burger Builder </h1>
-       <IngredientList /> 
-      <BurgerPane />
-      </>
+      <div>
+          <div className="ingredients">
+              <h1> Burger Builder </h1>
+              <IngredientList /> 
+          </div>
+
+          <div className="burgerPane">
+            <BurgerPane />
+          </div>
+      </div>
     )
   }
 }
