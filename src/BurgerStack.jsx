@@ -6,7 +6,8 @@ export default class BurgerStack extends Component {
         return(
             <div>
             <BurgerIngredients 
-            ingredient={ingredient}/>
+            ingredient={ingredient}
+            key={`burgerIngredientId${i}`}/>
             </div>
         )
     })

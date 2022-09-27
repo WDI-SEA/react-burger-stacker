@@ -24,7 +24,7 @@ export default class App extends Component {
   addIngredient = (e) => {
     console.log(this.state.burgerIngredientsArray)
     this.setState({
-      ingredient:e.target.value
+      ingredient: e.target.value
     })
     this.setState(prevState => {
       return {
@@ -44,14 +44,14 @@ export default class App extends Component {
     return(
       <div className="center">
         <h1>Burger Stacker Application</h1>
-        <container className="App">
+        <div className="App">
           <IngredientList 
           ingredientsArray={this.state.ingredientsArray}
           addIngredient={this.addIngredient}/>
           <BurgerPane 
           burgerIngredientsArray={this.state.burgerIngredientsArray}
           clearBurger={this.clearBurger}/>
-        </container>
+        </div>
 
       </div>
     )
