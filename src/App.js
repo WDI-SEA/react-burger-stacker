@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import IngredientList from './IngredientList'
 import './index.css'
 import BurgerPane from './BurgerPane'
+import BurgerStack from './BurgerStack'
+
 
 export default class App extends Component{
   
@@ -19,7 +21,8 @@ export default class App extends Component{
       {name: 'Tomato', color: 'tomato'},
       {name: 'Bacon', color: 'maroon'},
       {name: 'Onion', color: 'lightyellow'}
-    ]
+    ],
+    stack: []
   }
   
   render(){
@@ -27,8 +30,13 @@ export default class App extends Component{
       <div>
         <IngredientList 
           ingredients = {this.state.ingredients}
+          stack={this.state.stack}
         />
         <BurgerPane
+
+        />
+        <BurgerStack 
+          stack = {this.state.stack}
           ingredients = {this.state.ingredients}
         />
       </div>
