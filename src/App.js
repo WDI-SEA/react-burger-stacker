@@ -15,11 +15,9 @@ export default class App extends Component {
         { stacked: [ingredient, ...prevState.stacked] }
       )
     })
-    console.log(this.state.stacked)
   }
 
   clearStack = () => {
-    console.log('cleared')
     this.setState({
       stacked: []
     })
@@ -42,6 +40,9 @@ export default class App extends Component {
       'angus patty',
       'spicy patty',
       'veggie patty',
+      'ketchup',
+      'mustard',
+      'mayonaise',
       'seasame bun',
       'brioche bun',
       'gluten-free bun'

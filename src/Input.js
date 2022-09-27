@@ -5,11 +5,15 @@ export default class Input extends Component {
   render() {
     const ingredients = this.props.items.map((ingredient, i) => {
       return (
-        <Ingredient 
-          key={`ingredient_${i}`}
-          ingredient={ingredient}
-          addIngredient={this.props.addIngredient}
-        />
+        <>
+          <Ingredient 
+            key={`ingredient_${i}`}
+            ingredient={ingredient}
+            addIngredient={this.props.addIngredient}
+            isStacked={false}
+            index={i}
+          />
+        </>
       )
     })
     return (

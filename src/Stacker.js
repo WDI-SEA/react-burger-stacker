@@ -8,13 +8,15 @@ export default class Stacker extends Component {
   }
 
   render() {
-    const stacked = this.props.stacked.map((ingredient, i) => {
+    const stacked = this.props.stacked.map((ingredient, i, arr) => {
       return (
         <Ingredient
           key={`stacked_${i}`}
           ingredient={ingredient}
           isStacked={true}
-          fadeIn = {i === 0 ? true : false}
+          isTop = {i === 0 ? true : false}
+          isBottom = { i === arr.length - 1 ? true : false}
+          index={i}
         />
       )
     })

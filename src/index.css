@@ -23,6 +23,9 @@
   --jalepeno: #460;
   --bacon: #c20;
   --pickle: #8a2;
+  --mustard: #ee0;
+  --mayo: #efb;
+  --ketchup: #b20;
 }
 
 body {
@@ -157,7 +160,19 @@ body {
   font-size: 1.5em;
 }
 
+.fade-in {
+  animation: fade-in .8s;
+}
+
 /* INGREDIENTS */
+.top {
+  border-radius: 50% 50% 0 0;
+}
+
+.bottom {
+  border-radius: 0 0 1.2em 1.2em;
+}
+
 .bun {
   background: var(--bun);
 }
@@ -195,7 +210,29 @@ body {
   background: var(--pickle);
 }
 
+.mustard {
+  background: var(--mustard);
+  color: var(--fnt-clr-2);
+  height: 3rem;
+}
+
+.mayonaise {
+  background: var(--mayo);
+  color: var(--fnt-clr-2);
+  height: 3rem;
+}
+
+.ketchup {
+  background: var(--ketchup);
+  height: 3rem;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@keyframes fade-in {
+  from {translate: 0 -20%; opacity: 0;}
+  to {translate: 0; opacity: 1;}
 }
