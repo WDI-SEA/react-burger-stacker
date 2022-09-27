@@ -34,7 +34,3 @@ code {
 .center {
   text-align: center;
 }
-
-.reverse-column {
-  flex-direction: column-reverse;
-}

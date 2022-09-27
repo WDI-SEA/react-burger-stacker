@@ -6,7 +6,7 @@ export default class IngredientList extends Component {
     const ingredients = this.props.ingredientsArray.map((ingredient,i)=> {
         return(
             <Ingredients 
-                ingredient={ingredient.name}
+                ingredient={ingredient}
                 color={ingredient.color}
                 key={`ingredientId${i}`}
                 addIngredient={this.props.addIngredient}/>

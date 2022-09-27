@@ -21,10 +21,10 @@ export default class App extends Component {
       burgerIngredientsArray:[],
       ingredient: ''
 }
-  addIngredient = (e) => {
+  addIngredient = (ingredient) => {
     console.log(this.state.burgerIngredientsArray)
     this.setState({
-      ingredient: e.target.value
+      ingredient: ingredient
     })
     this.setState(prevState => {
       return {

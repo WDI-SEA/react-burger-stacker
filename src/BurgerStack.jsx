@@ -12,7 +12,7 @@ export default class BurgerStack extends Component {
         )
     })
     return(
-      <div className="reverse-column">
+      <div>
         {burgerIngredients}
       </div>
     )
