@@ -5,6 +5,10 @@ import styles from './App.css'
 
 export default class App extends Component {
 
+  state = {
+    burgerStack: []
+  }
+
   ingredients = [
     {name: 'Kaiser Bun', color: 'saddlebrown'},
     {name: 'Sesame Bun', color: 'sandybrown'},
@@ -25,12 +29,14 @@ export default class App extends Component {
       <div className='main'>
         
         <div className='ingredient-list'>
+          <h2>Borger DNA</h2>
           <IngredientList
           ingredients={this.ingredients}
           />
         </div>
 
         <div className='burger-pane'>
+          <h2>Crafted Borger</h2>
           <BurgerPane
           ingredients={this.ingredients}
           />

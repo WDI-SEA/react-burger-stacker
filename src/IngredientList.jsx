@@ -8,13 +8,16 @@ export default class IngredientList extends Component {
         const allIngredients = this.props.ingredients.map((ingredient, i) => {
             if (ingredient){
                 return (
-                    <ul key={`ingredient${i}`}>
-                        <li>
-                            <Ingredients 
-                                ingredient={ingredient}
-                            />
-                        </li>
-                    </ul>
+                    
+                    <div key={`ingredient${i}`}>
+                        <ul>
+                            <li>
+                                <Ingredients 
+                                    ingredient={ingredient}
+                                />
+                            </li>
+                        </ul>
+                    </div>
                 )
             }
         })
