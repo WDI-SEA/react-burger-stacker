@@ -9,7 +9,7 @@ export default class IngredientList extends Component {
             />
         })
         return (
-            <div>
+            <div className='ingCtn'>
                 {burgerIng}
             </div>
         )

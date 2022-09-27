@@ -5,28 +5,29 @@
 }
 
 body {
-  background-color: black;
   color: white;
+  background-color: #937DC2;
 }
 
 .Container {
   width: 100vw;
   height: 100vh;
   display: flex;
-  background-color: orange;
+  
   justify-content: center;
   align-items: center;
   
 }
 
 .CreateCol {
-  background-color: blue;
+  
+  background-color: rgba(198, 137, 198, 0.55);
 
 }
 
 .DisplayCol {
   margin-left: 6%;
-  background-color: red;
+  background-color: rgb(255, 171, 225, 0.55);
   
   
 }
@@ -34,16 +35,54 @@ body {
 .CreateCol, .DisplayCol {
   border-radius: 10%;
   width: 40vw;
-  height: 80vh;
+  min-height: 80vh;
+  height: fit-content;
   padding: 3%;
 }
 
 .DisplayCol button {
-  background-color: gold;
   height: 45px;
-  width: 200px;
+  width: fit-content;
   font-size: 25px;
   font-weight: bold;
   border-radius: 5%;
-  margin: 5%;
+
+}
+
+.ingredient {
+  text-align: center;
+  font-size: 25px;
+  padding: 8px;
+  margin-bottom: 10px;
+  
+}
+
+.clsBunTop {
+  border-radius: 50px 50px 0 0;
+  padding: 25px;
+}
+
+.clsBunBtm {
+  padding: 30px;
+  border-radius: 0 0 50px 50px;
+} 
+
+.clsPatty {
+  border-radius: 30px;
+}
+
+.clsOnion {
+  color: black;
+}
+
+.clearBtn {
+  
+  width: fit-content;
+  margin: 0 auto;
+  padding: px;
+}
+
+.ingCtn {
+  display: flex;
+  flex-direction: column;
 }

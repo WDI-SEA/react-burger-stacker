@@ -22,9 +22,20 @@ export default class App extends Component {
   
   state = {
     burgerIngredients: ingredients,
-    burgerArray: []
+    burgerArray: [],
+    bottomBun: false
 
   }
+
+  checkBun = () => {
+    if (this.state.burgerArray.length > 0) {
+      if (this.state.burgerArray[0].includes('Bun')) {
+        this.state.burgerArray[0].setState({bottomBun: true})
+
+      }
+    }
+  }
+
 
   handleIngredientClick = e => {
     const ingredient = this.state.burgerIngredients.find(({name}) => {
@@ -53,7 +64,9 @@ export default class App extends Component {
         <div className='DisplayCol'>
           <BurgerPane 
           burgerArray={this.state.burgerArray}
-          handleBurgerClear={this.handleBurgerClear}/>
+          handleBurgerClear={this.handleBurgerClear}
+          checkBun={this.checkBun}
+          />
         </div>
       </div>
     )
