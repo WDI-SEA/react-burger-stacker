@@ -10,7 +10,10 @@ export default class Ingredient extends Component {
         return (
             <div 
                 style={styles}
-                onClick={() => this.props.handleIngredientClick(this.props.ingredient)}
+                onClick={ this.props.handleIngredientClick ?
+                    () => this.props.handleIngredientClick(this.props.ingredient) :
+                    () => {}
+                }
             >
                 <p>{this.props.ingredient.name}</p>
             </div>

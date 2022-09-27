@@ -47,7 +47,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div style={{ display: 'flex', margin: '3rem' }}>
+      <div style={{ display: 'flex', margin: '3rem', alignItems: 'flex-end' }}>
         {/* will recieve ingredients a props and render them, and a event handler to handle ingredient clicks */}
         <IngredientList 
           ingredients={ingredients}

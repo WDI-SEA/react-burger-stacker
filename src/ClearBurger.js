@@ -4,7 +4,11 @@ export default class ClearBurger extends Component {
     render() {
         return (
             <div>
-                ClearBurger
+                <button
+                    onClick={this.props.handleBurgerClear}
+                >
+                    Clear
+                </button>
             </div>
         )
     }
