@@ -9,7 +9,7 @@ export default class Ingredients extends Component {
         
         if (this.props.ingredient) {
             return (
-                <div style={{ backgroundColor: this.props.ingredient.color }} onClick={(e) => this.props.addIngredient(e, this.props.ingredient.name)}>
+                <div style={{ backgroundColor: this.props.ingredient.color }} onClick={(e) => this.props.addIngredient(e)}>
                     {this.props.ingredient.name}
                 </div>
             )

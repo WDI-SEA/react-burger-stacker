@@ -12,12 +12,14 @@ export default class BurgerPane extends Component {
         return (
             <div>
                 (Burger Pane)
+                <p>{this.props.burgerStack}</p>
                 <BurgerStack
+                    burgerStack={this.props.burgerStack}
                     ingredients={this.props.ingredients}
                 />
 
                 <ClearBurger
-                
+                    clearBorger={this.props.clearBorger}
                 />
 
             </div>

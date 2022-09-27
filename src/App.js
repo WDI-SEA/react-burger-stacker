@@ -25,9 +25,27 @@ export default class App extends Component {
   }
 
   
-  addIngredient = (e, name) => {
-    console.log(`Added ${name}`)
+  addIngredient = (e) => {
+    console.log(this.state.burgerStack)
+    console.log(e.target.innerText)
+    this.setState(prevState => {
+      return {
+        burgerStack: [e.target.innerText, ...prevState.burgerStack]
+        
+      }
+      
+    })
+      
+  
+    console.log(`Added`)
 }   
+
+  clearBorger = (e) => {
+    this.setState({
+      burgerStack: []
+    })
+    console.log(`Borger Deletus`)
+  }
   
 
   
@@ -43,13 +61,16 @@ export default class App extends Component {
             <IngredientList
               addIngredient={this.addIngredient}
               ingredients={this.state.ingredients}
+              burgerStack={this.state.burgerStack}
             />
           </div>
 
           <div className='burger-pane'>
             <h2>Crafted Borger</h2>
             <BurgerPane
-            ingredients={this.state.ingredients}
+              clearBorger={this.clearBorger}
+              burgerStack={this.state.burgerStack}
+              ingredients={this.state.ingredients}
             />
           </div>
 

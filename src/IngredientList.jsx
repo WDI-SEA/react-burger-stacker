@@ -23,7 +23,7 @@ export default class IngredientList extends Component {
             }
         })
     
-        console.log(this.props.ingredients)
+        // console.log(this.props.ingredients)
         return (
             <div>
                 {allIngredients}
