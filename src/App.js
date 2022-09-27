@@ -35,21 +35,12 @@ class App extends Component {
         this.setState({burgerArray: []});
     }
     render() {
-        const ingredients = ingredientArray.map((ingredient, index) => {
-            return (
-                <IngredientList 
-                    ingredient={ingredient.name}
-                    color={ingredient.color}
-                    key={`ingredient-${index}`}
-                    handleIngredientClick={this.handleIngredientClick}
-                />
-            );
-        })
         return (
             <div className="flex items-end gap-4">
-                <div className="w-32">
-                    {ingredients}
-                </div>
+                <IngredientList 
+                    ingredientArray={ingredientArray}
+                    handleIngredientClick={this.handleIngredientClick}
+                />
                 <BurgerContainer 
                     burgerArray={this.state.burgerArray} 
                     handleBurgerClear={this.handleBurgerClear} 
