@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './App.css'
 import IngredientList from './IngredientList'
 import BurgerPane from './BurgerPane'
 
@@ -18,38 +17,53 @@ const ingredients = [
   {name: 'Onion', color: 'lightyellow'}
 ]
 
-state = {
-  stack: []
-}
-
-handleAdd = (e) => {
-  console.log('adding an ingredient')
-
-  const newIngredient = {
-    name: e.target.innerText
-  }
-}
-
-
-handleRemove = (e) => {
-  console.log('removing')
-  this.setState({
-    stack:[]
-  })
-}
 
 
 export default class App extends Component {
+  // have state that keeps track of clicked ingredients in an array
+  state = {
+    //array of ingredients that the user has clicked on
+    clickedIngredients: []
+  }
+
+
+    //click event handler -- when an ingredient is clicked, it will add that ingredient to that array in state of clicked ingredients
+  handleIngredientClick = ingredient => {
+    // console.log(e.target.innerText)
+    console.log(ingredient)
+    this.setState(prevState => {
+      //add the ingredient that was clicked to a new array with the old state's array spred into it 
+      const clickedIngredients = [ingredient, ...prevState.clickedIngredients]
+      // merge the new array into state
+      return {
+        clickedIngredients
+      }
+    })
+  }
+
+
+  // clear button click handler, which will empty the array in state
+  handleBurgerClear = () => {
+    this.setState ({
+      clickedIngredients: []
+    })
+  }
+
   render () {
     return (
       <>
         <h1>Burger Stacker</h1>
+        <div style={{ display: 'flex', margin: '3rem', alignItems: 'flex-end'}}>
+          {/* Step one: rendering our ingredients first before creating state and will receive ingredients a props and render them, and a event handler to handle ingredient clicks */}
         <IngredientList 
-            list={ingredients}
-            handleAdd={this.handleAdd} />
+            ingredients={ingredients}
+            handleIngredientClick={this.handleIngredientClick}
+            />
+          {/* Will receive the clear the button event handler and the clicked ingredients from state to render */}
         <BurgerPane
-            stack={this.state.stack}
-            handleRemove={this.handleRemove} />
+            clickedIngredients={this.state.clickedIngredients}
+            handleBurgerClear={this.handleBurgerClear} />
+        </div>
 
       </>
     )

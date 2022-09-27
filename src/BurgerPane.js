@@ -1,20 +1,16 @@
 import React, { Component } from 'react'
-import Ingredients from './Ingredients'
+import ClearBurger from './ClearBurger'
+import BurgerStack from './BurgerStack'
 
 export default class BurgerPane extends Component {
     render() {
-        const stackBurger = this.props.stack.map((item, i) => {
-            return <Ingredients
-                i={i}
-                item={item}
-                />
-        })
         return (
-            <>
-            <h1>Burger Pane</h1>
-            <button onClick={this.props.handleRemove}>Clear</button>
-            
-            </>
+            <div>
+                <BurgerStack 
+                    clickedIngredients={this.props.clickedIngredients}/>
+                <ClearBurger 
+                    handleBurgerClear={this.props.handleBurgerClear}/>
+            </div>
         )
     }
 }

@@ -3,20 +3,23 @@ import Ingredients from './Ingredients'
 
 export default class IngredientList extends Component {
 
-    const listToAdd = this.props.items.map((item, i) => {
-        return <Ingredients
-        i={i}
-        item={item}
-        handleAdd={this.props.handleAdd}
-        />
-    })
-
     render() {
+        //we put this in the render because we want this logic to happen more than once 
+        const ingredientComponents = this.props.ingredients.map((item, i) => {
+            return (
+                <Ingredients
+                    //pass in the click event handler
+                    ingredient={item}
+                    handleIngredientClick={this.props.handleIngredientClick}
+                    key={`ingredient-list-${i}`}
+                />
+            )
+        })
+
         return (
-            <>
-            <h1>Ingredients Here</h1>
-            {listToAdd}
-            </>
+            <div>
+                {ingredientComponents}
+            </div>
         )
     }
 
