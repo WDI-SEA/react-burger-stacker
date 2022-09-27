@@ -8,13 +8,16 @@ export default class IngredientList extends Component {
             <Ingredients 
                 ingredient={ingredient.name}
                 color={ingredient.color}
-                key={`ingredientId${i}`}/>
+                key={`ingredientId${i}`}
+                addIngredient={this.props.addIngredient}/>
     )})
+    // const addIngredient = this.props.addIngredient
     return(
         <div>
             <ul className="column1">
             Ingredient List
             {ingredients}
+            {/* {addIngredient} */}
       </ul>
       </div>
     )

@@ -22,6 +22,7 @@ export default class App extends Component {
       ingredient: ""
 }
   addIngredient = (e) => {
+    console.log(this.state.burgerIngredientsArray)
     this.setState({
       ingredient:e.target.value
     })
