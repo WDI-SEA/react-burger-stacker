@@ -4,31 +4,22 @@ import Ingredients from "./Ingredients"
 
 export default class IngredientList extends Component {
     render() {
-        const allIngredients = this.props.ingredients.map((ingredient, idx) => {
+        const ingredientComponents = this.props.ingredients.map((item, i) => {
             return (
-            
-                <Ingredients
-                key={`ingredient - ${idx}`}
-                ingredient={ingredient.name}
-                color={ingredient.color}
-                ingredientButton = { () => this.props.ingredientButton(`${ingredient.name}`)}
-                />
+                <Ingredients 
+                    // Pass in click handler
+                    ingredient = {item}
+                    handleIngredientClick = {this.props.handleIngredientClick}
+                    key = {`ingredient-list-${i}`}
                 
+                />
             )
         })
-
-
-        return (
+        return(
             <div>
-                <ul style={{
-                        display: "flex",
-                        flex: "1",
-                        flexDirection: "column",
-
-                }}>{allIngredients}</ul>
-      
+                {ingredientComponents}
             </div>
-            
+       
         )
     }
 }

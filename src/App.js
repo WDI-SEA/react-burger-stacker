@@ -2,9 +2,7 @@ import React, { Component } from "react"
 import BurgerPane from "./BurgerPane"
 import IngredientList from "./IngredientList"
 
-export default class App extends Component {
-  state = {
-    ingredients: [
+const ingredients = [
       {name: 'Kaiser Bun', color: 'saddlebrown'},
       {name: 'Sesame Bun', color: 'sandybrown'},
       {name: 'Gluten Free Bun', color: 'peru'},
@@ -18,56 +16,49 @@ export default class App extends Component {
       {name: 'Bacon', color: 'maroon'},
       {name: 'Onion', color: 'lightyellow'},
       {name: 'Cheese', color: 'yellow' }
-    ],
-    ingredientsPicked: []
+    ]
+export default class App extends Component {
+  // have state that keeps track of clicked ingredients in an array
+  state = {
+    clickedIngredients: []
   }
-
-  handleClick = (ingredientClicked) => {
-    this.setState(
-      {ingredientClicked}
-    )
+  //click event handler -- when an ingredient is clicked, it will add ingredient to that array in state of clicked ingredients
+  handleIngredientClick = ingredient => {
+    console.log(ingredient)
     this.setState(prevState => {
-      return {
-        ingredientsPicked: [prevState.ingredientClicked, ...prevState.ingredientsPicked],
-        ingredient: " "
-      }
+          const clickedIngredients = [ingredient, ...prevState.clickedIngredients]
+          return {
+            clickedIngredients
+          }
     })
   }
-
-  clearButton = () => {
-    this.setState(
-      {ingredientsPicked: []}
-    )
+  // clear button handler which will empty the array in state
+  handleBurgerClear = () => {
+    this.setState({
+      clickedIngredients: []
+    })
   }
-
-  render() {
-    return (
-      <div style={{
-        textAlign: "center"
-      }}>
-        <h1>pick your burger ingredients</h1>
-        <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              flexDirection: "row",
-              
-            }}>
-              <IngredientList
-              ingredients={this.state.ingredients}
-              ingredientButton = {this.handleClick}
-
-              />
-              
-              <BurgerPane
-              allIngredients={this.state.ingredients}
-              ingredients={this.state.ingredientsPicked}
-              clearButton={this.clearButton}
-              />
-           
-        </div>
+  render () {
+    return(
+      <div style = {{
+        display: 'flex',
+        margin: '3rem',
+        alignItems: 'flex-end'
+        }}>
+          {/* Will recieve ingredients as a prop and render them, and an event handler to handle ingredient clicks */}
+      <IngredientList ingredients = {ingredients}
+        handleIngredientClick = {this.handleIngredientClick}
+      
+      />
+        
+        {/* clear button and clicked ingredients to render */}
+      <BurgerPane 
+        clickedIngredients = {this.state.clickedIngredients}
+        handleBurgerClear = {this.handleBurgerClear}
+      />
       </div>
     )
   }
+ 
 }
 

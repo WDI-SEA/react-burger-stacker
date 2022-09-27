@@ -1,20 +1,33 @@
 import { Component } from "react"
-import PickedIngredients from "./PickedIngredients"
+import Ingredients from "./Ingredients"
+
 
 export default class BurgerStack extends Component {
     render() {
-        const ingredientsPicked = this.props.ingredients.map((ingredient, idx ) => {
+        const ingredientComponents = this.props.clickedIngredients.map((item, i) =>{
             return(
-                <PickedIngredients 
-                ingredient={ingredient}
-                key={`$ingredientsPicked - ${idx}`}/>
+                <Ingredients 
+                    ingredient = {item}
+                    key={`burgerlist-ingredient${i}`}
+                />
             )
         })
-     
-        return (
+        return(
             <div>
-                {ingredientsPicked}
+                {ingredientComponents}
+
             </div>
         )
     }
 }
+
+
+// ternary statement = if/else
+
+// condition "?"" what to return if true ":" what to return if false
+
+// aka if (conditon) { 
+    // what to return if true
+// }else {
+    // what to return if flase
+//}
