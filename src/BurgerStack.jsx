@@ -6,7 +6,9 @@ export default class BurgerStack extends Component {
         return (
             <div>
                 
-                <Ingredients />
+                <Ingredients
+                
+                />
 
             </div>
         )

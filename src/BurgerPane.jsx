@@ -7,7 +7,13 @@ export default class BurgerPane extends Component {
         return (
             <div>
 
-                <BurgerStack />
+                <BurgerStack
+                
+                />
+
+                <ClearBurger
+                
+                />
 
             </div>
         )

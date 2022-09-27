@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 
 export default class Ingredients extends Component {
+
+    // console.log(this.props.ingredient.name)   
+
     render() {
-        return (
-            <div>
-                
-            </div>
-        )
+        
+        if (this.props.ingredient) {
+            return (
+                <div>
+                    {this.props.ingredient.name}
+                </div>
+            )
+
+        }
     }
 }
