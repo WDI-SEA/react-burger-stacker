@@ -4,9 +4,9 @@ class BurgerContainer extends Component {
     render() {
         const burger = this.props.burgerArray.map((ingredient, index) => {
             return (
-                <div key={`ingredient-${index}`}>
-                    {ingredient}
-                </div> 
+                <div key={`ingredient-${index}`} style={{backgroundColor: ingredient.color}}>
+                    {ingredient.name}
+                </div>
             );
         })
         return (

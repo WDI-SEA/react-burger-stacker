@@ -22,9 +22,13 @@ class App extends Component {
         burgerArray: []
     }
     handleIngredientClick = e => {
+        const ingredient = ingredientArray.find(({name}) => {
+            return (name === e.target.innerText);
+        });
+        console.log(ingredient)
         this.setState(prevState => {
             return {
-                burgerArray: [e.target.innerText, ...prevState.burgerArray]
+                burgerArray: [ingredient, ...prevState.burgerArray]
             }
         });
     }
@@ -44,10 +48,10 @@ class App extends Component {
         })
         return (
             <div className="flex items-end gap-4">
-                <div className="w-fit">
+                <div className="w-32">
                     {ingredients}
                 </div>
-                <div>
+                <div className="w-32">
                     <BurgerContainer 
                         burgerArray={this.state.burgerArray} 
                         handleBurgerClear={this.handleBurgerClear}
