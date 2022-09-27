@@ -5,11 +5,12 @@ import BurgerPane from './BurgerPane';
 export default class App extends Component {
   render(){
     return(
-      <div>
-        Burger Stacker Application
-        <IngredientList />
-
-        <BurgerPane />
+      <div className="center">
+        <h1>Burger Stacker Application</h1>
+        <container className="App">
+          <IngredientList />
+          <BurgerPane />
+        </container>
 
       </div>
     )

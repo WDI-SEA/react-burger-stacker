@@ -26,10 +26,12 @@ export default class IngredientList extends Component {
                 key={`ingredientId${i}`}/>
     )})
     return(
-      <ul>
-        Ingredient List
-        {ingredients}
+        <div>
+            <ul className="column1">
+            Ingredient List
+            {ingredients}
       </ul>
+      </div>
     )
   }
 }
