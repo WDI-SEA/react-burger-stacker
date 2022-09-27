@@ -1,17 +1,11 @@
 import React, { Component } from "react";
+import BurgerStack from "./BurgerStack";
 
 class BurgerContainer extends Component {
     render() {
-        const burger = this.props.burgerArray.map((ingredient, index) => {
-            return (
-                <div key={`ingredient-${index}`} style={{backgroundColor: ingredient.color}}>
-                    {ingredient.name}
-                </div>
-            );
-        })
         return (
-            <div>
-                {burger}
+            <div className="w-32">
+                <BurgerStack burgerArray={this.props.burgerArray} />
                 <button onClick={this.props.handleBurgerClear}
                     className="px-2 py-1 bg-red-500 border rounded text-sm">
                     Clear

@@ -25,7 +25,6 @@ class App extends Component {
         const ingredient = ingredientArray.find(({name}) => {
             return (name === e.target.innerText);
         });
-        console.log(ingredient)
         this.setState(prevState => {
             return {
                 burgerArray: [ingredient, ...prevState.burgerArray]
@@ -51,12 +50,10 @@ class App extends Component {
                 <div className="w-32">
                     {ingredients}
                 </div>
-                <div className="w-32">
-                    <BurgerContainer 
-                        burgerArray={this.state.burgerArray} 
-                        handleBurgerClear={this.handleBurgerClear}
-                    />
-                </div>
+                <BurgerContainer 
+                    burgerArray={this.state.burgerArray} 
+                    handleBurgerClear={this.handleBurgerClear} 
+                />
             </div>
         );
     }
