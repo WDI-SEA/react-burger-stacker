@@ -14,7 +14,7 @@ class IngredientList extends Component {
             );
         })
         return (
-            <div className="w-32">
+            <div>
                 {ingredientList}
             </div>
         );

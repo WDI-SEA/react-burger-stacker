@@ -50,16 +50,19 @@ class App extends Component {
     }
     render() {
         return (
-            <div className="flex items-end gap-4">
-                <IngredientContainer 
-                    ingredientArray={this.state.ingredientArray}
-                    handleIngredientClick={this.handleIngredientClick}
-                    handleAddIngredient={this.handleAddIngredient}
-                />
-                <BurgerContainer 
-                    burgerArray={this.state.burgerArray} 
-                    handleBurgerClear={this.handleBurgerClear} 
-                />
+            <div>
+                <h1 className="mt-3 text-center text-5xl font-bold">Burger Stacker</h1>
+                <div className="flex justify-center items-end gap-4 mx-auto mt-3 mb-5 p-3 w-fit border-2 rounded">
+                    <IngredientContainer 
+                        ingredientArray={this.state.ingredientArray}
+                        handleIngredientClick={this.handleIngredientClick}
+                        handleAddIngredient={this.handleAddIngredient}
+                    />
+                    <BurgerContainer 
+                        burgerArray={this.state.burgerArray} 
+                        handleBurgerClear={this.handleBurgerClear} 
+                    />
+                </div>
             </div>
         );
     }

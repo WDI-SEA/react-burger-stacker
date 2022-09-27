@@ -11,14 +11,20 @@ class IngredientForm extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="mt-3">
                 <form onSubmit={this.handleFormSubmit}>
-                    <input type="text" name="input" placeholder="Enter new ingredient"
-                        value={this.state.input}
-                        onChange={e => this.setState({[e.target.name]: e.target.value})}
-                        className="border rounded" 
-                    />
-                    <button type="submit">Add</button>
+                    <div className="flex flex-col items-center">
+                        <input type="text" name="input" placeholder="Enter new ingredient"
+                            value={this.state.input}
+                            onChange={e => this.setState({[e.target.name]: e.target.value})}
+                            className="border rounded text-center select-none focus:placeholder-white" 
+                            required
+                        />
+                        <button type="submit" 
+                            className="mt-1 px-2 py-1 bg-green-500 border rounded text-sm select-none hover:bg-green-700">
+                            Add
+                        </button>
+                    </div>
                 </form>
             </div>
         );

@@ -5,7 +5,7 @@ import IngredientList from "./IngredientList";
 class IngredientContainer extends Component {
     render() {
         return (
-            <div>
+            <div className="flex flex-col items-center">
                 <IngredientList 
                     ingredientArray={this.props.ingredientArray}
                     handleIngredientClick={this.props.handleIngredientClick}
