@@ -7,7 +7,7 @@ export default class BurgerStack extends Component {
         const myBorger = this.props.burgerStack.map((burger, i) => {
             if (burger) {
                 return (
-                    <div key={`ingredient${i}`}>
+                    <div style={{ backgroundColor: this.props.ingredients.color }} key={`ingredient${i}`}>
                         <ul>
                             <li>
                                 {burger}

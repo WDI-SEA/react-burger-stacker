@@ -32,6 +32,7 @@ export default class App extends Component {
       return {
         burgerStack: [e.target.innerText, ...prevState.burgerStack]
         
+        
       }
       
     })
