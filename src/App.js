@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import BurgerPane from './BurgerPane'
 import IngredientList from './IngredientList'
 
-class App extends Component {
+
+
+export default class App extends Component {
+    // have state that keeps track of clicked ingredients in an array
+    // array of ingredients that user has clicked on 
     state = {
         ingredients: [
           {name: 'Kaiser Bun', color: 'saddlebrown'},
@@ -21,6 +25,7 @@ class App extends Component {
         burgerIngredients: []
     }
 
+    // click even handler -- when an ingredient is click, it will add that ingredient to that array in state of clicked ingredients
     addToStack = (e) => {
         console.log(e.target)
         console.log(e.target.style.backgroundColor)
@@ -29,7 +34,8 @@ class App extends Component {
             burgerIngredients: [{name: e.target.innerText, color: e.target.style.backgroundColor}, ...this.state.burgerIngredients]
         })
     }
-    
+
+    // clear button click handler, which will empty the array in the state
     clearBurger = () => {
         this.setState({
             burgerIngredients: []
@@ -41,24 +47,20 @@ class App extends Component {
             <main>
                 <h1>BurgerStacker</h1>
 
-                <div class="row">
-                  <div class="column">
+                <div style={{ display: 'flex', margin: '3rem'}}>
+                    {/* will receive ingredients as props and render them and a evnet handle ingredient clicks */}
                     <IngredientList 
                       ingredients={this.state.ingredients} 
                       add={this.addToStack} 
                     />
-                  </div>
-         
-                  <div className="panes" class="column">
+
+                    {/* will receive the clear button event handler and the clicked ingredients from state to render */}
                     <BurgerPane 
                       ingredients={this.state.burgerIngredients} 
                       clear={this.clearBurger} 
                     />
-                  </div>
                 </div>
             </main>
         )   
     }
 }
-
-export default App
