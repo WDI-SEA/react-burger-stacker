@@ -1,8 +1,8 @@
 import React, { Component} from "react";
-import Ingredient from "./Ingredients";
 import IngredientList from "./IngredientList";
 import BurgerPane from "./BurgerPane";
-import BurgerStack from "./BurgerStack";
+import "./App.css"
+
 
 
 export default class App extends Component{
@@ -10,6 +10,8 @@ export default class App extends Component{
     return(
       <>
       <h1> Burger Builder </h1>
+       <IngredientList /> 
+      <BurgerPane />
       </>
     )
   }
