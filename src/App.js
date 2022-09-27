@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import BurgerPane from './BurgerPane'
 import IngredientList from './IngredientList'
+import styles from './App.css'
 
 export default class App extends Component {
 
@@ -21,15 +22,19 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className=''>
+      <div className='main'>
         
-        <IngredientList
-        ingredients={this.ingredients}
-        />
+        <div className='ingredient-list'>
+          <IngredientList
+          ingredients={this.ingredients}
+          />
+        </div>
 
-        <BurgerPane
-        ingredients={this.ingredients}
-        />
+        <div className='burger-pane'>
+          <BurgerPane
+          ingredients={this.ingredients}
+          />
+        </div>
 
       </div>
     )

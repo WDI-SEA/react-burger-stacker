@@ -6,7 +6,7 @@ export default class BurgerPane extends Component {
     render(){
         return (
             <div>
-
+                Burger Pane
                 <BurgerStack
                 
                 />
