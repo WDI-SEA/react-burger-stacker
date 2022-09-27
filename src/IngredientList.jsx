@@ -6,6 +6,8 @@ export default class IngredientList extends Component {
         return (
             <div>
 
+                <Ingredients />
+                
             </div>
         )
     }

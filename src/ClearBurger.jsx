@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-import Ingredients from './Ingredients'
 
-export default class BurgerStack extends Component {
+export default class ClearBurger extends Component {
     render() {
         return (
             <div>
                 
-                <Ingredients />
-
             </div>
         )
     }
