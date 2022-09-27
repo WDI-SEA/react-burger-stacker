@@ -22,10 +22,7 @@ class App extends Component {
         ingredientArray: ingredientArray,
         burgerArray: []
     }
-    handleIngredientClick = e => {
-        const ingredient = this.state.ingredientArray.find(({name}) => {
-            return (name === e.target.innerText);
-        });
+    handleIngredientClick = ingredient => {
         this.setState(prevState => {
             return {
                 burgerArray: [ingredient, ...prevState.burgerArray]
