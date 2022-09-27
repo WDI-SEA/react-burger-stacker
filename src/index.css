@@ -12,21 +12,3 @@ code {
     monospace;
 }
 
-.App {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.ingredients{
-  display: flex;
-  flex-direction: column;
-  flex:1;
-}
-
-.burgerPane {
-  display: flex;
-  /* will need to reverse one all is working */
-  flex-direction: column; 
-  flex:2;
-}

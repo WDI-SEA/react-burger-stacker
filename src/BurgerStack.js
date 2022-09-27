@@ -1,14 +1,24 @@
 import React, { Component} from "react"
-import Ingredients from "./Ingredients"
+import Ingredient from "./Ingredient"
 
 
 
 export default class BurgerStack extends Component{
+
   render(){
+  const ingredientComponents = this.props.clickedIngredients.map
+    ((item, i)=>{
+      return(
+        <Ingredient 
+         ingredient={item}
+         key ={`burgerlist-ingrdient${i}`}
+         />
+      )
+    })
     return (
-      <>
-      <h1> This is the burger </h1>
-      </>
+      <div>
+      {ingredientComponents}
+      </div>
     )
   }
 }
