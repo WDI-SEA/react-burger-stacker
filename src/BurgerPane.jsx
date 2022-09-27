@@ -3,6 +3,11 @@ import BurgerStack from './BurgerStack'
 import ClearBurger from './ClearBurger'
 
 export default class BurgerPane extends Component {
+
+    // state = {
+    //     burgerStack: []
+    //   }
+
     render(){
         return (
             <div>

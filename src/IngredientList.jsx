@@ -12,7 +12,8 @@ export default class IngredientList extends Component {
                     <div key={`ingredient${i}`}>
                         <ul>
                             <li>
-                                <Ingredients 
+                                <Ingredients
+                                    addIngredient={this.props.addIngredient} 
                                     ingredient={ingredient}
                                 />
                             </li>
