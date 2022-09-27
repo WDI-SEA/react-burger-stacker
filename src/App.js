@@ -24,7 +24,7 @@ export default class App extends Component {
     ]
   }
 
-  
+  // need to pass something other than target text to include color
   addIngredient = (e) => {
     console.log(this.state.burgerStack)
     console.log(e.target.innerText)
