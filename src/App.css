@@ -5,6 +5,8 @@
 }
 
 body {
+  padding:30px;
+  height: fit-content;
   color: white;
   background-color: #937DC2;
 }
@@ -15,7 +17,7 @@ body {
   display: flex;
   
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   
 }
 

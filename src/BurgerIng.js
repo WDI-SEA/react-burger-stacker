@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
 
-export default class BurgerIng extends Component {
-    render() {
+function BurgerIng(props) {
+
         return (
             <div className={`ingredient 
-            ${this.props.isTop === true && this.props.ingredientName.includes('Bun')? 'clsBunTop' : ''} 
-            ${this.props.isBottom === true && this.props.ingredientName.includes('Bun')? 'clsBunBtm' : ''} 
-            ${this.props.ingredientName.includes('Patty')? 'clsPatty' : ''}
-            ${this.props.ingredientName.includes('Onion')? 'clsOnion' : ''}`} 
-             style={{backgroundColor: this.props.ingredientColor}}>
-                {this.props.ingredientName}
+            ${props.isTop === true && props.ingredientName.includes('Bun')? 'clsBunTop' : ''} 
+            ${props.isBottom === true && props.ingredientName.includes('Bun')? 'clsBunBtm' : ''} 
+            ${props.ingredientName.includes('Patty')? 'clsPatty' : ''}
+            ${props.ingredientName.includes('Onion')? 'clsOnion' : ''}`} 
+             style={{backgroundColor: props.ingredientColor}}>
+                {props.ingredientName}
             </div>
         )
     }
-}
+export default BurgerIng

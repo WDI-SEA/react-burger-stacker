@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
 import BurgerPane from './BurgerPane'
 import IngredientList from './IngredientList'
 import './App.css'
+import {useState} from 'react'
 
 const ingredients = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
@@ -18,57 +18,41 @@ const ingredients = [
   {name: 'Onion', color: 'lightyellow'}
 ]
 
-export default class App extends Component {
+function App() {
+
+  const [burgerIngredients , setBurgerIngredients] = useState(ingredients)
+  const [burgerArray, setBurgerArray] = useState([])
   
-  state = {
-    burgerIngredients: ingredients,
-    burgerArray: [],
-    bottomBun: false
-
-  }
-
-  checkBun = () => {
-    if (this.state.burgerArray.length > 0) {
-      if (this.state.burgerArray[0].includes('Bun')) {
-        this.state.burgerArray[0].setState({bottomBun: true})
-
-      }
-    }
-  }
 
 
-  handleIngredientClick = e => {
-    const ingredient = this.state.burgerIngredients.find(({name}) => {
-        return (name === e.target.innerText);
-    });
-    this.setState(prevState => {
-        return {
-            burgerArray: [ingredient, ...prevState.burgerArray]
-        }
-    });
+
+  const handleIngredientClick = e => {
+    const ingredient = burgerIngredients.find(({name}) => {
+        return (name === e.target.innerText)
+    })
+    setBurgerArray([ingredient, ...burgerArray])
 }
-  handleBurgerClear = () => {
-      this.setState({burgerArray: []});
+ const handleBurgerClear = () => {
+      setBurgerArray([])
   }
 
-  render() {
-    return (
+  return (
       <div className='Container'>
         <div className='CreateCol'>
           <IngredientList 
-          ingredients={this.state.burgerIngredients} 
-          handleIngredientClick={this.handleIngredientClick}
+          ingredients={burgerIngredients} 
+          handleIngredientClick={handleIngredientClick}
           />
         </div>
 
         <div className='DisplayCol'>
           <BurgerPane 
-          burgerArray={this.state.burgerArray}
-          handleBurgerClear={this.handleBurgerClear}
-          checkBun={this.checkBun}
+          burgerArray={burgerArray}
+          handleBurgerClear={handleBurgerClear}
           />
         </div>
       </div>
     )
-  }
 }
+
+export default App
