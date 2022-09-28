@@ -9,7 +9,7 @@ export default function Ingredient(props) {
     }
 
     return (
-        <div 
+        <div class='p-2 border-2 rounded'
         style={styles}
         onClick={ props.handleIngredientClick ?
             () => props.handleIngredientClick(props.ingredient) :
