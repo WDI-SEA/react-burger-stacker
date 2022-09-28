@@ -1,14 +1,31 @@
-import React, { Component } from 'react'
+import { useState } from 'react'
 
-export default class ClearBurger extends Component {
-
-
-
-    render() {
-        return (
-            <div>
-                <button onClick={(e) => this.props.clearBorger(e)}>Clear Borger</button>
-            </div>
-        )
-    }
+function ClearBurger(props) {
+    return (
+        <div>
+            <button onClick={props.handleBurgerClear}>Clear</button>
+        </div>
+    )
 }
+
+export default ClearBurger
+
+
+
+
+
+// import React, { Component } from 'react'
+
+// export default class ClearBurger extends Component {
+//     render() {
+//         return (
+//             <div>
+//                 <button
+//                     onClick={this.props.handleBurgerClear}
+//                 >
+//                     Clear
+//                 </button>
+//             </div>
+//         )
+//     }
+// }

@@ -1,84 +1,109 @@
-import React, { Component } from 'react'
-import BurgerPane from './BurgerPane'
+// import React, { Component } from 'react'
 import IngredientList from './IngredientList'
-import styles from './App.css'
+import BurgerPane from './BurgerPane'
+import { useState } from 'react'
 
-export default class App extends Component {
+const ingredients = [
+  {name: 'Kaiser Bun', color: 'saddlebrown'},
+  {name: 'Sesame Bun', color: 'sandybrown'},
+  {name: 'Gluten Free Bun', color: 'peru'},
+  {name: 'Lettuce Wrap', color: 'olivedrab'},
+  {name: 'Beef Patty', color: '#3F250B'},
+  {name: 'Soy Patty', color: '#3F250B'},
+  {name: 'Black Bean Patty', color: '#3F250B'},
+  {name: 'Chicken Patty', color: 'burlywood'},
+  {name: 'Lettuce', color: 'lawngreen'},
+  {name: 'Tomato', color: 'tomato'},
+  {name: 'Bacon', color: 'maroon'},
+  {name: 'Onion', color: 'lightyellow'}
+]
 
 
-  state = {
-    burgerStack: [],
-    ingredients: [
-      {name: 'Kaiser Bun', color: 'saddlebrown'},
-      {name: 'Sesame Bun', color: 'sandybrown'},
-      {name: 'Gluten Free Bun', color: 'peru'},
-      {name: 'Lettuce Wrap', color: 'olivedrab'},
-      {name: 'Beef Patty', color: '#3F250B'},
-      {name: 'Soy Patty', color: '#3F250B'},
-      {name: 'Black Bean Patty', color: '#3F250B'},
-      {name: 'Chicken Patty', color: 'burlywood'},
-      {name: 'Lettuce', color: 'lawngreen'},
-      {name: 'Tomato', color: 'tomato'},
-      {name: 'Bacon', color: 'maroon'},
-      {name: 'Onion', color: 'lightyellow'}
-    ]
-  }
+export default function App(props) {
 
-  // need to pass something other than target text to include color
-  addIngredient = (e) => {
-    console.log(this.state.burgerStack)
-    console.log(e.target.innerText)
-    this.setState(prevState => {
+  const [clickedIngredients, setClickedIngredients] = useState([])
+
+    // clear button click handler, which will empty the array in state
+    const handleBurgerClear = () => {
+      setClickedIngredients([])
+    }
+    
+        // click even handler -- when an ingredient is click, it will add that ingredient to that array in state of clicked ingredients
+    const handleIngredientClick = ingredient => {
+      setClickedIngredients([ingredient, ...clickedIngredients])
+
       return {
-        burgerStack: [e.target.innerText, ...prevState.burgerStack]
-        
-        
+        clickedIngredients
       }
-      
-    })
-      
-  
-    console.log(`Added`)
-}   
-
-  clearBorger = (e) => {
-    this.setState({
-      burgerStack: []
-    })
-    console.log(`Borger Deletus`)
-  }
-  
-
-  
-  render() {
-    return (
-      <div>
-        <h2>Burger Stacker!</h2>
-        <div className='main'>
-          
-          
-          <div className='ingredient-list'>
-            <h2>Borger DNA</h2>
-            <IngredientList
-              addIngredient={this.addIngredient}
-              ingredients={this.state.ingredients}
-              burgerStack={this.state.burgerStack}
-            />
-          </div>
-
-          <div className='burger-pane'>
-            <h2>Crafted Borger</h2>
-            <BurgerPane
-              clearBorger={this.clearBorger}
-              burgerStack={this.state.burgerStack}
-              ingredients={this.state.ingredients}
-            />
-          </div>
+    }
 
 
+  return (
+      <div style={{ display: 'flex', margin: '3rem', alignItems: 'flex-end' }}>
+          {/* will recieve ingredients a props and render them, and a event handler to handle ingredient clicks */}
+          <IngredientList 
+            ingredients={ingredients}
+            handleIngredientClick={handleIngredientClick}
+          />
+
+          {/* will recive the clear button event handler, and the clicked ingredients from state to render */}
+          <BurgerPane 
+            clickedIngredients={clickedIngredients}
+            handleBurgerClear={handleBurgerClear}
+          />
       </div>
-
-      </div>
-    )
-  }
+  )
 }
+
+
+
+
+
+
+
+// export default class App extends Component {
+//   // have state that keeps track of clicked ingredients in an array
+//   state = {
+//     // array of ingredients that the user has clicked on
+//     clickedIngredients: []
+//   }
+
+//   // click even handler -- when an ingredient is click, it will add that ingredient to that array in state of clicked ingredients
+//   handleIngredientClick = ingredient => {
+//     // console.log(e.target.innerText)
+//     console.log(ingredient)
+//     this.setState(prevState => {
+//       // add the ingredient that was clicked to a new array with the old state's array spred into it
+//       const clickedIngredients = [ingredient, ...prevState.clickedIngredients]
+//       // merge the new array into state
+//       return {
+//         clickedIngredients
+//       }
+//     })
+//   }
+
+//   // // clear button click handler, which will empty the array in state
+//   // handleBurgerClear = () => {
+//   //   this.setState({
+//   //     clickedIngredients: []
+//   //   })
+//   // }
+
+//   render() {
+//     return (
+//       <div style={{ display: 'flex', margin: '3rem', alignItems: 'flex-end' }}>
+//         {/* will recieve ingredients a props and render them, and a event handler to handle ingredient clicks */}
+//         <IngredientList 
+//           ingredients={ingredients}
+//           handleIngredientClick={this.handleIngredientClick}
+//         />
+
+//         {/* will recive the clear button event handler, and the clicked ingredients from state to render */}
+//         <BurgerPane 
+//           clickedIngredients={this.state.clickedIngredients}
+//           handleBurgerClear={this.handleBurgerClear}
+//         />
+//       </div>
+//     )
+//   }
+// }
