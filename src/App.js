@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import { useState } from "react";
 import IngredientContainer from "./IngredientContainer";
 import BurgerContainer from "./BurgerContainer";
 
-const ingredientArray = [
+const ingredientData = [
     {name: 'Kaiser Bun', color: 'saddlebrown'},
     {name: 'Sesame Bun', color: 'sandybrown'},
     {name: 'Gluten Free Bun', color: 'peru'},
@@ -17,52 +17,40 @@ const ingredientArray = [
     {name: 'Onion', color: 'lightyellow'}
 ]
 
-class App extends Component {
-    state = {
-        ingredientArray: ingredientArray,
-        burgerArray: []
+function App() {
+    const [ingredientArray, setIngredientArray] = useState(ingredientData);
+    const [burgerArray, setBurgerArray] = useState([]);
+    const handleIngredientClick = ingredient => {
+        setBurgerArray([ingredient, ...burgerArray]);
     }
-    handleIngredientClick = ingredient => {
-        this.setState(prevState => {
-            return {
-                burgerArray: [ingredient, ...prevState.burgerArray]
-            }
-        });
-    }
-    handleAddIngredient = e => {
+    const handleAddIngredient = e => {
         e.preventDefault();
         const newIngredient = {
             // the input value from the form is on the first index of target
             name: e.target[0].value,
             color: "antiquewhite"
         }
-        this.setState(prevState => {
-            return {
-                ingredientArray: [...prevState.ingredientArray, newIngredient]
-            };
-        })
+        setIngredientArray([...ingredientArray, newIngredient]);
     }
-    handleBurgerClear = () => {
-        this.setState({burgerArray: []});
+    const handleBurgerClear = () => {
+        setBurgerArray([]);
     }
-    render() {
-        return (
-            <div>
-                <h1 className="mt-3 text-center text-5xl font-bold">Burger Stacker</h1>
-                <div className="flex justify-center items-end gap-4 mx-auto mt-3 mb-5 p-3 w-fit border-2 rounded">
-                    <IngredientContainer 
-                        ingredientArray={this.state.ingredientArray}
-                        handleIngredientClick={this.handleIngredientClick}
-                        handleAddIngredient={this.handleAddIngredient}
-                    />
-                    <BurgerContainer 
-                        burgerArray={this.state.burgerArray} 
-                        handleBurgerClear={this.handleBurgerClear} 
-                    />
-                </div>
+    return (
+        <div>
+            <h1 className="mt-3 text-center text-5xl font-bold">Burger Stacker</h1>
+            <div className="flex justify-center items-end gap-4 mx-auto mt-3 mb-5 p-3 w-fit border-2 rounded">
+                <IngredientContainer 
+                    ingredientArray={ingredientArray}
+                    handleIngredientClick={handleIngredientClick}
+                    handleAddIngredient={handleAddIngredient}
+                />
+                <BurgerContainer 
+                    burgerArray={burgerArray} 
+                    handleBurgerClear={handleBurgerClear} 
+                />
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default App;
