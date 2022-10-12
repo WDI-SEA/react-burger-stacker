@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
 import Ingredient from './Ingredient'
 
-export default class BurgerStack extends Component {
-    render() {
-        const ingredientComponents = this.props.clickedIngredients.map((item, i) => {
+export default function BurgerStack(props){
+        const ingredientComponents = props.clickedIngredients.map((item, i) => {
             return (
                 <Ingredient 
                     ingredient={item}
@@ -17,7 +15,7 @@ export default class BurgerStack extends Component {
                 {ingredientComponents}
             </div>
         )
-    }
+    
 }
 
 // ternary statements = if/else
