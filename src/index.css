@@ -5,11 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: azure;
+  background-color: fff;
 }
 .todo{
+  background-color:cornsilk;
  
-  border: 2px solid black;
   
 }
 .clear{
