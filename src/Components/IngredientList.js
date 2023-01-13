@@ -4,7 +4,7 @@ import Ingredient from "./Ingredient";
 export default class IngredientList extends Component {
     render() {
         const ingredientArray = this.props.ingredients.map( (ingredient, idx )=> {
-            return <Ingredient ingredient={ingredient} handleAddIngredient={this.props.handleAddIngredient} />
+            return <Ingredient ingredient={ingredient} handleAddIngredient={this.props.handleAddIngredient} key={idx} />
         })
         return (
             <>

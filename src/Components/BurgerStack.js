@@ -5,7 +5,12 @@ export default class BurgerStack extends Component {
 
         return(
             <>
-            <div className="burgerDiv">{this.props.ingredient}</div>
+            <div 
+            className="burgerDiv"
+            style={{backgroundColor: this.props.ingredient.color}}
+            >
+                {this.props.ingredient.name}
+            </div>
             </>
         )
     }

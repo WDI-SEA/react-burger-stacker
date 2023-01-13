@@ -3,8 +3,8 @@ import BurgerStack from "./BurgerStack";
 
 export default class BurgerList extends Component {
     render() {
-            const addedIngredient = this.props.addIngredients.map(ingredient => {
-                return <BurgerStack ingredient={ingredient} />
+            const addedIngredient = this.props.addIngredients.map((ingredient, idx) => {
+                return <BurgerStack ingredient={ingredient} key={idx}/>
             })
         return (
             <>

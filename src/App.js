@@ -5,7 +5,8 @@ import './index.css'
 
 export default class App extends Component {
   state = {
-    addIngredients: ['']
+    addIngredients: [''],
+    // ingredientsArray: [...ingredientsArray]
   }
 
   handleAddIngredient = (filter) => {
@@ -28,10 +29,13 @@ export default class App extends Component {
       {name: 'Burger Bun', color: 'brown'},
       {name: 'Lettuce Wrap', color: 'olivedrab'},
       {name: 'Beef Patty', color: '#3F250B'},
+      {name: 'Crabby patty', color: 'brown'},
       {name: 'Lettuce', color: 'lawngreen'},
       {name: 'Tomato', color: 'tomato'},
       {name: 'Bacon', color: 'maroon'},
-      {name: 'Onion', color: 'lightyellow'}
+      {name: 'Onion', color: 'lightyellow'},
+      {name: 'Cheese', color: 'lightyellow'},
+      {name: 'secret sauce', color: 'red'}
     ]
     return (
       <>
