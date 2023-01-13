@@ -1,0 +1,9 @@
+App
+|--IngredientList
+|   |--Props: Ingredient(s)
+|
+|--BurgerPane
+|   |--BurgerStack
+|   |   |--Ingredient(s)
+|   |
+|   |--ClearBurger
