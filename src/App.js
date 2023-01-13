@@ -5,7 +5,7 @@ import './index.css'
 
 export default class App extends Component {
   state = {
-    addIngredients: []
+    addIngredients: ['']
   }
 
   handleAddIngredient = (filter) => {
@@ -23,9 +23,6 @@ export default class App extends Component {
     })
   }
 
-  findAllvalues =(ingredients) => {
-    console.log(ingredients)
-  }
   render() {
     const ingredients = [
       {name: 'Burger Bun', color: 'brown'},
