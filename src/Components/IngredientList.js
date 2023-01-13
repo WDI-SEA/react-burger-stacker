@@ -9,7 +9,7 @@ export default class IngredientList extends Component {
         return (
             <>
             <div><h4>Choose Your Ingredients:</h4></div>
-            <div>{ingredientArray}</div>
+            {ingredientArray}
             </>
         )
     }

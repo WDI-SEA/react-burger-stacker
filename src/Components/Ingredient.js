@@ -5,7 +5,7 @@ export default class Ingredient extends Component {
 
         return (
             <>
-                <div onClick={()=>{this.props.handleAddIngredient(this.props.ingredient.name)}} >{this.props.ingredient.name}</div>
+                <div className="burgerDiv" onClick={()=>{this.props.handleAddIngredient(this.props.ingredient.name)}} >{this.props.ingredient.name}</div>
             </>
         )
     }
