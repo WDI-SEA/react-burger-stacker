@@ -1,22 +1,22 @@
-import { Component } from "react";
-import Ingredient from "./Ingredient";
+import { Component } from 'react'
+import Ingredient from './Ingredient'
 
 export default class BurgerPane extends Component {
-    render () {
+    render() {
         const stackToRender = this.props.stack.map((stackItem, i) => {
             return <Ingredient 
                 item={stackItem}
-                key={'stack'+i}
+                key={"stack"+i}
             />
         })
         return (
             <>
-                <h2>burger pane</h2>
-                {stackToRender}
+                <h2>Burger Pane</h2>
+                {stackToRender.reverse()}
                 <button
                     onClick={this.props.handleRemoveFromStack}
                 >
-                Clear
+                    Clear
                 </button>
             </>
         )

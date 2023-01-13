@@ -1,17 +1,17 @@
-import { Component } from "react";
-import Ingredient from "./Ingredient";
+import { Component } from 'react'
+import Ingredient from './Ingredient'
 
 export default class IngredientList extends Component {
-    render () {
+    render() {
         const listToRender = this.props.items.map((item, i) => {
-            return <Ingredient
+           return <Ingredient 
                 item={item}
                 i={i}
-                key={'ingred'+i}
+                key={"ingred"+i}
                 handleAddToStack={this.props.handleAddToStack}
             />
         })
-        return (
+        return(
             <>
                 <h2>Ingredient List</h2>
                 {listToRender}
