@@ -1,0 +1,25 @@
+h1 {
+  text-align: center;
+}
+.container-div {
+  /* border: blue 2px dotted; */
+  display: flex;
+}
+
+.list-div {
+  /* border: yellow 3px solid; */
+  display: grid;
+  flex: 50%;
+  justify-items: center;
+}
+
+.stack-div {
+  /* border: green 3px solid; */
+  display: grid;
+  flex: 50%;
+  justify-items: center;
+}
+
+.burger-stack {
+  position: absolute;
+}
