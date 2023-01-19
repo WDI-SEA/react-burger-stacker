@@ -1,6 +1,22 @@
 .App {
   text-align: center;
 }
+.burger {
+  background-color: #61dafb;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
 
 .App-logo {
   height: 40vmin;

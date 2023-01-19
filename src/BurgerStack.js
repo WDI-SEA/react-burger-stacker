@@ -5,10 +5,16 @@ import Ingredients from './Ingredients'
 
 export default class BurgerStack extends React.Component {
   render(){
+    const stackToRender = this.props.stack.map((item, i) => {
+      return <Ingredients
+          item={item}
+          i={i}
+          key={`ingredient-${i}`}
+      />
+  })
     return(
       <div>
-        <h1>BurgerStack</h1>
-       <Ingredients/>
+        {stackToRender}
       </div>
     )
   }

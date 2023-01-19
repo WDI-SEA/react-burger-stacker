@@ -1,25 +1,19 @@
-import React from 'react'
+import { Component } from 'react'
 
+export default class Ingredients extends Component {
+    render() {
+        return (
+            <div
+                key={`ingred-${this.props.i}`}
+                onClick={this.props.handleAddToStack}
 
+                
+                
+            >
+                {this.props.item.name}
 
-export default class Ingredients extends React.Component {
-  render(){
-    
+            </div>
 
-    
-    return(
-      <div>
-        <h1>Ingredient1</h1>
-        <h1>Ingredient2</h1>
-
-        
-        
-
-
-
-        
-      </div>
-    )
-  }
-
+        )
+    }
 }

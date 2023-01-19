@@ -1,21 +1,22 @@
-import React from 'react'
+import { Component } from 'react'
 import Ingredients from './Ingredients'
+//import Input from './Input'
 
-
-
-export default class IngredientsList extends React.Component {
-  render(){
-    return(
-      <div>
-        <h1>IngredientsList</h1>
-        <ul>
-         
-         
-
-        </ul>
-       <Ingredients/>
-      </div>
-    )
-  }
-
+export default class IngredientList extends Component {
+    render() {
+        const listToRender = this.props.items.map((item, i) => {
+            return <Ingredients 
+                item={item}
+                i={i}
+                handleAddToStack={this.props.handleAddToStack}
+            />
+        })
+        return(
+            <>
+               
+                <h2>Ingredient List</h2>
+               {listToRender}
+            </>
+        )
+    }
 }
