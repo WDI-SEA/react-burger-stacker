@@ -49,9 +49,42 @@
 .burgerPane {
   display: flex;
   flex-direction: column-reverse;
-  height: 500px;
 }
 
 .spacer {
   width: 200px;
+}
+
+.burgerPaneHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.clearButton {
+  height: 35px;
+  width: 115px;
+  z-index: 1;
+}
+
+#burger {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  transform: rotate(180deg)
+}
+
+#burger2 {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+}
+
+.burgerStackerHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
