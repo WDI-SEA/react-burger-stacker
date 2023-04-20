@@ -1,0 +1,15 @@
+This is the Component Diagram:
+
+
+-----
+
+const ingredients = this.props
+        const IngredientsList = this.props.Ingredients.name.map((ingredient, i)=> {
+            return (
+                <Ingredients
+                key= {i}
+                ingredient= {ingredient} 
+                />
+            )
+        })
+
