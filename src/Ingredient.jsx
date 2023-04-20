@@ -12,7 +12,7 @@ export default class Ingredient extends Component {
     render() {
         return(
             <div>
-                <button onClick={this.handleClick} >{this.props.item}</button>
+                <button onClick={this.handleClick} style={{ backgroundColor: this.props.color}} >{this.props.item}</button>
             </div>
         )
     }
