@@ -15,11 +15,29 @@ App
 */
 
 export default class App extends Component {
+
+  state = {
+    burgerStack: []
+  }
+
+  handleAddIngredient = (item) => {
+    console.log('handling add ingredient')
+    this.setState({ burgerStack: [item, ...this.state.burgerStack] })
+  }
+
+  handleClearBurger = () => {
+    console.log('handling clear burger')
+    this.setState({ burgerStack: [] })
+  }
+
   render() {
     return (
-      <div className='App'>
-        <IngredientList />
-        <BurgerPane />
+      <div>
+        <IngredientList onAddIngredient={this.handleAddIngredient} />
+        <BurgerPane 
+          onClearBurger={this.handleClearBurger} 
+            
+        />
       </div>
     )
   }

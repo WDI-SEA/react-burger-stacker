@@ -23,6 +23,7 @@ export default class IngredientList extends Component {
             key={`item + ${i}`}
             item={item.name}
             color={item.color}
+            onAddIngredient={this.props.onAddIngredient}
           />
         ))
         return (

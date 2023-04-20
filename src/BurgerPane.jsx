@@ -6,7 +6,7 @@ export default class BurgerPane extends Component {
         return(
             <div>
                 <BurgerStack />
-                <button>Clear Burger</button>
+                <button onClick={this.props.onClearBurger} >Clear Burger</button>
             </div>
         )
     }
