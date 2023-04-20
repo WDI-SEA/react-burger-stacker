@@ -27,7 +27,7 @@ export default class IngredientList extends Component {
           />
         ))
         return (
-            <div>
+            <div style={{border: 'solid 2px blue'}} >
                 <h1>Ingredient List</h1>
                 {ingredients}
             </div>

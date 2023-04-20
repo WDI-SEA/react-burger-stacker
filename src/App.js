@@ -32,11 +32,11 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{display: 'flex'}} >
         <IngredientList onAddIngredient={this.handleAddIngredient} />
         <BurgerPane 
           onClearBurger={this.handleClearBurger} 
-            
+          burgerStack={this.state.burgerStack}  
         />
       </div>
     )
