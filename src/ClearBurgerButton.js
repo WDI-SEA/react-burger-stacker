@@ -1,9 +1,11 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react';
 
-function ClearBurgerButton() {
-  return (
-    <button>Clear Burger</button>
-  );
+class ClearBurgerButton extends Component {
+  render() {
+    return (
+      <button onClick={this.props.clearStack}>Clear Burger</button>
+    );
+  }
 }
 
 export default ClearBurgerButton;

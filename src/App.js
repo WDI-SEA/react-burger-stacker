@@ -21,8 +21,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <IngredientList />
-        <BurgerPane />
+        <IngredientList ingredients={ingredients} />
+        <BurgerPane ingredients={ingredients} />
       </div>
     );
   }

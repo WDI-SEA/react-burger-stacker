@@ -1,12 +1,13 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
 class Ingredient extends Component {
-    render() {
-      return (
-        <h1> Ingredient </h1>
-      );
-    }
+  render() {
+    return (
+      <div>
+        <h1>{this.props.ingredient.name}</h1>
+      </div>
+    );
   }
-  
+}
 
-export default Ingredient
+export default Ingredient;
