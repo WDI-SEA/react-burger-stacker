@@ -26,7 +26,7 @@ export default class App extends Component{
   render() {
     return(
       <div>
-        <h1>hello app</h1>
+        
         <div className='ingredient-list'>
           <IngredientList handleAddIngredient={this.handleAddIngredient}/>
         </div>
