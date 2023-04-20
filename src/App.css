@@ -1,0 +1,12 @@
+.burger-pane{
+  float: right;
+  width: 50%;
+}
+.ingredient-list{
+  float: left;
+  width: 50%;
+}
+.clear-button{
+  position: absolute;
+  bottom: 0;
+}
