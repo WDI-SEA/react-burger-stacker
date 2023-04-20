@@ -6,3 +6,7 @@
   float: left;
   width: 50%;
 }
+.clear-button{
+  position: absolute;
+  bottom: 0;
+}

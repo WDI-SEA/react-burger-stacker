@@ -17,11 +17,19 @@ const ingredients = [
 ]
 
 export default class IngredientList extends Component{
+  
+  handleAddIngredient = (item) => {
+    this.props.handleAddIngredient(item)
+  }
+
   render() {
     return(
         <div>
             List of ingredients
-            <Ingredients ingredients={ingredients}/>
+            <Ingredients 
+              ingredients={ingredients} 
+              handleAddIngredient={this.handleAddIngredient}
+            />
         </div>
     )
   }

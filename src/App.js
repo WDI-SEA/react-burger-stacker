@@ -15,12 +15,14 @@ export default class App extends Component{
     this.setState({
       burger: []
     })
+    console.log(this.state)
   }
 
   handleAddIngredient = (item) => {
     this.setState({
       burger: [...this.state.burger, item]
     })
+    console.log(this.state)
   }
 
   render() {
@@ -32,7 +34,10 @@ export default class App extends Component{
         </div>
 
         <div className='burger-pane'>
-          <BurgerPane handleClearBurger={this.handleClearBurger}/>
+          <BurgerPane 
+          handleClearBurger={this.handleClearBurger}
+          burger={this.state.burger}
+          />
         </div>
 
       </div>

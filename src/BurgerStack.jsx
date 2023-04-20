@@ -1,17 +1,22 @@
 import React, { Component } from 'react'
 
-const ingredients = this.props.ingredients
+
 
 export default class BurgerStack extends Component{
 
-    state = {
-        ingredients: []
-    }
-
     render(){
+
+        const finalBurger = this.props.burger.map((item, i) => {
+            return(
+                <ul key={`item ${i}`}>
+                    {item}
+                </ul>
+            )
+        })
+
         return(
             <div>
-                burger stack
+                {finalBurger}
             </div>
         )
     }
