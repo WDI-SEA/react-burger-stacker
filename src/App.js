@@ -44,7 +44,7 @@ export default class App extends Component {
       )
     })
     return(
-      <>
+      <div className="appContainer">
       <div>
       <h2>Ingredients</h2>
         {ingredientComponents}
@@ -56,7 +56,7 @@ export default class App extends Component {
       />
         </div>
       
-      </>
+      </div>
     )
   }
 }

@@ -6,7 +6,10 @@ export default class IngredientList extends Component {
           return(
             <>
               <ul>
-                <li onClick={this.props.handleIngredientClick}>{ingredient.name}</li>
+                <li 
+                onClick={this.props.handleIngredientClick}
+                style={{ backgroundColor: ingredient.color }}
+                >{ingredient.name}</li>
               </ul>
               </>
           )
