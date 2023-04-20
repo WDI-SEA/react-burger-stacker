@@ -53,6 +53,14 @@ export default class App extends Component {
         <h2>Stacked Burger</h2>
       <BurgerPane
         stackedBurger={this.state.stackedBurger}
+        clearBurgerIngredients={ () => {
+          console.log("clear burger ingredeitn")
+          this.setState(() => {
+            return {
+              stackedBurger: []
+            }
+          })
+        }}
       />
         </div>
       

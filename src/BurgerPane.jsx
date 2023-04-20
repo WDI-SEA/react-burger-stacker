@@ -10,6 +10,7 @@ export default class BurgerPane extends Component {
         return(
             <>
             <ul>{stackedBurgerIngredients.reverse()}</ul>
+            <button onClick={this.props.clearBurgerIngredients}>Clear</button>
             </>
         )
     }
