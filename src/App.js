@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   addIngredient = (ingredient) => {
-    const updatedStack = [...this.state.burgerStack, ingredient];
+    const updatedStack = [ingredient, ...this.state.burgerStack];
     this.setState({ burgerStack: updatedStack });
   }
 

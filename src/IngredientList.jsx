@@ -3,18 +3,21 @@ import Ingredient from './Ingredient';
 
 class IngredientList extends Component {
   render() {
-    const ingredients = this.props.ingredients.map((ingredient, index) => (
+    let ingredientComponents
+    if (this.props.ingredients) {
+    ingredientComponents = this.props.ingredients.map((ingredient, index) => (
       <Ingredient
         key={index}
         ingredient={ingredient}
+        addIngredient={this.props.addIngredient}
       />
-    ));
+    ));}
 
     return (
       <div style={{ width: "500px" }}>
         <h2>Ingredients</h2>
         <ul>
-            {ingredients}
+            {ingredientComponents}
         </ul>
       </div>
     );

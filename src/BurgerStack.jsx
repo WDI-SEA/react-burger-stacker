@@ -3,13 +3,18 @@ import Ingredient from './Ingredient';
 
 class BurgerStack extends Component {
   render() {
-    const stack = this.props.stack;
+
 
     return (
       <div>
         <h1>Burger Stack</h1>
         <ul>
-            burgerstack
+          {this.props.burgerStack.map((ingredient, index) => (
+            <Ingredient
+              key={index}
+              ingredient={ingredient}
+            />
+          ))}
         </ul>
       </div>
     );
