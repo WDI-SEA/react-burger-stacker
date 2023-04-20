@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Ingredients from './Ingredient'
+import Ingredient from './Ingredient'
 
 export default class IngredientList extends Component {
-    const ingredients = [
+    ingredientsArray = [
         {name: 'Kaiser Bun', color: 'saddlebrown'},
         {name: 'Sesame Bun', color: 'sandybrown'},
         {name: 'Gluten Free Bun', color: 'peru'},
@@ -16,10 +16,19 @@ export default class IngredientList extends Component {
         {name: 'Bacon', color: 'maroon'},
         {name: 'Onion', color: 'lightyellow'}
       ]
-    render() {
+
+      render() {
+        const ingredients = this.ingredientsArray.map((item, i) => (
+          <Ingredient
+            key={`item + ${i}`}
+            item={item.name}
+            color={item.color}
+          />
+        ))
         return (
             <div>
-                <Ingredients />
+                <h1>Ingredient List</h1>
+                {ingredients}
             </div>
         )
     }
