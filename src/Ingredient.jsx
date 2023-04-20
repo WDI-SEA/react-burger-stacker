@@ -1,11 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Ingredient extends Component {
+  handleClick = () => {
+    this.props.addIngredient(this.props.ingredient);
+  }
+
   render() {
     return (
-      <div>
-        <h1>{this.props.ingredient.name}</h1>
-      </div>
+      <li style={{ backgroundColor: this.props.ingredient.color }} onClick={this.handleClick}>
+        {this.props.ingredient.name}
+      </li>
     );
   }
 }

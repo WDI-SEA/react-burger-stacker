@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import IngredientList from './IngredientList'
-import BurgerPane from './BurgerPane'
+import React, { Component } from 'react';
+import IngredientList from './IngredientList';
+import BurgerPane from './BurgerPane';
 
 const ingredients = [
   {name: 'Kaiser Bun', color: 'saddlebrown'},
@@ -15,17 +15,30 @@ const ingredients = [
   {name: 'Tomato', color: 'tomato'},
   {name: 'Bacon', color: 'maroon'},
   {name: 'Onion', color: 'lightyellow'}
-]
+];
 
 class App extends Component {
+  state = {
+    burgerStack: []
+  }
+
+  addIngredient = (ingredient) => {
+    const updatedStack = [...this.state.burgerStack, ingredient];
+    this.setState({ burgerStack: updatedStack });
+  }
+
+  clearBurger = () => {
+    this.setState({ burgerStack: [] });
+  }
+
   render() {
     return (
       <div>
-        <IngredientList ingredients={ingredients} />
-        <BurgerPane ingredients={ingredients} />
+        <IngredientList ingredients={ingredients} addIngredient={this.addIngredient} />
+        <BurgerPane burgerStack={this.state.burgerStack} clearBurger={this.clearBurger} />
       </div>
     );
   }
 }
 
-export default App
+export default App;
